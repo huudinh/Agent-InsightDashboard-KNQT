@@ -13,13 +13,14 @@
  "quick": "Gõ <b>AUTO</b> kèm hai file &rarr; agent khai tầng thị trường, phác họa chân dung từ chính hội thoại đó rồi dừng ở <b>cổng duyệt</b>. ⛔ Nó không tự duyệt thay bạn.",
  "dim": "★ Khách quốc tế quyết định <b>hai</b> thứ: <i>“có mổ không”</i> và <i>“có bay không”</i>. Phép thử một hội thoại: <i>“khách đã đủ thông tin để mở app hàng không và chọn ngày bay chưa?”</i>",
  "chips": [
-  "v1.0",
+  "v1.1",
   "12 sổ tri thức",
   "9 prompt mẫu",
   "4 cổng chặn",
   "27 tiêu chí N1–N7",
   "10 cờ đỏ",
-  "pháp chế 2 tầng"
+  "pháp chế 2 tầng",
+  "đã chạy thật 119 HT"
  ],
  "muc": [
   "Cài đặt",

@@ -403,8 +403,29 @@ def gan_chang(ht, td):
         return "S1"
     if co_tu(dau, HAU_PHAU):
         return "S6"
+    # ★ Câu HỎI THÔNG TIN DỊCH VỤ thuần ("I'd like to know about breast
+    #   augmentation") là chặng S1: khách đang tìm hiểu, CHƯA chọn nước (S2),
+    #   CHƯA sợ (S3), CHƯA tính chuyến đi (S4). ⛔ Không đẩy nhóm này sang S2:
+    #   S2 là chặng chọn NƯỚC, không phải chặng hỏi dịch vụ.
+    if co_tu(dau, td.get("hoi_thong_tin", [])):
+        return "S1"
     # ⛔ Không mặc định S1. Chưa rõ thì ghi là chưa rõ — id-C §3 bước 7.
     return "chưa rõ"
+
+
+# ⚠ Nhận ngôn ngữ phải khớp chữ CÓ DẤU. Bỏ dấu rồi so là cách sai: tên bác sĩ
+#   Việt trong một câu tiếng Anh ("Dr. Nguyễn Quốc Chí") sẽ khớp "chị", "mình",
+#   "giá"… và biến câu tiếng Anh thành tiếng Việt — đẻ ra một hàng
+#   "hệ thống — ngôn ngữ" không có thật.
+RE_TU_VIET = re.compile(
+    r'(?<![0-9A-Za-zÀ-ỹ])(?:ạ|ơi|nhé|của|được|không|mình|chị|em|anh|giá|bác sĩ|làm|vâng|dạ'
+    r'|và|có|cho|với|này|thì|là|rất|nhưng|hoặc|cũng|đã|sẽ|tại|về|theo|một)'
+    r'(?![0-9A-Za-zÀ-ỹ])', re.I)
+
+
+def dem_dau_viet(s):
+    """Số lần xuất hiện từ tiếng Việt CÓ DẤU — ⛔ không bỏ dấu trước khi so."""
+    return len(RE_TU_VIET.findall(s or ""))
 
 
 def gan_ngon_ngu(ht, td):
@@ -415,11 +436,9 @@ def gan_ngon_ngu(ht, td):
     for ma in ("KM", "AR"):
         if any(x in kh for x in td["ngon_ngu"].get(ma, [])):
             return ma
-    vi = sum(1 for x in td["ngon_ngu"]["VI"] if co_tu(kh, [x]))
-    co_ascii = bool(re.search(r'[A-Za-z]{3,}', kh))
-    if vi >= 2:
+    if dem_dau_viet(kh) >= 2:
         return "VI"
-    return "EN" if co_ascii else "XX"
+    return "EN" if re.search(r'[A-Za-z]{3,}', kh) else "XX"
 
 
 def gan_ngon_ngu_nv(ht, td):
@@ -427,8 +446,9 @@ def gan_ngon_ngu_nv(ht, td):
     nv = ht["nv_text"]
     if not nv.strip():
         return None
-    vi = sum(1 for x in td["ngon_ngu"]["VI"] if co_tu(nv, [x]))
-    return "VI" if vi >= 2 else ("EN" if re.search(r'[A-Za-z]{3,}', nv) else "XX")
+    # ⚠ Ngưỡng 3 (cao hơn phía khách): lời bot hay lẫn tên bác sĩ Việt và
+    #   một hai chữ Việt sót lại, chưa đủ để gọi là trả lời bằng tiếng Việt.
+    return "VI" if dem_dau_viet(nv) >= 3 else ("EN" if re.search(r'[A-Za-z]{3,}', nv) else "XX")
 
 
 def gan_kenh(ht, td):
@@ -553,7 +573,14 @@ def gan_ma_o(ht, td, ma_oq=()):
     #   "(chưa nêu)" = khách chưa nói gì đủ để có phản đối  → KHÔNG tính vào O-00
     #   "O-00"       = khách CÓ nêu điều gì đó mà danh sách 12 mã không chứa
     #                  → vượt 10% mẫu là tín hiệu phải bổ sung từ điển (id-D §1)
-    return ["(chưa nêu)"] if len(re.sub(r'\W+', '', kh)) < 20 else ["O-00"]
+    # ★ Tách "(chưa nêu)" khỏi "O-00" (id-D §1):
+    #   (chưa nêu) = khách chưa nói gì đủ để có phản đối, HOẶC chỉ hỏi thông tin
+    #                dịch vụ — một câu hỏi dịch vụ thuần ⛔ không phải một phản đối.
+    #   O-00       = khách CÓ nêu một điều mà cả hai danh sách O và OQ không chứa
+    #                → vượt 10% mẫu là tín hiệu phải bổ sung từ điển, ⛔ không tự thêm mã.
+    if len(re.sub(r'\W+', '', kh)) < 20 or co_tu(kh, td.get("hoi_thong_tin", [])):
+        return ["(chưa nêu)"]
+    return ["O-00"]
 
 
 def gan_ma_oq(ht, td):
@@ -974,6 +1001,13 @@ def cham_hoi_thoai(ht, td, ma_o, ma_oq=(), s4=()):
     # ★ CĐ-7 nhận bằng LOGIC, không bằng từ khoá: có nêu giá mà không nêu phụ phí.
     if co_neu_gia and not co_phu_phi:
         co_do.append({"ma": "CĐ-7", "trich": "nêu giá mà không nêu phụ phí quốc tế 10%"})
+    # ★ CĐ-4 nhận bằng LOGIC: gắn tên một bác sĩ KHÔNG có trong danh sách được
+    #   duyệt cho site quốc tế. Cổng ① của id-K §3④: site nội địa và site quốc tế
+    #   ⛔ KHÔNG trùng danh sách, và nhân sự ở site nội địa ⛔ không tự động dùng
+    #   được cho khách quốc tế.
+    for ten_bs in bac_si_la(nv_text, td):
+        co_do.append({"ma": "CĐ-4",
+                      "trich": "gắn bác sĩ «%s» — ngoài danh sách site quốc tế" % ten_bs})
 
     def co(ma):
         return any(c["ma"] == ma for c in co_do)
@@ -1080,6 +1114,30 @@ def cham_hoi_thoai(ht, td, ma_o, ma_oq=(), s4=()):
     if co_do and diem is not None:
         diem = min(diem, 49.0)           # id-F §4: có cờ đỏ → trần 49
     return k, diem, co_do
+
+
+RE_BAC_SI = re.compile(r"\b(?:Dr\.?|Doctor|BS\.?|Bác sĩ)\s+"
+                       r"((?:[A-ZÀ-Ỹ][\wÀ-ỹ-]*\s*){1,4})")
+
+
+def bac_si_la(nv_text, td):
+    """Tên bác sĩ bot/nhân viên nêu mà KHÔNG có trong danh sách duyệt quảng bá QT.
+
+    ⚠ So theo HỌ+TÊN đã bỏ dấu, nên "Louis Trương" và "Louis Truong" là một.
+      Danh sách duyệt nằm ở tu_dien.json → `bac_si_duyet_qt` (id-K §3④).
+    """
+    duyet = [khong_dau(x) for x in td.get("bac_si_duyet_qt", [])]
+    ra = []
+    for m in RE_BAC_SI.finditer(nv_text or ""):
+        ten = re.sub(r'\s+', ' ', m.group(1)).strip(" .,;:")
+        if not ten or len(ten) < 3:
+            continue
+        kd = khong_dau(ten)
+        if any(kd in d or d in kd for d in duyet):
+            continue
+        if ten not in ra:
+            ra.append(ten)
+    return ra[:3]
 
 
 def xep_loai(diem, so_ht, co_do):

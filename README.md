@@ -6,7 +6,21 @@
 >
 > Đầu ra dùng được ngay: **dashboard 10 tab · ma trận ưu tiên · ngân hàng hook EN/VI · sổ tay thực thi riêng cho từng nhân viên**.
 
-`v1.0` · 2026-10-31 · Claude / ChatGPT / Gemini / Claude Code
+`v1.1` · 2026-10-31 · Claude / ChatGPT / Gemini / Claude Code
+
+### 📘 [**Hướng dẫn cài đặt & prompt mẫu →**](https://claude.ai/artifact/E5U9He8ox1xmzxUz4hWN7E)
+### 📈 [**Báo cáo insight — chạy thật trên 119 hội thoại quốc tế →**](https://claude.ai/artifact/UnEJMD37Lc3ydC31skNSwH)
+### 📋 [**Kế hoạch nội dung 11/2026 →**](https://claude.ai/artifact/X1NaLkUJveCxtkY4sAL53Y)
+
+> Trang hướng dẫn có **nút Copy từng file**: 2 thẻ bộ não · 21 file tri thức · 16 prompt mẫu lọc theo nhóm · 8 câu smoke test · bảng 11 việc đang chặn. Người mới vào khối thì **mở trang này trước, đừng đọc README**.
+>
+> Báo cáo: bố cục `insight` **5 tab** *(Phễu · Thị trường · Chân dung · Ma trận · Ngân hàng hook)* · kỳ **04/09–31/10** · 119 hội thoại **thật** từ AI Chatbox · 6 chân dung đã duyệt CỔNG 0 · **14 hook** gắn tầng + ngôn ngữ, trong đó **3 hook ⏸ chờ dữ kiện**.
+>
+> Kế hoạch nội dung *(một doc — sửa và comment trực tiếp)*: 6 ô nội dung chia **3 cụm làm được ngay** / **3 ô chờ dữ kiện** · bảng 14 hook · cờ pháp chế hai tầng · hình **2x2 đòn bẩy × độ chặn** · 5 con số để đo kỳ sau. Đây là bản `ST-ND` của [`id-I §5`](knowledge/id-I-so-tay-thuc-thi.md) viết ra thành tài liệu.
+>
+> ⚠️ **Cả hai link đang ở chế độ “ai có link đều mở được”.** Trang hướng dẫn thì không sao — nó chỉ chứa file của repo.
+>
+> ⛔ **Nhưng báo cáo thì khác:** nó chứa lời khách *(đã ẩn danh)*, tên bác sĩ, và kết luận pháp chế nội bộ. **Nếu repo này là public** thì chọn một trong hai: **gỡ dòng link báo cáo** khỏi README, hoặc **đổi artifact báo cáo về riêng tư** *(menu Share của chính trang đó)*.
 
 **Site phục vụ:** <https://kangnamaesthetichospital.com/> — ⛔ khác site nội địa.
 

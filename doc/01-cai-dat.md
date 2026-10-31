@@ -1,5 +1,8 @@
 # 01 · Cài đặt
 
+📘 **Bản có nút Copy từng file:** <https://claude.ai/artifact/E5U9He8ox1xmzxUz4hWN7E>
+*(2 thẻ bộ não · 21 file tri thức · 16 prompt · 8 câu smoke test — dễ dùng hơn file này)*
+
 Ba cách dùng agent này. Chọn một.
 
 > ⚠️ Đây là bản **QUỐC TẾ** (`KN-QT` · `kangnamaesthetichospital.com`). Bản nội địa là [`Agent-InsightDashboard-Kangnam`](../../Agent-InsightDashboard-Kangnam/). ⛔ **Không nạp lẫn tri thức của hai bản vào cùng một Project** — khác site, khác số cơ sở, khác luật hiển thị giá, khác hệ chặng (`S1–S7` vs `5A`).
@@ -79,6 +82,13 @@ cd dashboard && python -m http.server 8080
 ```
 
 ⚠️ **Schema của bản này là `insight-dashboard-knqt/1`** — ⛔ không tương thích với `insight-dashboard-kangnam/1`. Hai dashboard, hai thư mục `data/`, ⛔ không trộn file kỳ.
+
+📈 **Bản đã publish — chạy thật trên 119 hội thoại quốc tế:** <https://claude.ai/artifact/UnEJMD37Lc3ydC31skNSwH>
+*(kỳ 04/09–31/10 · bố cục `insight` 5 tab · 6 chân dung đã duyệt CỔNG 0 · 14 hook)*
+
+★ **Cách publish một kỳ thành MỘT file gửi được:** nhúng file kỳ vào ô `<script type="application/json" id="kn-data">` của `dashboard/index.html` rồi publish file đó. Trang đọc khối nhúng trước `data/index.json`, nên bản một file **không cần máy chủ tĩnh**. Và file kỳ **tự khai bố cục** qua trường `bo_cuc` — khai `"insight"` thì ra đúng bản 5 tab.
+
+⚠️ **Trước khi publish, kiểm chế độ chia sẻ.** Bản báo cáo chứa lời khách *(đã ẩn danh)* và kết luận nội bộ. Artifact mặc định **riêng tư**; chuyển sang *“ai có link đều mở được”* thì ⛔ đừng dán link vào repo public.
 
 ⚠️ **Trước khi publish:** file JSON có **tên nhân viên thật** trong `nhan_vien.ca_nhan`. Thay bằng mã `NV-01…` nếu bản publish có người ngoài khối xem được — rào an toàn ④ của [`id-F §7`](../knowledge/id-F-cham-diem-nhan-vien.md).
 

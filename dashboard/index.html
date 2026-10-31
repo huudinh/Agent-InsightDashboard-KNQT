@@ -311,7 +311,9 @@ function theTong(D){
   return '<div class="kpis">'+ds.map(function(x){
     var p=find(P,'id',x.id);
     var v=x.kieu==='pct'?pct(x.gia_tri):num(x.gia_tri,0);
-    var canh=x.id==='nong_chua_sdt'&&x.gia_tri>0;
+    /* Ba ô nguy hiểm của bản quốc tế: lead nóng chưa vào tay ai · khách muốn làm mà
+       không bay được · lead nóng mất vì lịch trực (id-D §3 · id-J §1). */
+    var canh=['nong_chua_lh','s4_chua_dong','nong_ngoai_gio'].indexOf(x.id)>=0&&x.gia_tri>0;
     return '<div class="kpi'+(canh?' canh':'')+'"><span class="l">'+esc(x.nhan)+'</span><b>'+v+'</b>'+
       '<span class="s">'+esc(x.phu||'')+'</span>'+delta(x.gia_tri,p?p.gia_tri:null,x.kieu,x.tot)+'</div>'
   }).join('')+'</div>'}
@@ -804,8 +806,14 @@ var TEN_FM={
   L07:['Khách hàng — Hành trình 1 ngày','45–90s'], L08:['Khách hàng — Kết quả','20–35s'],
   L09:['Dịch vụ — Công nghệ','15–30s'],        L10:['Dịch vụ — Quy trình','25–40s'],
   L11:['Dịch vụ — Giá / chính sách','10–20s'], L12:['Local — Cơ sở · bác sĩ · công nghệ','20–35s'],
-  L13:['⚠ chưa có định nghĩa format','—'],L14:['⚠ chưa có định nghĩa format','—'],
-  L15:['⚠ chưa có định nghĩa format','—'],L16:['⚠ chưa có định nghĩa format','—']};
+  L13:['★ Khách ở xa — Quy trình 5 bước','30–60s'],
+  L14:['★ Phiên dịch & hậu phẫu từ xa','20–40s'],
+  L15:['★ Hậu cần chuyến đi — đưa đón · khách sạn','20–40s'],
+  L16:['★ Giấy phép & tiêu chuẩn bệnh viện','15–30s']};
+/* ⚠ Bốn format dựa trên KHÁCH HÀNG bị chặn ở TT-C: AHPRA cấm testimonial kết quả
+   lâm sàng, before–after mặc định không dùng (id-H §2 · id-K §4). */
+var FM_CHAN_TTC=['L04','L05','L06','L08'];
+var FM_SACH=['L10','L13','L14','L16','L11','L01','L02'];
 
 /* Chặng đọc theo tầng phễu cho khối nội dung. ⛔ Không đổi tên chặng trong dữ liệu —
    chỉ đổi cách hiện. ⚠ S1 và S6 ⛔ KHÔNG chạy landing chốt (id-C §3). */
@@ -846,9 +854,12 @@ function locHook(){
 /* Ba bộ lọc: dịch vụ · tuyến nội dung · nhân viên. Trường nào dữ liệu chưa khai thì
    select khoá lại và nói rõ cần khai trường gì — ⛔ không ẩn đi như thể không có yêu cầu. */
 function locHookBar(ds){
-  var F=[{k:'dv',l:'Dịch vụ',truong:'dich_vu'},
-         {k:'tuyen',l:'Tuyến nội dung',truong:'tuyen'},
-         {k:'nhanvien',l:'Nhân viên',truong:'nhan_vien'}];
+  /* ★ Ba chiều lọc của bản quốc tế. Bản nội địa lọc theo dịch vụ · tuyến · nhân viên;
+     ở đây TẦNG và NGÔN NGỮ quyết định hook dùng được hay không, nên chúng đứng trước. */
+  var F=[{k:'tt',l:'Tầng thị trường',truong:'tt'},
+         {k:'ngon_ngu',l:'Ngôn ngữ',truong:'ngon_ngu'},
+         {k:'rao',l:'Rào chốt',truong:'rao'},
+         {k:'dv',l:'Dịch vụ',truong:'dich_vu'}];
   return '<div class="loc" id="hook-loc">'+F.map(function(f){
     var dem={},co=0;
     ds.forEach(function(x){var v=x[f.k]; if(v){dem[v]=(dem[v]||0)+1;co++}});
@@ -879,9 +890,12 @@ function keHoachCD(D,ds){
     return {cd:cd,ten:i.ten||tp.ten||cd,ins:i.insight||'',proof:i.proof||w.proof||'',ds_proof:pr,
       diem:(w.diem==null?null:w.diem),hang:w.hang,
       so:ds.filter(function(x){return x.r.cd===cd}).length}});
-  dong.sort(function(a,b){return (b.diem||0)-(a.diem||0)});
+  var coWin=dong.some(function(r){return r.diem!=null});
+  dong.sort(function(a,b){return coWin?((b.diem||0)-(a.diem||0)):(b.so-a.so)});
   return '<h2 class="top">Kế hoạch theo chân dung</h2>'+
-    '<div class="note nb">'+num(dong.length,0)+' chân dung được chọn, sắp theo điểm Win. '+
+    '<div class="note nb">'+num(dong.length,0)+' chân dung được chọn, sắp theo '+
+    (coWin?'điểm Win':'<b>số hook của kỳ</b> — kỳ này ⛔ không xếp được điểm Win, '+
+     'xem lý do ở tab Chân dung')+'. '+
     'Mỗi chân dung có một insight cốt lõi và proof bắt buộc phải có trước khi sản xuất. '+
     'Proof gom từ cờ pháp chế của chính các hook bên dưới — khai <code>proof</code> trong thẻ '+
     'insight chân dung thì bảng lấy nguyên.</div>'+
@@ -913,13 +927,16 @@ function tabHook(D){
     var cd=find(tep,'cd',r.cd)||{};
     return {r:r, ten:cd.ten||'',
       dv:r.dich_vu||suyDichVu(r,cd.ten),
+      tt:r.tt||((cd.tt||[])[0])||'(chưa khai)',
+      ngon_ngu:r.ngon_ngu||'(chưa khai)',
+      rao:r.rao||cd.rao_chot||'(chưa khai)',
       tuyen:r.tuyen||r.khoi||'(chưa khai)',
       nhanvien:r.nhan_vien||r.nguoi_viet||r.so_huu||''}});
 
   /* Bảng gọn 6 cột. Mã O · truy ngược · cờ pháp chế · ô Duyệt ⛔ KHÔNG bị bỏ —
      dồn xuống dòng phụ dưới hook, vì đó là rào an toàn id-H §4 chứ không phải cột trang trí. */
-  var head=[{l:'Chân dung'},{l:'Giai đoạn'},{l:'Hook 3 giây'},{l:'CTA cuối'},
-    {l:'Format đề xuất'},{l:'Win',c:'n'}];
+  var head=[{l:'Chân dung'},{l:'Tầng · ngôn ngữ'},{l:'Chặng'},{l:'Hook 3 giây'},
+    {l:'CTA cuối'},{l:'Format đề xuất'}];
   var rows=ds.map(function(x){
     var r=x.r,c=CO[r.co_phap_che]||[r.co_phap_che||'—',''],w=find(W,'cd',r.cd)||{};
     var diem=(r.win!=null?r.win:(w.diem!=null?w.diem:null));
@@ -929,24 +946,34 @@ function tabHook(D){
       '<span style="color:var(--bad)">⛔ truy ngược trống — loại</span>');
     if(x.nhanvien)phu.push('NV: '+esc(x.nhanvien));
     phu.push(r.duyet?'duyệt: '+esc(r.duyet):'chờ BS + pháp chế');
-    return '<tr data-loc="1" data-dv="'+esc(x.dv)+'" data-tuyen="'+esc(x.tuyen)+
-      '" data-nhanvien="'+esc(x.nhanvien)+'"'+(r.co_phap_che==='🔴'?' class="pick"':'')+'>'+
+    /* Hai tầng pháp chế của bản quốc tế: luật VN và luật nước người xem (id-K §4). */
+    var cvn=CO[r.co_phap_che_vn||r.co_phap_che]||[(r.co_phap_che_vn||r.co_phap_che||'—'),''];
+    var cmk=r.co_phap_che_market?(CO[r.co_phap_che_market]||[r.co_phap_che_market,'']):null;
+    var chan=r.co_phap_che==='🔴'||r.co_phap_che_vn==='🔴'||r.co_phap_che_market==='🔴';
+    return '<tr data-loc="1" data-dv="'+esc(x.dv)+'" data-tt="'+esc(x.tt)+
+      '" data-ngon_ngu="'+esc(x.ngon_ngu)+'" data-rao="'+esc(x.rao)+
+      '" data-tuyen="'+esc(x.tuyen)+'" data-nhanvien="'+esc(x.nhanvien)+'"'+
+      (chan?' class="pick"':'')+'>'+
       td('<b>'+esc(x.ten||r.cd)+'</b>'+
-         (x.ten&&r.cd?'<div class="note">'+esc(r.cd)+' · '+esc(x.dv)+'</div>':''))+
+         '<div class="note">'+esc(r.ma||'')+(r.ma?' · ':'')+esc(r.cd)+' · '+esc(x.dv)+'</div>')+
+      td('<span class="tag t-acc">'+esc(x.tt)+'</span> <span class="tag">'+esc(x.ngon_ngu)+'</span>'+
+         (r.market?'<div class="note">'+esc(r.market)+'</div>':'')+
+         '<div class="note">rào '+esc(x.rao)+'</div>')+
       td('<span class="nw">'+esc(GIAI_DOAN[r.chang]||r.chang||'—')+'</span>')+
-      td('<span class="tag '+c[1]+'">'+esc(c[0])+'</span>'+
-         (r.challenger?'<span class="tag t-acc">challenger</span>':'')+
+      td('<span class="tag '+cvn[1]+'">VN '+esc(cvn[0])+'</span>'+
+         (cmk?' <span class="tag '+cmk[1]+'">'+esc(r.market||'market')+' '+esc(cmk[0])+'</span>':'')+
+         (r.du_kien_du===false?' <span class="tag t-bad">⏸ chờ dữ kiện</span>':'')+
+         (r.challenger?' <span class="tag t-acc">challenger</span>':'')+
          '<b>'+esc(r.hook)+'</b>'+
          (r.insight?'<div class="note">'+esc(r.insight)+'</div>':'')+
          (r.ly_do_co?'<div class="note">'+esc(r.ly_do_co)+'</div>':'')+
          '<div class="note">'+phu.join(' · ')+'</div>')+
       td(esc(r.cta))+
       td('<div class="fm-ds">'+(r.fm||[]).map(function(f){
-        var n=TEN_FM[f];
-        return '<div>'+esc(n?n[0]:f)+
-          (n&&n[1]&&n[1]!=='—'?' <span class="dim">'+esc(n[1])+'</span>':'')+'</div>'}).join('')+'</div>')+
-      td(diem==null?'<span class="dim">—</span>':
-         '<b>'+num(diem,1)+'</b>'+(r.win==null&&w.hang?'<div class="note">hạng '+esc(w.hang)+'</div>':''),'n')+
+        var n=TEN_FM[f],xau=(x.tt==='TT-C'&&FM_CHAN_TTC.indexOf(f)>=0);
+        return '<div'+(xau?' style="color:var(--bad)"':'')+'>'+esc(f)+' · '+esc(n?n[0]:'')+
+          (n&&n[1]&&n[1]!=='—'?' <span class="dim">'+esc(n[1])+'</span>':'')+
+          (xau?' <b>⛔ chặn ở TT-C</b>':'')+'</div>'}).join('')+'</div>')+
       '</tr>'});
   rows.push('<tr id="hook-rong" hidden><td colspan="'+head.length+
     '" class="empty">Không hook nào khớp bộ lọc đang chọn</td></tr>');
@@ -955,12 +982,14 @@ function tabHook(D){
   return dau+'<h2'+(dau?'':' class="top"')+'>Ngân hàng hook — <span id="hook-dem">'+
     num(H.dong.length,0)+' hook</span></h2>'+
     '<div class="note nb">'+num(H.dong.length,0)+
-    ' nội dung: Chân dung → Giai đoạn → Hook → CTA → Format'+
+    ' nội dung: Chân dung → Tầng · ngôn ngữ → Chặng → Hook → CTA → Format'+
     (H.ghi_chu?'<br>'+esc(H.ghi_chu):'')+'</div>'+locHookBar(ds)+
     '<div class="note nb">Bộ lọc chỉ lọc bảng, ⛔ không đổi số liệu kỳ. '+
-    'Dịch vụ suy từ chữ trong hook khi dòng hook chưa khai <code>dich_vu</code>. '+
-    '<b>Win</b> là điểm win của chân dung ở tab Chân dung (lead bỏ lỡ × hệ số × tỷ lệ chốt), '+
-    '⛔ chưa phải điểm riêng từng hook — khai <code>win</code> trong dòng hook thì bảng lấy số đó.</div>'+
+    'Mỗi hook gắn <b>đúng một tầng và một ngôn ngữ</b>: hook của <code>TT-B</code> viết bằng '+
+    'tiếng Việt, hook của <code>TT-C</code> ⛔ không dùng được bốn format dựa trên khách hàng '+
+    '(<code>L04·L05·L06·L08</code> — AHPRA). Dòng <b>⏸ chờ dữ kiện</b> ⛔ không vào kế hoạch '+
+    'sản xuất. Cột <b>Duyệt</b> do bác sĩ + pháp chế điền ở <b>cả hai tầng luật</b> '+
+    '(<code>id-H §4</code> · <code>id-K §4</code>).</div>'+
     t(rows,head,null,'hook-bang')+
     ((H.tu_kiem||[]).length?'<h2>Tự kiểm ngân hàng hook — id-H §5</h2><div class="card">'+
       bullets(H.tu_kiem)+'</div>':'')}
@@ -1091,7 +1120,14 @@ function napKy(ds,id){
       esc(p.nhan)+'"')});
 }
 var inline=document.getElementById('kn-data').textContent.trim();
-if(inline){try{render(JSON.parse(inline),null,null)}catch(e){loi('Khối dữ liệu trong file bị lỗi: '+e.message)}}
+if(inline){try{
+  /* ★ Bản MỘT FILE không có data/index.json để đọc `bo_cuc`, nên file kỳ tự khai.
+     Nhờ vậy một báo cáo gửi đi được là bản `insight` đúng như bản nhiều kỳ. */
+  var _D=JSON.parse(inline);
+  if(_D.bo_cuc&&BO_CUC[_D.bo_cuc])BC=_D.bo_cuc;
+  try{document.title=bc().ten}catch(e){}
+  render(_D,null,null)
+}catch(e){loi('Khối dữ liệu trong file bị lỗi: '+e.message)}}
 else fetch('data/index.json').then(function(r){if(!r.ok)throw new Error(r.status);return r.json()})
   .then(function(idx){
     if(idx.bo_cuc&&BO_CUC[idx.bo_cuc])BC=idx.bo_cuc;

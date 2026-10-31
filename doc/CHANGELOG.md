@@ -1,5 +1,73 @@
 # CHANGELOG
 
+## v1.1 — 2026-10-31 · CHẠY THẬT TRÊN 119 HỘI THOẠI AI CHATBOX
+
+Kỳ thật đầu tiên: **04/09–31/10/2026**, 127 hội thoại Quốc Tế xuất từ AI Chatbox, 119 vào mẫu phân tích.
+
+### Ba artifact đã publish
+
+| | Link | Dạng |
+|---|---|---|
+| 📘 Trang hướng dẫn | <https://claude.ai/artifact/E5U9He8ox1xmzxUz4hWN7E> | trang HTML sinh từ `tools/huong-dan.json` |
+| 📈 Báo cáo kỳ 04/09–31/10 | <https://claude.ai/artifact/UnEJMD37Lc3ydC31skNSwH> | `dashboard/index.html` + JSON kỳ nhúng |
+| 📋 Kế hoạch nội dung 11/2026 | <https://claude.ai/artifact/X1NaLkUJveCxtkY4sAL53Y> | **doc** — sửa và comment trực tiếp |
+
+⚠️ Cả ba đang ở chế độ *"ai có link đều mở được"*. Báo cáo và kế hoạch chứa lời khách *(đã ẩn danh)*, tên bác sĩ và kết luận pháp chế nội bộ — ⛔ nếu repo là public thì gỡ hai link đó khỏi README hoặc đổi artifact về riêng tư.
+
+★ **Kế hoạch nội dung là bản `ST-ND` của `id-I §5` viết ra thành tài liệu**, không phải một tab mới của dashboard: 6 ô chia **3 cụm làm được ngay / 3 ô chờ dữ kiện** · bảng 14 hook · cờ pháp chế hai tầng · hình **2x2 đòn bẩy × độ chặn** · 5 con số đo kỳ sau. Dạng doc để Content sửa thẳng và comment vào từng ô.
+
+### Thêm `tools/doi-khuon-chatbox.py`
+
+Bản xuất `GET /api/conversations` của AI Chatbox có khuôn riêng → đổi sang khuôn `id-B §2`, và **suy `Nước:` từ mã quốc gia của số điện thoại** *(căn cứ chắc nhất có trong dữ liệu — `id-B §3` dòng 1)*.
+
+★ **Và nó ghi rõ ba điều về dữ liệu này:** người trả lời là **bot**, không phải nhân viên → mọi điểm `N` là điểm của **câu trả lời của bot**, đầu ra đi về **người huấn luyện bot**, ⛔ không vào sổ tay cá nhân · SLA của bot luôn đạt nên `N1` và `N7.4` ⛔ không đọc được như báo cáo trực kênh · ô *"ngoài giờ"* ở đây là chỉ số về **khách**, không về lịch trực.
+
+### Bốn lỗi của chính bộ công cụ, phát hiện khi chạy thật
+
+| Lỗi | Hậu quả nếu để nguyên | Sửa |
+|---|---|---|
+| Nhận ngôn ngữ **bỏ dấu** rồi so | Tên bác sĩ Việt trong câu tiếng Anh khớp *"chị · mình · giá"* → **46 HT bị gắn oan** *"hệ thống — ngôn ngữ"* | `dem_dau_viet()` — so chữ **có dấu**, ngưỡng 2 (khách) / 3 (NV) |
+| Số điện thoại không có `+` | `2813894741` thành *"+281"* → **gán sai tầng**, đúng lỗi im lặng mà `id-L §2` cảnh báo | Nhận NANP theo mã vùng; nước ngoài schema thì **gọi đúng tên, để trống mã** |
+| `O-00` nuốt cả câu hỏi dịch vụ thuần | O-00 phình lên **51%** che mất tín hiệu thật | Thêm `hoi_thong_tin` → tách `(chưa nêu)`; O-00 còn 26% |
+| `OQ-01` không bắt *"safe to fly … after rhinoplasty"* | **Bỏ sót đúng mã quan trọng nhất của repo** — HT-021 là ví dụ | Thêm 11 cụm: `safe to fly` · `fly after` · `day 14` · `travel after`… |
+
+⚠️ `O-00` vẫn **26,1% > ngưỡng 10%** của `id-D §1` → **báo lại**, ⛔ agent không tự thêm mã.
+
+### Thêm cờ đỏ nhận bằng LOGIC
+
+- ★ **`CĐ-4` theo danh sách bác sĩ.** `tu_dien.json` → `bac_si_duyet_qt` *(5 bác sĩ của site quốc tế)*. Bot/nhân viên gắn tên ngoài danh sách → cờ. Kỳ đầu: **60 lần, 25 cách viết tên, ⛔ không một ai trong 5 người**.
+- `CĐ-8` mở rộng: tên 5 viện tỉnh + *"3 hospitals"* · *"branches in"*. Kỳ đầu **14 HT**.
+
+### Tối ưu hiển thị tab Hook cho bản quốc tế
+
+| Bản nội địa | Bản quốc tế |
+|---|---|
+| Lọc **Dịch vụ · Tuyến · Nhân viên** | ★ Lọc **Tầng · Ngôn ngữ · Rào chốt · Dịch vụ** |
+| Cột `Giai đoạn` = nấc `A1–A5` | Cột **`Tầng · ngôn ngữ`** + cột `Chặng` = `S1–S7` |
+| Một cờ pháp chế | ★ **Hai cờ**: luật VN và luật nước người xem |
+| `L13`–`L16` *"chưa có định nghĩa"* | ★ Đặt tên: 5 bước khách xa · phiên dịch & hậu phẫu từ xa · hậu cần · giấy phép |
+| — | ★ Chip **`⏸ chờ dữ kiện`** · format bị chặn ở `TT-C` tự tô đỏ kèm `⛔ chặn ở TT-C` |
+| Cột `Win` | Bỏ khi không xếp được điểm Win → *Kế hoạch theo chân dung* sắp theo **số hook** và nói rõ lý do |
+
+### Hai thay đổi nhỏ của trang dashboard
+
+- ★ **File kỳ tự khai `bo_cuc`.** Bản một file *(JSON nhúng vào `#kn-data`)* không có `data/index.json` để đọc bố cục → giờ đọc `bo_cuc` ngay trong file kỳ. Nhờ vậy một báo cáo gửi đi được **là bản `insight` đúng như bản nhiều kỳ**.
+- Thẻ số tô đỏ theo **ba ô nguy hiểm của bản quốc tế**: `nong_chua_lh` · `s4_chua_dong` · `nong_ngoai_gio`.
+
+### ⚠ Điều kỳ đầu dạy ra
+
+```
+Báo cáo kỳ này KHÔNG xếp được điểm Win. Công thức của id-C §6 nhân với
+TỶ LỆ ĐANG CHỐT của chính nhóm — mà cả kỳ chỉ 2/119 khách để lại liên hệ
+thật (1,7%), nên mọi nhóm đều ≈ 0.
+⛔ Không tự đặt một hệ số thay thế (luật ⑪). Thay vào đó xếp theo ĐỘ CHẶN:
+   ô nào đang chờ dữ kiện, ô nào làm được ngay.
+```
+
+★ Và con số thô là 3 — nhưng **HT-096 là một bản pentest** *("My name is Test Pentest")*, ⛔ không phải khách. Đã thành việc #11 của kỳ.
+
+---
+
 ## v1.0 — 2026-10-31 · DỰNG MỚI BẢN QUỐC TẾ
 
 Dựng `Agent-InsightDashboard-KNQT` từ `Agent-InsightDashboard-Kangnam` `v1.1`.
