@@ -1,0 +1,459 @@
+{
+ "ma": "insightdashboard-knqt",
+ "title": "Cài đặt Insight Dashboard KNQT",
+ "h1": "Agent đọc Insight khách quốc tế KN-QT",
+ "eyebrow": "Insight khách quốc tế · Hướng dẫn cài đặt &amp; prompt mẫu",
+ "ten_agent": "Agent-InsightDashboard-KNQT",
+ "repo": "https://github.com/huudinh/Agent-InsightDashboard-KNQT",
+ "buoc2": "<b>Thẻ A</b> vào ô chỉ dẫn",
+ "brain": "SYSTEM-PROMPT.md",
+ "brain_ngan": "SYSTEM-PROMPT-NGAN.md",
+ "mo_ta_agent": "Agent đọc insight khách quốc tế của Kangnam Korean Aesthetic Hospital. Từ 100–300 hội thoại trên 7 kênh nhắn tin và số quảng cáo cắt theo thị trường, nó trả lời: khách là ai · họ đang ở đâu · họ sợ gì · họ tắc ở đâu và vì ai · kỳ tới làm gì. Đầu ra: dashboard 10 tab · ma trận ưu tiên · ngân hàng hook EN/VI · sổ tay thực thi riêng cho từng nhân viên.",
+ "lede": "Đây là <b>agent đọc insight khách quốc tế</b>. Nó đọc <b>chính lời khách nói trên 7 kênh nhắn tin</b> cùng <b>số quảng cáo cắt theo thị trường</b>, rồi trả lời năm câu: <b>khách là ai · họ đang ở đâu · họ đang sợ gì · họ tắc ở đâu và vì ai · kỳ tới phải làm gì</b>.",
+ "quick": "Gõ <b>AUTO</b> kèm hai file &rarr; agent khai tầng thị trường, phác họa chân dung từ chính hội thoại đó rồi dừng ở <b>cổng duyệt</b>. ⛔ Nó không tự duyệt thay bạn.",
+ "dim": "★ Khách quốc tế quyết định <b>hai</b> thứ: <i>“có mổ không”</i> và <i>“có bay không”</i>. Phép thử một hội thoại: <i>“khách đã đủ thông tin để mở app hàng không và chọn ngày bay chưa?”</i>",
+ "chips": [
+  "v1.0",
+  "12 sổ tri thức",
+  "9 prompt mẫu",
+  "4 cổng chặn",
+  "27 tiêu chí N1–N7",
+  "10 cờ đỏ",
+  "pháp chế 2 tầng"
+ ],
+ "muc": [
+  "Cài đặt",
+  "Prompt mẫu",
+  "Bốn điều phải biết",
+  "Việc đang chặn"
+ ],
+ "cai_dat_intro": "Agent là <b>prompt + tri thức</b>, không phải phần mềm. Ba bước: tạo trợ lý &rarr; dán bộ não &rarr; upload 21 file. ⛔ <b>Không nạp lẫn tri thức của bản nội địa</b> vào cùng một project: hai bản khác hệ chặng, khác luật hiển thị giá, khác số cơ sở.",
+ "dl_mo_ta": "Toàn bộ repo: bộ não đầy đủ và bản ngắn · 12 sổ tri thức · 9 prompt · dashboard 10 tab · 5 script chạy thật · file mẫu để chạy thử ngay khi chưa có dữ liệu thật.",
+ "cau_mo_dau": [
+  "AUTO — kỳ 19–25/10. Đính kèm hội thoại + số ads.",
+  "ĐỌC THỊ TRƯỜNG & MÚI GIỜ — khách kỳ này đang ở đâu, mất bao nhiêu lead vì lệch giờ?",
+  "Khách hỏi phải ở Việt Nam bao nhiêu ngày — trả lời thế nào?"
+ ],
+ "the": [
+  {
+   "ma": "brain",
+   "nhan": "Thẻ A",
+   "ten": "Bộ não đầy đủ",
+   "nen_tang": "Claude &amp; Gemini",
+   "mo_ta": "§0–§8: vai trò · ranh giới với 8 agent khác · <b>quy trình 8 bước và bốn cổng chặn</b> · ★ <b>mười hai luật bất biến</b> · danh sách ⛔ tuyệt đối không · cách xử khi thiếu dữ liệu."
+  },
+  {
+   "ma": "ngan",
+   "nhan": "Thẻ B",
+   "ten": "Bản ngắn",
+   "nen_tang": "ChatGPT",
+   "tran": 8000,
+   "mo_ta": "Giữ nguyên bộ mã (<code>TT</code> · <code>S1–S7</code> · <code>O</code> · <code>OQ</code> · <code>N1–N7</code> · 10 cờ đỏ), 5 tín hiệu nóng, phân rã CPL, mười hai luật và danh sách cấm. <b>Bỏ phần giải thích vì sao</b> — phần đó nằm trong file tri thức."
+  }
+ ],
+ "tabs": [
+  {
+   "ten": "Claude Project",
+   "tieu_de": "Claude Project — khuyến nghị",
+   "mo_ta": "Ô chỉ dẫn không giới hạn ký tự nên dùng được bộ não đầy đủ. Agent này phải giữ hội thoại + số ads + 12 sổ tri thức cùng lúc, nên cửa sổ rộng là lợi thế thật.",
+   "buoc": [
+    "<b>Projects</b> &rarr; <b>Create project</b>, tên và mô tả lấy ở khối phía trên.",
+    "<b>Custom instructions</b> &rarr; dán <b>Thẻ A &middot; Bộ não đầy đủ</b>.",
+    "<b>Add content</b> &rarr; upload <b>đủ 21 file</b> ở khối dưới.",
+    "Mở chat mới &rarr; chạy <b>8 câu smoke test</b>. Sai câu nào thì thiếu file tương ứng."
+   ],
+   "ghi_chu": "⛔ Đừng upload thêm tri thức của <code>Agent-InsightDashboard-Kangnam</code> vào project này. Hai bản dùng hai hệ chặng (<code>S1–S7</code> vs <code>5A</code>) và hai luật ngược nhau về hiển thị giá."
+  },
+  {
+   "ten": "ChatGPT Custom GPT",
+   "tieu_de": "ChatGPT — ô Instructions có trần 8.000 ký tự",
+   "mo_ta": "Dán <b>Thẻ B · bản ngắn</b> (7.998 ký tự) vào Instructions, phần còn lại lên Knowledge như Claude.",
+   "buoc": [
+    "<b>Explore GPTs</b> &rarr; <b>Create</b> &rarr; tab <b>Configure</b>.",
+    "<b>Instructions</b> &rarr; dán <b>Thẻ B</b>. ⛔ Thẻ A sẽ bị cắt mất phần cuối.",
+    "<b>Knowledge</b> &rarr; upload <b>21 file</b>.",
+    "<b>Conversation starters</b> &rarr; dán ba câu mở đầu ở khối trên."
+   ],
+   "ghi_chu": "Sau mỗi lần sửa bản ngắn, chạy <code>python tools/dem-ngan.py</code> để canh trần 8.000 ký tự."
+  },
+  {
+   "ten": "Gemini Gem",
+   "tieu_de": "Gemini — ô Chỉ dẫn",
+   "buoc": [
+    "<b>Gem manager</b> &rarr; <b>New Gem</b>.",
+    "<b>Chỉ dẫn</b> &rarr; dán <b>Thẻ A &middot; Bộ não đầy đủ</b>.",
+    "<b>Knowledge</b> &rarr; upload <b>21 file</b>.",
+    "Chạy <b>8 câu smoke test</b>."
+   ]
+  }
+ ],
+ "the_mo_ta": "Thẻ A và B <b>dán vào ô văn bản</b> của nền tảng. Chọn đúng một thẻ theo nền tảng bạn dùng.",
+ "files_mo_ta": "Thứ tự dưới đây <b>là thứ tự agent đọc</b>: <b>vai trò &rarr; đầu vào &rarr; khách là ai &rarr; khách sợ gì &rarr; số ads &rarr; chấm người &rarr; chọn việc &rarr; viết &rarr; phát &rarr; dashboard &rarr; brand &rarr; ★ thị trường</b>.",
+ "files_canh_bao": "<p style=\"margin-bottom:0\">★ <b>Bốn sổ lõi nhất là <code>id-C</code>, <code>id-D</code>, <code>id-L</code> và <code>id-K</code>.</b> <code>id-L</code> là sổ ⛔ <b>không có ở bản nội địa</b> — nó định nghĩa <b>CỔNG M</b>, và thiếu nó thì agent sẽ trộn bốn tầng khách vào một con số trung bình không nói về ai cả.</p>",
+ "files": [
+  {
+   "duong_dan": "knowledge/id-A-vai-tro-quy-trinh.md",
+   "badge": "lõi",
+   "mo_ta": "<b>Vai trò &amp; quy trình</b> — 8 bước · <b>bốn cổng chặn</b> (thêm ★ <b>CỔNG M</b>) · lệnh <code>AUTO</code> · ngưỡng mẫu · ranh giới với 8 agent khác."
+  },
+  {
+   "duong_dan": "knowledge/id-B-doc-dau-vao.md",
+   "badge": "lõi",
+   "mo_ta": "<b>Đọc đầu vào</b> — ba dòng dữ liệu · <b>7 kênh nhắn tin</b> · ★ <b>cách suy tầng thị trường</b> khi file không khai · ẩn danh <b>12 thứ</b> · quy ước mã."
+  },
+  {
+   "duong_dan": "knowledge/id-C-chan-dung-s7.md",
+   "badge": "★★ lõi nhất",
+   "mo_ta": "<b>Phác họa chân dung từ hội thoại · CỔNG 0</b> × <b>phễu S1–S7</b>. ⛔ Hệ không có bộ chân dung dựng sẵn, và ⛔ không gán <code>QT1–QT7</code> của gói ads."
+  },
+  {
+   "duong_dan": "knowledge/id-D-dao-sau-insight.md",
+   "badge": "★★ lõi nhất",
+   "mo_ta": "12 mã <code>O</code> + ★ <b>8 mã <code>OQ</code> chỉ có ở khách quốc tế</b> · <b>bốn rào chốt</b> · ★ <b>bốn câu của rào XA</b> · vì sao rơi (ba nhánh hệ thống)."
+  },
+  {
+   "duong_dan": "knowledge/id-E-to-chuc-ads-chi-so.md",
+   "badge": "★",
+   "mo_ta": "Tổ chức ads quốc tế theo <b>thị trường × dịch vụ</b> · ★ <b>CPA-KHÁM</b> · phân rã CPL · ngân sách <code>S3</code>/<code>S4</code> · ★ <b>luật port thị trường</b>."
+  },
+  {
+   "duong_dan": "knowledge/id-F-cham-diem-nhan-vien.md",
+   "badge": "★★ nhạy cảm",
+   "mo_ta": "Chấm điểm <code>N1–N7</code> · A/B/C/D · <b>10 cờ đỏ</b> · ★ <b>bốn rào an toàn</b> và ★ <b>bảy nhóm lỗi hệ</b> ⛔ không trừ điểm người."
+  },
+  {
+   "duong_dan": "knowledge/id-G-ma-tran-uu-tien.md",
+   "badge": "★",
+   "mo_ta": "Ma trận <b>bốn khối</b> (thêm ★ <b>MỞ CHẶNG S4</b>) · luật combo · ★ nhóm <b>⏸ CHỜ CẤP DỮ KIỆN</b> — ⛔ không vào kế hoạch nội dung."
+  },
+  {
+   "duong_dan": "knowledge/id-H-ngan-hang-hook.md",
+   "badge": "",
+   "mo_ta": "Hook 7 loại × 16 format · ★ <b>format bị chặn theo tầng</b> (<code>TT-C</code> ⛔ không dùng <code>L04·L05·L06·L08</code>) · ★ cụm hook chặng <code>S4</code>."
+  },
+  {
+   "duong_dan": "knowledge/id-I-so-tay-thuc-thi.md",
+   "badge": "★",
+   "mo_ta": "Sổ tay thực thi · luật một việc · câu mẫu <b>song ngữ</b> · ★ mục <b>“việc không phải của bạn”</b> ⛔ không được bỏ."
+  },
+  {
+   "duong_dan": "knowledge/id-J-dashboard-schema.md",
+   "badge": "",
+   "mo_ta": "Dashboard <b>10 tab</b> · schema <code>insight-dashboard-knqt/1</code> · <b>5 luật hiển thị</b> (thêm ★ mọi tỷ lệ phải cắt được theo tầng)."
+  },
+  {
+   "duong_dan": "knowledge/id-K-module-knqt-phap-che.md",
+   "badge": "★★ module brand",
+   "mo_ta": "<b>Module KNQT</b> — 2 cơ sở, cả hai tuyến bệnh viện · ★ <b>giá đã công khai</b> · ★ <b>pháp chế HAI TẦNG</b> · rào <code>R8</code> · bộ bằng chứng sạch pháp chế."
+  },
+  {
+   "duong_dan": "knowledge/id-L-thi-truong-ngon-ngu-mui-gio.md",
+   "badge": "★★ lõi nhất",
+   "mo_ta": "<b>Tầng thị trường · ngôn ngữ · múi giờ · kênh</b> — sổ lõi của bản quốc tế, ⛔ <b>không có tương đương ở bản nội địa</b>. Đây là nơi định nghĩa <b>CỔNG M</b>."
+  },
+  {
+   "duong_dan": "prompts/prompt-auto.md",
+   "badge": "prompt",
+   "mo_ta": "Chạy cả kỳ một phát, dừng đúng ở hai cổng duyệt."
+  },
+  {
+   "duong_dan": "prompts/prompt-thi-truong-mui-gio.md",
+   "badge": "★ prompt",
+   "mo_ta": "<b>CỔNG M</b> — khách ở đâu · ngôn ngữ · kênh · múi giờ. Chạy <b>trước</b> mọi prompt khác."
+  },
+  {
+   "duong_dan": "prompts/prompt-chan-dung-insight.md",
+   "badge": "★ prompt",
+   "mo_ta": "Phác họa chân dung (hai lượt, CỔNG 0 ở giữa) + đào sâu insight."
+  },
+  {
+   "duong_dan": "prompts/prompt-cham-diem.md",
+   "badge": "★ prompt",
+   "mo_ta": "Chấm 27 tiêu chí <code>N1.1–N7.6</code> + bốn rào an toàn + phép thử rào ③."
+  },
+  {
+   "duong_dan": "prompts/prompt-doc-so-ads.md",
+   "badge": "prompt",
+   "mo_ta": "Đọc số ads cắt theo thị trường · phân rã CPL · nối hội thoại ↔ nội dung."
+  },
+  {
+   "duong_dan": "prompts/prompt-ma-tran.md",
+   "badge": "prompt",
+   "mo_ta": "Dựng ma trận bốn khối (cổng 1) + nhóm ⏸ chờ cấp dữ kiện."
+  },
+  {
+   "duong_dan": "prompts/prompt-hook.md",
+   "badge": "prompt",
+   "mo_ta": "Viết ngân hàng hook (sau cổng 1) — mỗi hook 1 tầng + 1 ngôn ngữ."
+  },
+  {
+   "duong_dan": "prompts/prompt-so-tay.md",
+   "badge": "★ prompt",
+   "mo_ta": "Viết sổ tay từng người — câu mẫu song ngữ, mục “việc không phải của bạn”."
+  },
+  {
+   "duong_dan": "prompts/prompt-phap-che.md",
+   "badge": "★ prompt",
+   "mo_ta": "Soát cổng 2 — <b>hai tầng pháp lý</b> + dòng xác nhận <code>R8</code>."
+  }
+ ],
+ "smoke": [
+  {
+   "go": "Khách hỏi: <i>“How many days do I need to stay in Vietnam?”</i>",
+   "thay": "⛔ <b>Không nêu số nào.</b> Trả lời <i>“the surgeon confirms this at your assessment”</i> + ghi <code>[CHỜ CẤP: số ngày ở lại — Khoa Chuyên môn]</code>. ⚠ Đây là <b>mốc y khoa</b> — bay quá sớm sau phẫu thuật là rủi ro thật.",
+   "hl": true
+  },
+  {
+   "go": "<code>TT-0</code> chiếm 35% mẫu — chạy tiếp được chưa?",
+   "thay": "⛔ <b>Chưa.</b> Dừng ở <b>CỔNG M</b>, in bảng căn cứ suy, chờ người dùng xác nhận. Và nói rõ đây là lỗi <b>kép</b>: hệ (câu mở không hỏi) + kỹ năng (<code>N7.1</code>).",
+   "hl": true
+  },
+  {
+   "go": "Khách UK nhắn 2h sáng ICT, 11h trưa mới có người trả lời — ai bị trừ điểm?",
+   "thay": "⛔ <b>Không ai</b> ở <code>N1.1</code> (ngoài giờ → <code>—</code>). <code>N7.4</code> xét việc dọn hộp thư trong 12h — và đây là việc của <b>lịch trực</b>.",
+   "hl": true
+  },
+  {
+   "go": "Khách hỏi giá, trực kênh nói <i>“bác sĩ báo sau khi khám”</i> — chấm sao?",
+   "thay": "<code>N3.1</code> = <b>✗ (lỗi người)</b> — giá <b>đã công khai</b> tại <code>/price-list/</code>. Ngoại lệ <code>—</code>: dịch vụ không có trong bảng giá công khai."
+  },
+  {
+   "go": "Gửi review khách cho một lead ở Úc được không?",
+   "thay": "⛔ <b>Không</b> — AHPRA cấm testimonial về kết quả lâm sàng. Chỉ được review <b>phi lâm sàng</b>: phiên dịch · đưa đón · khách sạn · thái độ nhân viên."
+  },
+  {
+   "go": "Chân dung lấy ở đâu ra?",
+   "thay": "⛔ Không có bộ dựng sẵn — <b>phác họa từ chính hội thoại của kỳ</b>, duyệt ở <b>CỔNG 0</b>. Và ⛔ <b>không gán <code>QT1–QT7</code></b> của gói ads."
+  },
+  {
+   "go": "CPL kỳ này tăng 40%. Làm hook mới nhé?",
+   "thay": "⛔ <b>Chưa</b> — phân rã CPL trước, và ★ <b>kiểm cơ cấu thị trường trước cả bốn thành phần</b>. Chuyển chi từ <code>KH</code> sang <code>AU</code> thì CPM tăng mà không có gì xấu đi.",
+   "hl": true
+  },
+  {
+   "go": "Nhân viên có 7 hội thoại thì xếp loại gì?",
+   "thay": "<b>Chưa đủ mẫu</b> — ⛔ không phân loại. Và ⛔ không hạ ngưỡng xuống 5 để “có bảng cho đẹp”: cỡ mẫu nhỏ là <b>bình thường</b> ở inbox quốc tế."
+  }
+ ],
+ "smoke_ghi": "<p style=\"margin-bottom:0\"><b>Câu 1 là câu agent sai tự tin nhất.</b> Trong dữ liệu thử, nhân viên trả lời <i>“you can fly after 7 days”</i> — một câu nói ra vì khách <b>cần một con số để đặt vé</b>. Đó là cờ đỏ <code>CĐ-5</code>, và nó xuất hiện vì người ta <b>đang cố giúp khách</b>, không phải vì cẩu thả.</p>",
+ "prompt_intro": "Bốn nhóm theo đúng nhịp một kỳ: <b>chạy cả kỳ &rarr; đọc khách &rarr; chấm người &rarr; ra việc</b>. ★ Và ở bản quốc tế, prompt <b>CỔNG M</b> chạy <b>trước</b> mọi prompt khác.",
+ "nhom_prompt": [
+  {
+   "ma": "auto",
+   "ten": "★ AUTO · một câu là xong"
+  },
+  {
+   "ma": "khach",
+   "ten": "Đọc khách"
+  },
+  {
+   "ma": "nguoi",
+   "ten": "Chấm người"
+  },
+  {
+   "ma": "viec",
+   "ten": "Ra việc"
+  }
+ ],
+ "prompts": [
+  {
+   "nhom": "auto",
+   "ten": "Gõ một câu ngắn",
+   "kieu": "chuẩn",
+   "noi_dung": "AUTO — kỳ 19–25/10.\n<đính kèm hội thoại + số ads>"
+  },
+  {
+   "nhom": "auto",
+   "ten": "Có bối cảnh — tốt hơn",
+   "kieu": "★ hay gặp",
+   "noi_dung": "AUTO — kỳ 19–25/10.\n\nĐính kèm:\n · 120 hội thoại quốc tế (WhatsApp · Telegram · Zalo · Messenger)\n · số ads cùng kỳ — ⚠ bản xuất CHƯA có cột market\n · chưa có Google Ads\n\nKỳ trước: 5–11/10, đã có kết quả đính kèm.\nR8: chưa xác nhận.\nChạy B1→B3 rồi dừng ở CỔNG 0."
+  },
+  {
+   "nhom": "auto",
+   "ten": "Duyệt chân dung",
+   "kieu": "chuẩn",
+   "noi_dung": "DUYỆT CHÂN DUNG"
+  },
+  {
+   "nhom": "auto",
+   "ten": "Duyệt ma trận",
+   "kieu": "chuẩn",
+   "noi_dung": "DUYỆT"
+  },
+  {
+   "nhom": "khach",
+   "ten": "CỔNG M — khách đang ở đâu",
+   "kieu": "★ chạy trước tiên",
+   "noi_dung": "ĐỌC THỊ TRƯỜNG & MÚI GIỜ — CỔNG M\n\nFile: <hoi-thoai.md> · kỳ 19–25/10.\nIn sáu khối của prompt-thi-truong-mui-gio: bảng tầng · căn cứ suy · ma trận ngôn ngữ\n· bảng kênh · bảng múi giờ · mùa.\nNếu TT-0 ≥ 20% thì DỪNG và nói thẳng rằng mọi tỷ lệ bên dưới đọc với độ tin thấp."
+  },
+  {
+   "nhom": "khach",
+   "ten": "Phác họa chân dung",
+   "kieu": "★",
+   "noi_dung": "PHÁC HỌA CHÂN DUNG QUỐC TẾ\n\nFile: <hoi-thoai.md> · kỳ 19–25/10.\nMỗi chân dung phải có: nỗi sợ riêng · tên NGUYÊN VĂN chữ của khách · ≥1 HT-nnn\n· MỘT TẦNG CHÍNH · MỘT RÀO CHỐT · RÀNG BUỘC CHUYẾN ĐI.\n⛔ Không gán QT1–QT7 của Agent-AdsOptimize-Kangnam-QT.\nDừng ở CỔNG 0, chờ tôi duyệt."
+  },
+  {
+   "nhom": "khach",
+   "ten": "S4 chưa đóng — khách không đặt được vé",
+   "kieu": "★ riêng của bản QT",
+   "noi_dung": "BẢNG S4 CHƯA ĐÓNG — kỳ 19–25/10.\n\nVới bốn câu của rào XA (id-D §6.1): bao nhiêu HT hỏi · bao nhiêu được trả lời đủ\n· câu nào KHÔNG AI TRẢ LỜI ĐƯỢC vì thiếu dữ kiện gốc.\nPhép thử từng hội thoại: “khách đã đủ thông tin để mở app hàng không và chọn ngày bay chưa?”"
+  },
+  {
+   "nhom": "khach",
+   "ten": "Đếm 8 mã OQ",
+   "kieu": "★",
+   "noi_dung": "ĐẾM MÃ OQ — kỳ 19–25/10.\n\nIn cả 8 mã kể cả mã bằng 0, kèm % mẫu và TRẠNG THÁI CHẶN của từng mã.\n⚠ Câu “how many days do I stay” là OQ-01, ⛔ KHÔNG phải O-09.\nQuét TOÀN BỘ lời khách — mã OQ thường xuất hiện ở câu thứ năm, thứ sáu."
+  },
+  {
+   "nhom": "nguoi",
+   "ten": "Chấm điểm cả khối",
+   "kieu": "★",
+   "noi_dung": "CHẤM ĐIỂM TRỰC KÊNH QUỐC TẾ — kỳ 19–25/10.\n\n27 tiêu chí N1.1–N7.6. In bảy khối của prompt-cham-diem.\nTrước khi trả lời, chạy PHÉP THỬ RÀO ③ cho từng ô ✗:\n“người giỏi nhất khối, với đúng những gì hệ thống đang cấp, có làm khác được không?”\nKhông → ô đó phải là “—”."
+  },
+  {
+   "nhom": "nguoi",
+   "ten": "Chấm một người",
+   "kieu": "chuẩn",
+   "noi_dung": "CHẤM RIÊNG: <tên nhân viên>\n\nTừng hội thoại: HT-nnn · tầng · ngôn ngữ · trong giờ/ngoài giờ ICT · 27 ô ✓/✗/—\n· điểm · một câu làm tốt và một câu làm hỏng, NGUYÊN VĂN.\nCuối bảng: liệt kê riêng những ô “—” do HỆ THỐNG, kèm ai cấp."
+  },
+  {
+   "nhom": "nguoi",
+   "ten": "Lead mất vì múi giờ",
+   "kieu": "★ riêng của bản QT",
+   "noi_dung": "ĐỌC LẠI PHẦN NGOÀI GIỜ — kỳ 19–25/10.\n\nBao nhiêu HT đến ngoài khung 8–17 ICT · chờ TB bao lâu · bao nhiêu mất quá 12h\n· tầng nào bị ảnh hưởng nặng nhất.\n⛔ Không trừ điểm ai ở N1.1 cho những HT này. Đề xuất CA TRỰC, không đề xuất việc cho người."
+  },
+  {
+   "nhom": "nguoi",
+   "ten": "Sổ tay từng người",
+   "kieu": "★",
+   "noi_dung": "VIẾT SỔ TAY THỰC THI QUỐC TẾ — kỳ 19–25/10.\n\nKhung đã sinh ở out/so-tay/. Điền mọi chỗ «agent điền: …».\nCâu mẫu SONG NGỮ EN/VI. ST-CN phải có mục 6 “việc không phải của bạn”.\n⛔ Không viết việc mà hệ thống đang chặn."
+  },
+  {
+   "nhom": "viec",
+   "ten": "Dựng ma trận ưu tiên",
+   "kieu": "★",
+   "noi_dung": "DỰNG MA TRẬN ƯU TIÊN QUỐC TẾ — kỳ 19–25/10.\n\nBốn khối đúng thứ tự: ① Tăng HOT → ② MỞ CHẶNG S4 → ③ Giảm COLD → ④ Tối ưu WARM.\nMỗi ô ĐÚNG MỘT TẦNG. Áp luật combo. ⛔ Không tự đặt hệ số tầng/mùa.\nTách riêng nhóm ⏸ CHỜ CẤP DỮ KIỆN: dữ kiện trống · ai cấp · chặn bao nhiêu HT.\nDừng ở CỔNG 1."
+  },
+  {
+   "nhom": "viec",
+   "ten": "Viết hook",
+   "kieu": "chuẩn",
+   "noi_dung": "VIẾT NGÂN HÀNG HOOK QUỐC TẾ — ma trận đã duyệt <ngày>.\n\nMỗi hook: 1 tầng · 1 ngôn ngữ · 1 chặng · 1 mã O/OQ · 1 rào · 1 HT truy ngược · 3 format.\n⚠ Kiểm format theo tầng TRƯỚC khi chốt: TT-C ⛔ không dùng L04·L05·L06·L08.\n⚠ Hook cho TT-B viết bằng TIẾNG VIỆT.\n⛔ Không dịch hook nội địa sang tiếng Anh."
+  },
+  {
+   "nhom": "viec",
+   "ten": "Soát pháp chế hai tầng",
+   "kieu": "★ trước khi phát",
+   "noi_dung": "SOÁT CỔNG 2 — HAI TẦNG.\n\nBản cần soát: <dán nội dung>\nMarket có mặt trong kỳ: <AU · UK · KH · VN-EXPAT>\n\nTầng ① luật Việt Nam · Tầng ② luật nước người xem (in riêng từng market).\nIn dòng xác nhận R8.\n⛔ Còn một dòng 🔴 ở bất kỳ tầng nào, hoặc R8 chưa xác nhận → không phát."
+  },
+  {
+   "nhom": "viec",
+   "ten": "Việc cần xử lý của kỳ",
+   "kieu": "chuẩn",
+   "noi_dung": "BẢNG VIỆC CẦN XỬ LÝ — kỳ 19–25/10.\n\nMỗi việc: ai làm (TÊN THẬT) · bộ phận · hạn · đo thế nào ở kỳ sau.\nTách riêng ba loại: việc NỘI DUNG · việc TRỰC KÊNH · việc HỆ THỐNG (dữ kiện/múi giờ/ngôn ngữ).\nDòng ⏸ chờ cấp dữ kiện quá 2 kỳ → gắn 🔴 CHẶN KÉO DÀI và đưa lên ĐẦU trang."
+  }
+ ],
+ "prompt_ghi": "<p style=\"margin-bottom:0\"><b>Vì sao mọi prompt chấm điểm đều kèm phép thử rào ③?</b> Vì trực kênh quốc tế đang làm việc với <b>sáu ô dữ liệu trống</b> và một <b>lịch trực lệch múi giờ</b>. Chấm một người “né câu hỏi” khi hệ thống chưa cấp câu trả lời là <b>chấm sai người</b> — và bản quốc tế có nhiều ô như thế hơn bản nội địa rất nhiều.</p>",
+ "dieu_intro": "Bốn điều này là phần dễ bỏ qua nhất khi cài, và cũng là phần tốn nhất khi bỏ qua.",
+ "dieu": [
+  {
+   "pre": "Điều 1",
+   "h3": "Không có thị trường thì không kết luận — CỔNG M",
+   "html": "<div class=\"note stop\"><p style=\"margin-bottom:0\"><b>Cùng một câu, ba khách khác nhau.</b> <i>“How much is rhinoplasty in Hanoi?”</i> gõ từ Sydney là <code>TT-C</code> (cần số ngày ở lại, bảo hành từ xa); gõ từ Hà Nội là <code>TT-D</code> (cần địa chỉ, bác sĩ nói tiếng Anh); gõ bằng tiếng Việt từ Sydney là <code>TT-B</code> (cần lịch khớp chuyến về). Một câu trả lời cho cả ba &rarr; <b>mất cả ba</b>.</p></div><p style=\"margin-bottom:0\">Vì vậy mọi tỷ lệ phải <b>cắt được theo tầng</b>; tầng dưới 10 HT thì ⛔ không kết luận riêng; và <code>TT-0</code> ≥ 20% mẫu thì agent <b>dừng lại chờ bạn xác nhận</b>. ⚠️ Lỗi im lặng nguy hiểm nhất của bản này là trộn <code>TT-A</code> với <code>TT-C</code> rồi thấy <i>“CPL rẻ”</i>: CPL rẻ vì <code>TT-A</code> đông, còn <code>TT-C</code> — tầng đáng tiền nhất — thì không ai trả lời nổi câu về bảo hành từ xa.</p>"
+  },
+  {
+   "pre": "Điều 2",
+   "h3": "Chặng S4 — nơi khách muốn làm mà không bay được",
+   "html": "<div class=\"note stop\"><p style=\"margin-bottom:0\"><b>Khách đến <code>S4</code> đã vượt qua Sợ và Ngờ.</b> Họ muốn làm. Họ chỉ đang tính xem <b>chuyến đi có chạy được không</b>. Mất họ ở đây là mất khách <b>đắt nhất</b> trong cả phễu: đã đọc hết, đã so giá, đã tin bác sĩ — chỉ thiếu một con số.</p></div><div class=\"tw\" style=\"margin-top:4px\"><table style=\"min-width:0\"><tbody><tr class=\"hl\"><td>① <i>“Tôi phải ở Việt Nam bao nhiêu ngày?”</i></td><td>🔴 <code>OQ-01</code> — chưa có số</td></tr><tr><td>② <i>“Về nhà rồi liên hệ ai?”</i></td><td>✅ <b>viết được ngay</b> — quy trình 5 bước + phiên dịch sau khi về</td></tr><tr><td>③ <i>“Ai trả chi phí nếu phải chỉnh sửa?”</i></td><td>🔴 <code>OQ-04</code> — chưa có T&amp;C</td></tr><tr><td>④ <i>“Có ai nói được tiếng của tôi?”</i></td><td>🟡 một phần — chưa rõ ngôn ngữ nào, có phí không</td></tr></tbody></table></div><p style=\"margin-bottom:0\">★ Nếu một kỳ chỉ viết được <b>một</b> cụm hook mới thì viết cụm ②: sạch pháp chế, dùng được ở mọi thị trường, và gần như chưa ai làm.</p>"
+  },
+  {
+   "pre": "Điều 3",
+   "h3": "Lỗi hệ không trừ điểm người — bảy nhóm",
+   "html": "<div class=\"note stop\"><p style=\"margin-bottom:0\"><b>Phép thử, chạy trước khi phát mọi bảng điểm:</b> với mỗi ô <code>✗</code>, hỏi <i>“nếu người giỏi nhất khối ngồi vào đúng hội thoại này, với đúng những gì hệ thống đang cấp, họ có làm được khác không?”</i> Không &rarr; ô đó phải là <code>—</code>.</p></div><div class=\"tw\" style=\"margin-top:4px\"><table style=\"min-width:0\"><tbody><tr class=\"hl\"><td>chưa có <b>số ngày ở lại</b></td><td><code>N7.6</code> — Khoa Chuyên môn</td></tr><tr><td>chưa có <b>T&amp;C bảo hành</b></td><td><code>O-07</code> · <code>OQ-04</code> — Pháp chế</td></tr><tr><td>chưa có <b>visa / thanh toán</b></td><td><code>OQ-05</code> · <code>OQ-06</code> — Điều phối QT</td></tr><tr><td>chưa có <b>người trực ngôn ngữ đó</b></td><td><code>N7.3</code> — Vận hành</td></tr><tr class=\"hl\"><td><b>lịch trực chưa phủ múi giờ</b></td><td><code>N1.1</code> · <code>N7.4</code> — Vận hành</td></tr><tr><td>dịch vụ <b>ngoài bảng giá công khai</b></td><td><code>N3.1</code> — Vận hành</td></tr><tr><td>chưa có <b>privacy notice GDPR</b></td><td><code>N7.7</code> — Pháp chế</td></tr></tbody></table></div><p style=\"margin-bottom:0\">★ Ở bản quốc tế, mục <b>việc hệ thống</b> thường <b>lớn hơn cả phần điểm người</b> — và đó là <b>kết luận thật của kỳ</b>, không phải lời bào chữa cho ai.</p>"
+  },
+  {
+   "pre": "Điều 4",
+   "h3": "Pháp chế hai tầng — và rào R8",
+   "html": "<div class=\"note stop\"><p style=\"margin-bottom:0\"><b>Mọi câu nhân viên gõ ra chịu hai hệ luật cùng lúc:</b> luật <b>Việt Nam</b> (cơ sở ở VN, cần giấy xác nhận nội dung quảng cáo — áp <b>luôn</b>, bất kể khách ở đâu) và luật <b>nước người xem</b> (AHPRA · ASA · FTC · GDPR · cơ quan y tế GCC). Một câu hợp lệ ở Việt Nam <b>vẫn có thể</b> bị cơ quan nước đích xử lý.</p></div><p>⛔ Agent <b>không</b> đưa ra kết luận pháp lý. Nó chỉ: nêu tên cơ quan phải tra · gắn cờ vào đúng thành phần rủi ro · đề xuất câu đã hạ rủi ro. Dòng kết luận luôn là <i>“cần Pháp chế xác nhận cho thị trường [X] trước khi phát”</i>.</p><p style=\"margin-bottom:0\">★ Và <code>R8</code> là rào đặc biệt: <code>R2·R3·R7·R9</code> nói về <b>câu chữ</b>, còn <code>R8</code> nói về <b>việc có được tiếp nhận khách hay không</b> — đó là <b>điều kiện hoạt động</b>. Inbox đẹp, điểm 90, 40 lead tầng C — nhưng nếu cơ sở chưa đủ điều kiện <code>R8</code> thì <b>lead đổ về là rủi ro, không phải thành tích</b>.</p>"
+  }
+ ],
+ "chan_intro": "Agent cài xong là chạy được ngay. Nhưng có <b>mười một việc phải có người cấp dữ liệu</b> thì nó mới dùng được thật — và <b>sáu trong tám mã <code>OQ</code></b> đang bị chặn vì mấy ô trống này.",
+ "chan": [
+  {
+   "muc": "🔴",
+   "viec": "★ <b>Số ngày ở lại Việt Nam</b> theo 7 dịch vụ",
+   "ai": "Khoa Chuyên môn",
+   "chan": "Mã <code>OQ-01</code> · tiêu chí <code>N7.6</code> · cờ <code>CĐ-5</code> · mọi hook chặng <code>S4</code>. <b>Chặn lớn nhất của cả repo</b> — thiếu nó thì khách không đặt được vé.",
+   "hl": true
+  },
+  {
+   "muc": "🔴",
+   "viec": "<b>T&amp;C bảo hành bằng văn bản</b> — site đang ghi <i>“lifetime warranty”</i>",
+   "ai": "Pháp chế + Vận hành",
+   "chan": "Mã <code>O-07</code> · <code>OQ-04</code> · cờ <code>CĐ-2</code>. Phải nêu đủ: phạm vi · thời hạn · điều kiện loại trừ · <b>ai trả chi phí bay nếu phải chỉnh sửa</b> · xử lý từ xa.",
+   "hl": true
+  },
+  {
+   "muc": "🔴",
+   "viec": "★ <b><code>R8</code></b> — đủ điều kiện KCB cho người nước ngoài",
+   "ai": "Pháp chế + Điều phối QT",
+   "chan": "<b>Toàn bộ</b> site EN và mọi chiến dịch. ⚠ Đây ⛔ không phải rào câu chữ mà là <b>điều kiện hoạt động</b>: lead đổ về khi chưa đủ <code>R8</code> là <b>rủi ro, không phải thành tích</b>.",
+   "hl": true
+  },
+  {
+   "muc": "🔴",
+   "viec": "<b>Lịch trực theo múi giờ</b> cho <code>TT-C</code> (UK/EU/US)",
+   "ai": "Vận hành + Điều phối QT",
+   "chan": "Mọi ô SLA ngoài giờ. 17:00 ICT = 10:00 London = 06:00 Los Angeles — lead tầng C gửi tin lúc tối ở nước họ sẽ không có ai trả lời trong nhiều giờ."
+  },
+  {
+   "muc": "🔴",
+   "viec": "<b>Một dòng dùng chung cho cả hai site</b> về claim hội–hiệp hội",
+   "ai": "Pháp chế",
+   "chan": "Cờ <code>CĐ-4</code>. Site quốc tế đang hiển thị VSAPS · ASPS · ASAPS · ISAPS · AAFPRS ở mức thương hiệu, trong khi gói nội địa cấm thẳng."
+  },
+  {
+   "muc": "🔴",
+   "viec": "<b>Privacy notice đạt GDPR</b>",
+   "ai": "Pháp chế",
+   "chan": "Điểm <code>L12</code> — mọi lead EU/UK. ⚠ Ảnh khách gửi để pre-consultation <b>là dữ liệu sức khoẻ</b> ở mọi thị trường."
+  },
+  {
+   "muc": "🟠",
+   "viec": "<b>Visa · thanh toán quốc tế · ngôn ngữ phiên dịch</b>",
+   "ai": "Điều phối QT",
+   "chan": "Mã <code>OQ-03</code> · <code>OQ-05</code> · <code>OQ-06</code>. Thanh toán là <b>rào cản chốt thật</b> mà site chưa nói gì."
+  },
+  {
+   "muc": "🟠",
+   "viec": "<b>Bản xuất ads có cột <code>market</code></b>",
+   "ai": "Khối Ads",
+   "chan": "⛔ Không có cột đó thì không gán được số cho tầng nào — chỉ đọc được ở mức tổng."
+  },
+  {
+   "muc": "🟠",
+   "viec": "<b>Mốc mục tiêu TB 30 ngày</b> theo từng thị trường",
+   "ai": "Khối Ads",
+   "chan": "Mọi chỉ số ads ghi <code>⚠ chưa có mốc so sánh</code>."
+  },
+  {
+   "muc": "🟠",
+   "viec": "<b>Dữ liệu Google Ads</b>",
+   "ai": "Khối Ads",
+   "chan": "Tab ⑥ trống — khung đọc đã dựng sẵn. ★ Nhóm truy vấn chặng <code>S4</code> là nhóm ít cạnh tranh nhất cả phễu."
+  },
+  {
+   "muc": "🟡",
+   "viec": "<b>Mẫu sổ tay thực thi chính thức</b>",
+   "ai": "Người dùng",
+   "chan": "Khuôn <code>ST-CN</code> hiện là bản dựng tạm."
+  }
+ ],
+ "chan_ghi": [
+  {
+   "kieu": "stop",
+   "html": "<p style=\"margin-bottom:0\"><b>Dòng ① khác về bản chất với mười dòng còn lại.</b> Thiếu nó thì khách <b>không đặt được vé</b> — và lead không đặt vé thì ⛔ <b>không bao giờ thành ca</b>. Trong hội thoại thử đã có nhân viên <b>tự nghĩ ra một con số</b>. Đó không phải lỗi thái độ, đó là <b>một ô dữ liệu trống</b>.</p>"
+  }
+ ],
+ "footer": "<b>Agent đọc khách, khai thị trường, chấm người, và chọn việc. Bác sĩ duyệt chuyên môn, pháp chế duyệt câu chữ ở cả hai tầng, Khoa Chuyên môn cấp mốc y khoa, trưởng nhóm kèm người.</b> ⛔ Agent không làm thay bốn việc sau."
+}

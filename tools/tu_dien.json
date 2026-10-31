@@ -1,0 +1,156 @@
+{
+ "_ghi_chu": "Từ điển nhận dạng của bản QUỐC TẾ. Sửa file này thay vì sửa id.py. ⚠ Từ khoá quá rộng (ví dụ 'price', 'giá', 'surgery') làm một mã nuốt gần hết mẫu — thêm từ xong phải chạy lại và xem phân bố. ⛔ Không xoá mã nào khỏi bộ O / OQ / CĐ: danh sách đóng, dùng chung với Agent-AdsOptimize-Kangnam-QT.",
+ "_phien_ban": "1.0 · 2026-10-31",
+ "_tu_dung": ["là", "của", "và", "có", "không", "được", "cho", "em", "chị", "anh", "mình", "ạ", "dạ", "vâng", "ơi", "thì", "mà", "nhưng", "này", "đó", "kia", "ấy", "ở", "tại", "với", "như", "thế", "nào", "sao", "gì", "the", "and", "for", "you", "your", "with", "that", "this", "have", "has", "can", "will", "would", "could", "about", "from", "are", "was", "but", "not", "any", "all", "how", "what", "when", "where", "which", "there", "they", "them", "please", "thank", "thanks", "hello", "hi", "hey", "want", "need", "like", "just", "get", "got", "also", "very", "much", "more", "some", "one", "two", "would", "should", "may", "might", "been", "being", "did", "does", "doing"],
+
+ "ma_o": {
+  "O-01": ["how much", "how much is", "what is the price", "the price", "price list", "pricing", "cost", "costs", "how expensive", "total cost", "all inclusive", "included in the price", "any hidden", "extra fee", "extra fees", "deposit", "giá bao nhiêu", "bao nhiêu tiền", "chi phí", "hết bao nhiêu", "trọn gói", "bảng giá", "phát sinh"],
+  "O-02": ["looks worse", "look worse", "go wrong", "goes wrong", "gone wrong", "botched", "complication", "complications", "failed", "deformed", "asymmetric", "asymmetry", "sợ hỏng", "hỏng không", "xấu hơn", "biến chứng", "thất bại"],
+  "O-03": ["look fake", "looks fake", "look natural", "looks natural", "too obvious", "can people tell", "will people notice", "overdone", "trông giả", "lộ sửa", "tự nhiên không", "ai nhận ra"],
+  "O-04": ["painful", "how painful", "does it hurt", "pain", "swelling", "swollen", "bruising", "downtime", "recovery time", "how long to heal", "back to work", "time off work", "có đau không", "đau không", "sưng", "hồi phục", "bao lâu lành", "nghỉ mấy ngày", "kiêng"],
+  "O-05": ["who will operate", "which surgeon", "which doctor", "who is the doctor", "surgeon experience", "how experienced", "board certified", "qualification", "qualifications", "credentials", "bác sĩ nào", "ai mổ", "tay nghề", "kinh nghiệm bác", "bác sĩ trực tiếp"],
+  "O-06": ["is it a real hospital", "real hospital", "licensed", "license", "licence", "accredited", "accreditation", "is it safe there", "legit", "legitimate", "certificate", "ministry of health", "giấy phép", "có uy tín", "bệnh viện hay spa", "có thật không"],
+  "O-07": ["warranty", "guarantee", "guaranteed", "lifetime", "revision policy", "if i need a revision", "who is responsible", "bảo hành", "cam kết gì", "ai chịu trách nhiệm", "hỏng thì sao"],
+  "O-08": ["can you check my photo", "check my photos", "i'll send photos", "send you a photo", "what do you recommend", "what should i do", "what do i need", "assess my", "advise me", "em gửi ảnh", "xem giúp em", "tư vấn giúp em", "nên làm gì"],
+  "O-09": ["i'm far", "i am far", "i live far", "another province", "out of town", "weekend only", "em ở tỉnh", "ở xa", "đi lại xa", "cuối tuần em mới"],
+  "O-10": ["vs thailand", "vs korea", "vs turkey", "than thailand", "than korea", "than turkey", "cheaper in", "compared to", "other clinic", "another clinic", "quoted me", "i was quoted", "bên kia", "chỗ khác", "rẻ hơn", "nơi khác"],
+  "O-11": ["my husband", "my wife", "my mother", "my family", "my parents", "they don't know", "nobody knows", "my boyfriend", "chồng em", "mẹ em", "gia đình", "người nhà", "không cho làm", "giấu"],
+  "O-12": ["diabetic", "diabetes", "breastfeeding", "pregnant", "blood pressure", "hypertension", "heart condition", "thyroid", "medication", "allergy to", "autoimmune", "tiểu đường", "cho con bú", "mang thai", "huyết áp", "tim mạch", "bệnh nền", "đang uống thuốc"]
+ },
+
+ "ma_oq": {
+  "_ghi_chu": "★ Tám mã CHỈ CÓ Ở KHÁCH QUỐC TẾ (id-D §2). Sáu trong tám mã đang bị chặn vì thiếu dữ kiện gốc — trực kênh né những câu này phần lớn là LỖI HỆ, chấm «—».",
+  "OQ-01": ["how many days", "how long do i need to stay", "how long should i stay", "stay in vietnam", "when can i fly", "before flying", "fly home", "fly back", "minimum stay", "how many nights", "ở lại mấy ngày", "ở lại bao lâu", "bao giờ được bay", "em về nước được", "em chỉ ở được"],
+  "OQ-02": ["after i go home", "when i'm back home", "once i'm back", "follow up from", "aftercare at home", "who do i contact", "remote check", "online follow", "về nước rồi ai", "sau khi về nước", "theo dõi từ xa", "tái khám từ xa"],
+  "OQ-03": ["speak english", "english speaking", "interpreter", "translator", "arabic", "khmer", "do you speak", "language barrier", "nói tiếng anh", "phiên dịch", "thông dịch"],
+  "OQ-04": ["who pays", "pay for the flight", "cover the flight", "free revision", "revision cost", "if i need it corrected", "correction cost", "ai trả chi phí", "ai trả tiền vé", "sửa lại có mất phí"],
+  "OQ-05": ["visa", "invitation letter", "medical visa", "immigration", "customs", "entry requirement", "thư mời", "giấy xác nhận phẫu thuật", "thủ tục nhập cảnh", "hải quan"],
+  "OQ-06": ["pay by card", "credit card", "bank transfer", "wire transfer", "how much deposit", "pay in advance", "payment method", "paypal", "installment", "thanh toán bằng", "chuyển khoản", "đặt cọc bao nhiêu", "trả thẻ"],
+  "OQ-07": ["hotel", "accommodation", "where to stay", "airport pickup", "airport transfer", "pick me up", "can my husband come", "someone with me", "travel companion", "khách sạn", "đưa đón", "sân bay", "đi cùng"],
+  "OQ-08": ["halal", "muslim", "prayer", "ramadan", "female staff", "female nurse", "female doctor only", "privacy", "private room", "confidential"]
+ },
+
+ "tin_hieu_nong": {
+  "_ghi_chu": "★ Tín hiệu ② và ⑤ khác bản nội địa: ② là CỬA SỔ CHUYẾN ĐI (⚠ áp luật mùa của id-L §6), ⑤ đòi có MÚI GIỜ.",
+  "2_cua_so_chuyen_di": ["i'll be in vietnam", "i will be in vietnam", "arriving", "i arrive", "i fly in", "flying in", "my flight is", "i'm coming on", "next month i", "in december", "in january", "in february", "in march", "in april", "in may", "in june", "in july", "in august", "september", "october", "november", "booked my flight", "already booked", "wedding in", "before my wedding", "em về nước", "em về tết", "em về hè", "về việt nam ngày", "em bay ngày", "đã đặt vé", "em về từ", "em ở lại đến"],
+  "4_dieu_kien": ["can i book", "book a consultation", "available slot", "any slot", "which doctor is available", "opening hours", "what time do you open", "which branch", "hanoi or ho chi minh", "price list please", "send me the price", "deposit to book", "đặt lịch", "còn suất", "cơ sở nào", "giá cụ thể", "bác sĩ nào làm"],
+  "5_khung_gio": ["my time", "local time", "time zone", "timezone", "gmt", "utc", "aest", "aedt", "pst", "est", "sydney time", "london time", "dubai time", "call me after", "call me at", "best time to call", "i'm free at", "giờ bên em", "giờ bên này", "giờ việt nam thì", "gọi em lúc", "em nghe máy được"]
+ },
+
+ "rao_can": {
+  "_ghi_chu": "Rào cản nhận ra bằng chữ của khách, ⛔ KHÔNG suy ra từ chân dung (id-D §7). Năm nhãn cuối chỉ có ở bản quốc tế.",
+  "đã làm nơi khác": ["already had", "had it done", "previous surgery", "revision", "redo", "fix my", "went wrong before", "implant removed", "làm rồi", "đã làm", "làm lại", "sửa lại", "bên kia làm", "bị hỏng"],
+  "chờ ưu đãi": ["any discount", "any promotion", "any offer", "special price", "wait for a deal", "khi nào có ưu đãi", "chờ ưu đãi", "đợi khuyến mãi"],
+  "chưa biết ở lại mấy ngày": ["how many days", "how long do i need to stay", "minimum stay", "when can i fly", "ở lại mấy ngày", "bao giờ được bay"],
+  "lo thanh toán/đặt cọc": ["pay by card", "bank transfer", "how much deposit", "payment method", "đặt cọc", "chuyển khoản", "thanh toán bằng"],
+  "rào ngôn ngữ": ["speak english", "english speaking", "interpreter", "translator", "do you speak", "nói tiếng anh", "phiên dịch"],
+  "cửa sổ chuyến đi quá ngắn": ["only have", "only stay", "just a week", "5 days", "6 days", "7 days", "one week", "chỉ ở được", "em về được 7", "em về được 10", "được mấy ngày"],
+  "đi một mình": ["by myself", "on my own", "travelling alone", "traveling alone", "no one with me", "em đi một mình"]
+ },
+
+ "nv_hoi_tinh_trang": ["could you tell me", "may i ask", "can you tell me about your", "what is your concern", "what bothers you", "how old are you", "your height", "your weight", "have you had any", "any previous surgery", "send me a photo", "send us photos", "which area", "what would you like to improve", "tình trạng", "chị đang gặp", "đã can thiệp", "gửi em ảnh", "gửi ảnh", "vùng nào", "mong muốn", "bao nhiêu tuổi"],
+ "nv_xin_so": ["your phone number", "your whatsapp", "your contact", "may i have your number", "can i have your number", "your email", "leave your number", "your telegram", "xin số điện thoại", "xin sđt", "cho em xin số", "để lại số", "cho em xin thông tin liên hệ"],
+ "nv_ly_do_xin_so": ["so that", "so i can", "to send you", "to arrange", "to hold your", "for the doctor to", "it takes", "minutes", "để", "gọi lại", "gửi bảng giá", "giữ suất", "đặt lịch", "trao đổi nhanh"],
+ "nv_khung_gio": ["what time works", "which time zone", "your time zone", "best time to call", "what time is good", "giờ nào tiện", "khung giờ", "múi giờ", "mấy giờ tiện"],
+ "nv_moi_lich": ["i'll hold the slot", "hold a slot", "shall we book", "we can schedule you", "vietnam time", "utc+7", "ict", "giữ chỗ", "giữ lịch", "em đặt lịch", "hẹn chị", "giờ việt nam"],
+ "nv_moi_anh": ["send me a photo", "send photos", "send us photos", "front and side", "a photo of your", "gửi ảnh", "gửi hình", "ảnh chính diện", "ảnh nghiêng"],
+ "nv_neu_gia": ["vnd", "usd", "million", "triệu", "price list", "the price is", "it costs", "starts from", "bảng giá", "giá từ", "chi phí khoảng"],
+ "nv_phu_phi_10": ["10% international service charge", "10% service charge", "international service charge", "does not include 10", "phụ phí 10", "phí dịch vụ quốc tế"],
+ "nv_noi_ai_xem_anh": ["only our surgeon", "only the doctor", "our medical team will", "we don't use", "will not be used for marketing", "kept confidential", "chỉ bác sĩ xem", "không dùng cho quảng cáo", "bảo mật"],
+ "nv_giu_cua_mo": ["whenever you're ready", "feel free to message", "i'm here if", "take your time", "let me know anytime", "em luôn ở đây", "chị cứ nhắn", "bất cứ lúc nào"],
+ "nv_xin_loi_lech_gio": ["sorry for the late reply", "apologies for the delay", "due to the time difference", "different time zone", "we're in vietnam time", "xin lỗi vì trả lời muộn", "lệch múi giờ"],
+ "nv_hoi_o_dau": ["which country", "where are you based", "where are you now", "where are you writing from", "are you in vietnam", "which city are you in", "chị đang ở nước nào", "chị đang ở đâu", "ở nước nào"],
+ "nv_hoan_so_ngay": ["the surgeon confirms", "confirmed at your assessment", "depends on your case", "varies by case", "i'll get you the range", "i'll check with the medical team", "bác sĩ xác nhận sau khám", "tuỳ từng ca", "em xin phép hỏi lại khoa"],
+
+ "co_do": {
+  "_ghi_chu": "★ Mười cờ đỏ (id-F §5). Năm cờ CĐ-5 · CĐ-7 · CĐ-8 · CĐ-9 · CĐ-10 chỉ có ở bản quốc tế. CĐ-7 nhận bằng logic trong id.py (nêu giá mà KHÔNG nêu phụ phí), không nhận bằng từ khoá.",
+  "CĐ-1": ["guaranteed result", "guaranteed results", "100% safe", "100% success", "completely safe", "absolutely safe", "no risk", "risk free", "painless", "no scars", "permanent result", "results are permanent", "cam kết đẹp", "đảm bảo đẹp", "chắc chắn thành công", "tuyệt đối an toàn"],
+  "CĐ-2": ["lifetime warranty", "lifetime guarantee", "warranty for life", "10 year warranty", "10-year warranty", "5 year warranty", "3 year warranty", "warranty is 10", "bảo hành trọn đời", "bảo hành vĩnh viễn", "bảo hành 10 năm", "bảo hành 5 năm", "bảo hành 3 năm"],
+  "CĐ-3": ["diabetes is not a problem", "you can still have surgery", "breastfeeding is fine", "that won't affect", "no problem with your blood pressure", "tiểu đường vẫn làm được", "cho con bú vẫn", "bệnh đó không ảnh hưởng"],
+  "CĐ-4": ["board certified", "board-certified", "world's best", "best surgeon in", "leading surgeon", "top surgeon in asia", "member of asps", "member of isaps", "20+ years", "over 30 years", "thousands of successful cases", "bác sĩ đầu ngành", "chuyên gia hàng đầu", "giỏi nhất việt nam", "nghìn ca thành công"],
+  "CĐ-5": ["you can fly on day", "you can fly after 5", "you can fly after 6", "you can fly after 7", "stay for exactly", "you only need 5 days", "you only need 6 days", "you only need 7 days", "7 days is enough", "5 days is enough", "back to work in 3 days", "chỉ cần ở 5 ngày", "chỉ cần ở 7 ngày", "ở lại đúng 7 ngày", "bay về sau 5 ngày"],
+  "CĐ-6": ["that clinic is bad", "they are not good", "they botch", "don't trust them", "bên kia kém", "chỗ đó không tốt", "viện khác làm hỏng", "đừng tin bên đó"],
+  "CĐ-8": ["hai phong branch", "nghe an branch", "da nang branch", "can tho branch", "thanh hoa branch", "our clinic in hai phong", "viện hải phòng", "viện nghệ an", "viện đà nẵng", "viện cần thơ", "viện thanh hoá"],
+  "CĐ-10": ["cheaper than australia", "cheaper than korea", "cheaper than thailand", "70% cheaper", "60% cheaper", "half the price of", "than in the us", "rẻ hơn bên úc", "rẻ hơn hàn quốc"]
+ },
+
+ "gia_tri_don": {
+  "_ghi_chu": "Hệ số bậc giá trị đơn theo BẢNG GIÁ CÔNG KHAI tại /price-list/ (id-G §3): <20tr=1 · 20–50tr=2 · ≥50tr=3. ⚠ LUẬT COMBO: dịch vụ giá thấp cho TT-A/B/C bị cắt về hệ số 1 trong id.py.",
+  "3": ["rib cartilage", "rib-cartilage", "breast augmentation", "breast lift", "boob job", "v-line", "vline", "zygoma", "facelift", "face lift", "neck lift", "lipo 360", "liposuction", "tummy tuck", "hair transplant", "icefue", "jaw surgery", "6d vip", "nâng ngực", "hút mỡ", "căng da mặt", "cấy tóc", "hàm hô"],
+  "2": ["rhinoplasty", "nose job", "nose surgery", "nose", "forehead lift", "chin augmentation", "fat grafting", "canthoplasty", "ptosis", "dental implant", "implant", "veneer", "braces", "mini lipo", "nâng mũi", "sửa mũi", "niềng răng", "bọc sứ", "độn cằm"],
+  "1": ["eyelid", "double eyelid", "eye surgery", "filler", "botox", "acne", "pigmentation", "melasma", "scar", "laser", "whitening", "spa", "facial", "hair removal", "cắt mí", "mí mắt", "trị mụn", "trị nám", "triệt lông", "tắm trắng"]
+ },
+
+ "dich_vu_chinh": {
+  "Rhinoplasty": ["rhinoplasty", "nose job", "nose surgery", "nose tip", "nostril", "rib cartilage", "nâng mũi", "sửa mũi", "đầu mũi", "cánh mũi"],
+  "Eyelid": ["eyelid", "double eyelid", "canthoplasty", "ptosis", "eye bag", "eye surgery", "cắt mí", "mí mắt", "mở khoé", "sụp mí", "bọng mắt"],
+  "Jaw & Contouring": ["v-line", "vline", "jaw", "zygoma", "chin", "lip surgery", "cheekbone", "hàm", "cằm", "gò má", "môi"],
+  "Facial Rejuvenation": ["facelift", "face lift", "neck lift", "forehead lift", "fat grafting", "thread lift", "căng da", "căng chỉ", "cấy mỡ"],
+  "Breast": ["breast augmentation", "breast lift", "implant size", "boob", "nâng ngực", "treo sa trễ", "vòng 1"],
+  "Body & Lipo": ["liposuction", "lipo 360", "tummy tuck", "abdominoplasty", "fat removal", "body contouring", "hút mỡ", "giảm mỡ", "tạo hình thành bụng"],
+  "Hair Transplant": ["hair transplant", "icefue", "hairline", "fue", "cấy tóc", "cấy chân tóc"],
+  "Skin & Clinic": ["acne", "melasma", "pigmentation", "scar", "laser", "skin", "whitening", "hair removal", "filler", "botox", "trị mụn", "trị nám", "tàn nhang", "sẹo", "triệt lông"],
+  "Dentistry": ["dental implant", "veneer", "braces", "porcelain crown", "teeth", "niềng răng", "bọc sứ", "răng"],
+  "Reconstructive": ["facial paralysis", "reconstructive", "cleft", "liệt mặt", "tái tạo"]
+ },
+
+ "thi_truong": {
+  "_ghi_chu": "★ Suy tầng thị trường (id-B §3). Chạy theo thứ tự trong id.py: khai sẵn → khách tự nói nước → tiếng Việt + về nước → expat đang ở VN → hỏi chuyện bay → khu vực → kênh → TT-0. ⛔ Không suy tầng từ dịch vụ, ⛔ không suy từ tên thành phố Việt Nam trong câu (đó là NƠI MỔ, không phải NƠI KHÁCH Ở).",
+  "nuoc": {
+   "AU": ["australia", "australian", "sydney", "melbourne", "brisbane", "perth", "adelaide", "gold coast", "canberra", "aest", "aedt", "bên úc", "ở úc", "nước úc"],
+   "NZ": ["new zealand", "auckland", "wellington", "christchurch"],
+   "US": ["usa", "u.s.", "united states", "america", "american", "california", "texas", "new york", "florida", "seattle", "chicago", "houston", "los angeles", "san jose", "atlanta", "pst", "est", "bên mỹ", "ở mỹ", "nước mỹ", "cali"],
+   "CA": ["canada", "canadian", "toronto", "vancouver", "montreal", "calgary", "ottawa", "bên canada"],
+   "UK": ["united kingdom", "england", "london", "manchester", "birmingham", "scotland", "wales", "british", "bên anh", "ở anh"],
+   "DE": ["germany", "german", "berlin", "munich", "frankfurt", "bên đức", "ở đức"],
+   "CZ": ["czech", "prague", "bên séc", "ở séc"],
+   "AE": ["uae", "dubai", "abu dhabi", "emirates"],
+   "SA": ["saudi", "riyadh", "jeddah"],
+   "KW": ["kuwait"],
+   "QA": ["qatar", "doha"],
+   "KH": ["cambodia", "cambodian", "phnom penh", "siem reap", "khmer", "campuchia"],
+   "LA": ["laos", "vientiane", "lào"],
+   "MM": ["myanmar", "burma", "yangon", "mandalay"],
+   "ID": ["indonesia", "jakarta", "surabaya", "bali", "bahasa"],
+   "PH": ["philippines", "filipino", "manila", "cebu", "davao"],
+   "MY": ["malaysia", "kuala lumpur", "penang", "johor"],
+   "SG": ["singapore"],
+   "TH": ["thailand", "bangkok", "thai"],
+   "IN": ["india", "indian", "mumbai", "delhi", "bangalore", "chennai"],
+   "JP": ["japan", "tokyo", "osaka", "bên nhật", "ở nhật"],
+   "KR": ["korea", "seoul", "busan", "bên hàn", "ở hàn"],
+   "TW": ["taiwan", "taipei", "đài loan"],
+   "CN-HK": ["hong kong", "hongkong", "china", "shanghai", "shenzhen"]
+  },
+  "ve_nuoc": ["về nước", "về việt nam", "em về tết", "về hè", "bay về việt nam", "em ở bên", "em đang ở bên", "việt kiều", "em sống bên", "khi nào em về", "em về được", "lần này em về"],
+  "dang_o_vn": ["i live in hanoi", "i live in ho chi minh", "i live in saigon", "i'm living in vietnam", "i live here", "i work in hanoi", "i work in ho chi minh", "i'm based in hanoi", "i'm based in saigon", "expat", "my company in vietnam", "i'm already in vietnam", "i'm in vietnam now"],
+  "se_bay_sang": ["fly to vietnam", "come to vietnam", "travel to vietnam", "visit vietnam", "my flight to", "flying over", "coming over", "fly in", "trip to vietnam", "medical trip"],
+  "tang_theo_nuoc": {
+   "AU": "TT-C", "NZ": "TT-C", "US": "TT-C", "CA": "TT-C", "UK": "TT-C",
+   "DE": "TT-C", "CZ": "TT-C", "AE": "TT-C", "SA": "TT-C", "KW": "TT-C", "QA": "TT-C",
+   "KH": "TT-A", "LA": "TT-A", "MM": "TT-A", "ID": "TT-A", "PH": "TT-A",
+   "MY": "TT-A", "SG": "TT-A", "TH": "TT-A", "IN": "TT-A",
+   "JP": "TT-A", "KR": "TT-A", "TW": "TT-A", "CN-HK": "TT-A"
+  }
+ },
+
+ "ngon_ngu": {
+  "_ghi_chu": "Nhận ngôn ngữ của khách bằng dấu hiệu chữ. ⚠ Tiếng Việt KHÔNG có nghĩa là khách nội địa — xem id-L §1 (tầng B kiều bào).",
+  "VI": ["ạ", "ơi", "nhé", "của", "được", "không", "mình", "chị", "em", "anh", "giá", "bác sĩ", "làm", "vâng", "dạ"],
+  "KM": ["សូម", "ខ្ញុំ", "តើ", "បាទ", "ទេ"],
+  "AR": ["مرحبا", "السلام", "كم", "هل", "شكرا"]
+ },
+
+ "kenh": {
+  "_ghi_chu": "Bảy kênh (id-L §5). ⚠ Chỉ Messenger và click-to-WhatsApp nối được về chiến dịch.",
+  "WhatsApp": ["whatsapp", "wa.me", "whats app"],
+  "Telegram": ["telegram", "t.me"],
+  "Viber": ["viber"],
+  "Line": ["line app", "line id", "lineapp"],
+  "KakaoTalk": ["kakao", "kakaotalk"],
+  "Zalo": ["zalo"],
+  "Messenger": ["messenger", "m.me", "facebook", "fanpage", "inbox fb"]
+ },
+
+ "kh_dong_y_lich": ["yes", "ok", "okay", "sure", "sounds good", "that works", "let's do", "i'll take it", "book me", "vâng", "ok", "được", "em qua", "chị qua", "chốt nhé"]
+}
