@@ -583,6 +583,51 @@ def gan_ma_o(ht, td, ma_oq=()):
     return ["O-00"]
 
 
+def gan_lam_o_dau(ht, td):
+    """id-K §4b — BA loai "em da lam roi", va chung ⛔ KHONG giong nhau.
+
+      noi-khac            -> ca tu van moi, rao NGO rat nang
+      tai-kn-trong-vn     -> KHIEU NAI, ⛔ khong phai co hoi ban
+      tai-kn-da-ve-nuoc   -> 🔴 CAP CUU Y KHOA O XA. Khach ⛔ khong quay lai
+                             duoc de (dung rao XA) -> chuyen bac si NGAY.
+
+    ⛔ KHONG khoa o nay sau mot ma dich vu nao: mot lo hong cua bo cum
+    ⛔ khong duoc bien thanh mot ca khieu nai bi cham nhu co hoi ban.
+    """
+    t = td.get("lam_o_dau", {})
+    kh = ht["kh_text"]
+    # ⚠ Nhan bang LOGIC, ⛔ khong bang mot danh sach cau day du: khach viet
+    # "I had my rhinoplasty at Kangnam six weeks ago" — liet ke het cac cach
+    # dien dat la viec khong bao gio xong. Dieu kien: TEN + nhan DA LAM.
+    if co_tu(kh, t.get("ten_kn", [])) and co_tu(kh, t.get("da_lam", [])):
+        return "tai-kn-da-ve-nuoc" if co_tu(kh, t.get("da_ve_nuoc", [])) else "tai-kn-trong-vn"
+    if co_tu(kh, t.get("noi_khac", [])):
+        return "noi-khac"
+    return ""
+
+
+def co_dau_hieu_an_toan(ht, td):
+    """id-K §4b ① — tra ve "cap-tinh" | "chong-chi-dinh" | "".
+
+    ⚠ HAI TANG, va chi tang dau lam hoi thoai thanh luong KHONG-BAN:
+      · cap-tinh       : trieu chung DANG dien ra -> N3 va N5 cham "—"
+      · chong-chi-dinh : benh nen/thuoc khach tu neu -> PHAI chuyen bac si cho
+                         CAU HOI Y KHOA (CD-3 · N3.5), nhung hoi thoai VAN la
+                         ca tu van hop le -> ⛔ KHONG mien N5.
+
+    ★ "collapsed" / "deformed" la CHI DINH LAM LAI, ⛔ khong phai cap tinh.
+      Mot ca lam lai duoc tu van tot thi phai duoc CHAM — mien no la mat
+      phan khen dung.
+    """
+    t = td.get("dau_hieu_an_toan", {})
+    kh = ht["kh_text"]
+    if co_tu(kh, t.get("cap_tinh", [])):
+        return "cap-tinh"
+    if co_tu(kh, t.get("chong_chi_dinh", [])):
+        return "chong-chi-dinh"
+    return ""
+
+
 def gan_ma_oq(ht, td):
     """★ Tám mã phản đối CHỈ CÓ Ở KHÁCH QUỐC TẾ (id-D §2).
 
@@ -902,7 +947,7 @@ TIEU_CHI = [
 DIEM = {ma: d for _, _, ds in TIEU_CHI for ma, _, d in ds}
 
 
-def cham_hoi_thoai(ht, td, ma_o, ma_oq=(), s4=()):
+def cham_hoi_thoai(ht, td, ma_o, ma_oq=(), s4=(), lam_o_dau="", an_toan=""):
     """Trả về (bảng ✓/✗/—, điểm 0-100 hoặc None, danh sách cờ đỏ).
 
     ★ Bản quốc tế sẽ có NHIỀU ô "—" hơn bản nội địa, và đó là ĐÚNG: một hội
@@ -911,6 +956,9 @@ def cham_hoi_thoai(ht, td, ma_o, ma_oq=(), s4=()):
     """
     k = {}
     tin, kh_text, nv_text = ht["tin"], ht["kh_text"], ht["nv_text"]
+    # ★ id-K §4b — hai tinh huong ⛔ KHONG phai co hoi ban. Cham N5/N3 vao day
+    # la cham sai VIEC: nhan vien DUNG khi ⛔ khong xin so va ⛔ khong bao gia.
+    khong_phai_ban = lam_o_dau.startswith("tai-kn") or an_toan == "cap-tinh"
     tin_kh = [t for t in tin if not t["nv"]]
     tin_nv = [t for t in tin if t["nv"]]
     tg = ht.get("_trong_gio")
@@ -983,14 +1031,18 @@ def cham_hoi_thoai(ht, td, ma_o, ma_oq=(), s4=()):
     #   Ngoại lệ duy nhất chấm "—": dịch vụ khách hỏi không có trong bảng giá
     #   công khai → "bác sĩ chốt sau khám" là câu ĐẠT, cần người đối chiếu.
     co_neu_gia = co_tu(nv_text, td["nv_neu_gia"])
-    if "O-01" in ma_o:
+    if khong_phai_ban:
+        # ★ id-K §4b — ⛔ KHONG bao gia la DUNG o ca khieu nai / ca co dau
+        #   hieu an toan. ⛔ Khong tru diem ai vi viec do.
+        k["N3.1"] = "—"
+    elif "O-01" in ma_o:
         k["N3.1"] = "✓" if co_neu_gia else "✗"
     else:
         k["N3.1"] = "—"
     # ★ N3.2 — tiêu chí mới quan trọng nhất của nhóm. Bỏ dòng 10% là BOM NIỀM TIN:
     #   khách phát hiện ở quầy thanh toán thì mất cả ca VÀ nhận một review xấu.
     co_phu_phi = co_tu(nv_text, td["nv_phu_phi_10"])
-    k["N3.2"] = ("✓" if co_phu_phi else "✗") if co_neu_gia else "—"
+    k["N3.2"] = "—" if khong_phai_ban else (("✓" if co_phu_phi else "✗") if co_neu_gia else "—")
 
     co_do = []
     for ma, tu in td["co_do"].items():
@@ -1037,16 +1089,21 @@ def cham_hoi_thoai(ht, td, ma_o, ma_oq=(), s4=()):
 
     # ── N5
     xin = [t for t in tin_nv if co_tu(t["text"], td["nv_xin_so"])]
-    if not xin:
+    if khong_phai_ban:
+        # ★ Cham nhan vien vi "⛔ khong xin duoc so" trong mot ca khieu nai
+        #   hoac mot ca co dau hieu an toan la CHAM SAI VIEC (id-K §4b).
+        k["N5.1"] = k["N5.2"] = k["N5.3"] = k["N5.4"] = "—"
+    elif not xin:
         k["N5.1"] = k["N5.2"] = "✗"
     else:
         k["N5.1"] = "✓" if co_tu(xin[0]["text"], td["nv_ly_do_xin_so"]) else "✗"
         k["N5.2"] = "✓" if len(xin) >= 2 and khong_dau(xin[0]["text"]) != khong_dau(xin[1]["text"]) else "✗"
     # ★ Hỏi giờ mà KHÔNG hỏi múi giờ = ✗: giờ không có múi giờ là một con số
     #   vô dụng, và cuộc gọi đó đơn giản là không diễn ra.
-    k["N5.3"] = "✓" if co_tu(nv_text, td["nv_khung_gio"]) else "✗"
-    k["N5.4"] = "✓" if (co_tu(nv_text, td["nv_moi_lich"])
-                        and re.search(r'\d{1,2}\s*[hg:apm]', nv_text, re.I)) else "✗"
+    if not khong_phai_ban:
+        k["N5.3"] = "✓" if co_tu(nv_text, td["nv_khung_gio"]) else "✗"
+        k["N5.4"] = "✓" if (co_tu(nv_text, td["nv_moi_lich"])
+                            and re.search(r'\d{1,2}\s*[hg:apm]', nv_text, re.I)) else "✗"
 
     # ── N6
     dai = [t for t in tin_nv if len(t["text"]) > 400]
@@ -1182,7 +1239,9 @@ def lenh_doc(args):
         rao_chot = gan_rao_chot(ma_o, ma_oq)
         s4 = s4_chua_dong(ht, td, ma_oq)
         nhiet, tin_hieu = gan_nhiet(ht, td)
-        k, diem, co_do = cham_hoi_thoai(ht, td, ma_o, ma_oq, s4)
+        lam_o_dau = gan_lam_o_dau(ht, td)
+        an_toan = co_dau_hieu_an_toan(ht, td)
+        k, diem, co_do = cham_hoi_thoai(ht, td, ma_o, ma_oq, s4, lam_o_dau, an_toan)
         ht["chot_lich"] = bool(co_tu(ht["nv_text"], td["nv_moi_lich"])
                                and co_tu(ht["kh_text"], td["kh_dong_y_lich"]))
         roi = gan_vi_sao_roi(ht, td, diem, ma_oq, s4)
@@ -1192,6 +1251,7 @@ def lenh_doc(args):
         ban_ghi.append({
             "ma": ht["ma"], "nv": ht["nv"], "cd": cd, "chang": chang,
             "ma_o": ma_o, "ma_oq": ma_oq, "rao_chot": rao_chot, "s4_chua_dong": s4,
+            "lam_o_dau": lam_o_dau, "dau_hieu_an_toan": an_toan,
             "tt": tt, "market": market, "can_cu_tt": can_cu,
             "ngon_ngu": ht["_ngon_ngu"], "ngon_ngu_nv": ht["_ngon_ngu_nv"],
             "kenh": ht["_kenh"], "trong_gio": ht["_trong_gio"], "cho_gio": cho_bao_lau(ht),
@@ -1214,7 +1274,7 @@ def lenh_doc(args):
         cot = [m for _, _, ds in TIEU_CHI for m, _, _ in ds]
         w.writerow(["ma", "nv", "tt", "market", "can_cu_tt", "ngon_ngu", "ngon_ngu_nv",
                     "kenh", "trong_gio", "cho_gio", "cd", "chang", "ma_o", "ma_oq",
-                    "rao_chot", "s4_chua_dong", "nhiet", "co_lien_he", "chot_lich",
+                    "rao_chot", "s4_chua_dong", "lam_o_dau", "dau_hieu_an_toan", "nhiet", "co_lien_he", "chot_lich",
                     "vi_sao_roi", "rao_can", "dich_vu", "he_so", "diem", "co_do"] + cot)
         for r in ban_ghi:
             w.writerow([r["ma"], r["nv"], r["tt"], r["market"] or "", r["can_cu_tt"],
@@ -1222,7 +1282,8 @@ def lenh_doc(args):
                         "" if r["trong_gio"] is None else ("Có" if r["trong_gio"] else "Không"),
                         r["cho_gio"] if r["cho_gio"] is not None else "",
                         r["cd"], r["chang"], " ".join(r["ma_o"]), " ".join(r["ma_oq"]),
-                        r["rao_chot"] or "", " ".join(r["s4_chua_dong"]), r["nhiet"],
+                        r["rao_chot"] or "", " ".join(r["s4_chua_dong"]),
+                        r["lam_o_dau"], r["dau_hieu_an_toan"], r["nhiet"],
                         "Có" if r["co_sdt"] else "", "Có" if r["chot_lich"] else "",
                         r["roi"], " · ".join(r["rao_can"]), r["dich_vu"], r["he_so"],
                         r["diem"] if r["diem"] is not None else "", " ".join(r["co_do"])]

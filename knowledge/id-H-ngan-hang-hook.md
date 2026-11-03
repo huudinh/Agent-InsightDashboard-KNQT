@@ -148,6 +148,62 @@ HT-052: "em về nước được 12 ngày, có kịp làm mũi không ạ?"
 
 ---
 
+## 4b. ★★ KHUÔN BA NHỊP · VÀ TRẠNG THÁI DUYỆT GẮN TRÊN TỪNG CÂU
+
+### Khuôn ba nhịp
+
+Mọi hook, và mọi **câu mẫu** trong sổ tay (`id-I` §3 phần 2), viết theo đúng ba nhịp:
+
+```
+<điều khách sợ, BẰNG CHỮ CỦA KHÁCH>  →  <điều mình làm khác>  →  <bằng chứng>
+```
+
+| Phải có | ⛔ Phải KHÔNG có |
+|---|---|
+| Một `HT-nnn` truy ngược được | Con số bảo hành *(đang có ba mức cùng lưu hành)* |
+| **Chữ khách dùng**, ⛔ không phải tính từ | Cam kết kết quả chắc chắn |
+| Một điều **mình làm khác được** | Testimonial kết quả lâm sàng *(🔴 chặn ở `TT-C`)* |
+| Qua **CỔNG 2 hai tầng** trước khi phát | Giá chưa có trong bảng `/price-list/` hiện hành |
+
+> ★ **Viết bằng chữ của khách.** Khách ⛔ không tìm *"natural-looking result"* — khách viết *"my nose tip is shiny and red"*. Khách ⛔ không tìm *"world-class surgeon"* — khách viết *"how do I know who actually operates on me"*.
+
+★ **Ví dụ đủ ba nhịp**, cho rào `XA` / `OQ-01`:
+> *"Is it safe to fly more than 15 hours on day 14?"* **→** bác sĩ xác nhận mốc bay **sau khám**, và khách có **kênh liên lạc sau khi về nước** **→** `[CHỜ CẤP: số ngày ở lại — Khoa Chuyên môn]`. *(`HT-021`)*
+
+⚠️ Ví dụ trên **chưa phát được** — nhịp ③ còn là một ô chờ cấp. Đó là đúng: một hook thiếu nhịp ③ thì ⛔ **không được làm tròn bằng một câu nghe hay**.
+
+```
+Thiếu nhịp ③ → câu đó chỉ là lời hứa.
+Thiếu nhịp ① → nó là lời người bán.
+Thiếu nhịp ② → ⛔ không có gì để khách chọn mình.
+```
+
+### ★ Trạng thái duyệt — gắn trên TỪNG CÂU, ⛔ không gắn theo cả tuyến
+
+```
+✅ «đã duyệt»                      → phát được
+🟠 «đề xuất – chưa duyệt»          → ⛔ KHÔNG phát ra ngoài
+🟠 «chờ pháp chế duyệt»            → ⛔ KHÔNG phát ra ngoài
+🟠 «chỉ dùng được ở TT-A / TT-B»   → ★ riêng bản quốc tế, xem dưới
+⏸ «chờ dữ kiện <ô>»               → ⛔ chưa viết được, ghi rõ chờ ô nào
+```
+
+⚠️ **Một tuyến nội dung có thể gồm câu đã duyệt và câu chưa duyệt.** Duyệt theo tuyến là cách để một câu 🟠 đi ra ngoài dưới vỏ một tuyến 🟢. Trạng thái nằm trên **từng câu**.
+
+### ★★ Và ở bản quốc tế, trạng thái duyệt có **hai tầng**
+
+> Một câu **sạch theo luật Việt Nam vẫn có thể bị chặn ở nước người xem.** Nên trạng thái duyệt của một hook ⛔ không phải một ô — nó là **hai ô**.
+
+| | Tầng VN | Tầng nước người xem |
+|---|---|---|
+| Ai soát | Pháp chế VN | Theo bảng `id-K` §4 |
+| Ví dụ chặn riêng tầng ② | — | Testimonial kết quả lâm sàng: hợp ở `TT-A`, 🔴 **cấm ở AU (AHPRA)** |
+| Kết luận | Cả hai ✅ → phát | Một bên 🟠 → ⛔ **không phát ở thị trường đó**, ⛔ không phát ở đâu cả nếu chưa cắt được theo thị trường |
+
+★ Hook ⛔ không cắt được theo thị trường thì lấy **mức chặt nhất** trong các thị trường sẽ thấy nó. ⛔ Không lấy mức trung bình.
+
+---
+
 ## 5. ★★ CỤM HOOK CHẶNG `S4` — CỤM ĐÁNG LÀM NHẤT VÀ DỄ SAI NHẤT
 
 Bốn câu của rào `XA` (`id-D` §6.1) là bốn cụm hook. **Ba trong bốn cụm hiện ⏸ chờ dữ kiện** — và đó là thông tin quan trọng nhất của sổ này:

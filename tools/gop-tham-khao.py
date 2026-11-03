@@ -9,6 +9,10 @@ chỉ cho phép ít file Knowledge.
 """
 import os
 import sys
+
+# Console Windows mac dinh cp1252 -> tieng Viet no khi in.
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8")
 from datetime import date
 
 GOC = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))

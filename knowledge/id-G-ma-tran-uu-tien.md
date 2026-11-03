@@ -103,6 +103,56 @@ CD2 · "I was quoted 20 grand in Australia" · khối ② Mở chặng S4
 
 ---
 
+## 3b. ★★ ƯU TIÊN CHÂN DUNG **CHỈ TÍNH TỪ DỮ LIỆU** — 03/11/2026
+
+```
+⛔ KHÔNG chân dung nào, ⛔ KHÔNG dịch vụ nào, ⛔ KHÔNG tầng thị trường nào
+   được gán mức ưu tiên TRƯỚC. Kể cả `TT-C` nghe "giá trị cao nhất".
+
+Chỉ số ưu tiên của một chân dung tính từ HAI thành phần đo được:
+   ① độ nóng trung bình của nhóm đó          (id-D §2)
+   ② tỷ lệ ĐẾN KHÁM thật của nhóm đó         (id-E · CPA-KHÁM)
+```
+
+### ⚠️ Và ở bản quốc tế, thành phần ② thường ⛔ KHÔNG đo được
+
+> Khách quốc tế phải **bay sang** mới khám. Giữa *"đồng ý lịch"* và *"đến khám thật"* có một chuyến bay, một visa, và vài tuần — nên mốc đến khám về chậm hơn kỳ báo cáo rất nhiều.
+
+```
+Chưa đo được "đến khám" → ⛔ KHÔNG tính được chỉ số ưu tiên.
+→ Xếp theo ĐỘ CHẶN (§3) và GHI THẲNG:
+  "Kỳ này xếp theo độ chặn. ⛔ Chưa xếp theo giá trị kỳ vọng vì
+   chưa đo được tỷ lệ đến khám của khách quốc tế."
+⛔ KHÔNG suy ưu tiên từ số lead, từ tầng thị trường, hay từ hệ số giá trị đơn.
+```
+
+★ Và ⛔ **không lấy mốc đo của bản nội địa làm thay** — chu kỳ quyết định của khách bay sang khác hẳn khách nội thành.
+
+### Ngưỡng — ⛔ dưới ngưỡng thì ⛔ không xếp hạng
+
+| Nhóm có | Agent được làm gì |
+|---|---|
+| **< 30 hội thoại** trong kỳ | ⛔ *"chưa đủ dữ liệu"*. ⛔ Không xếp hạng |
+| **< 5 lượt đến khám** | ⛔ *"chưa đủ dữ liệu"*. ⛔ Không xếp hạng |
+| Đủ cả hai | ✅ Xếp hạng, kèm **hai con số** làm bằng |
+
+⚠️ Ngưỡng này **cao hơn** ngưỡng 10 HT của `id-A` §5, và ⛔ không mâu thuẫn: 10 HT đủ để **mô tả** một nhóm, nhưng ⛔ chưa đủ để **xếp nhóm này trên nhóm kia**. Xếp hạng là quyết định phân bổ tiền.
+
+### ★ Mức ưu tiên đổi cái gì — và ⛔ không đổi cái gì
+
+```
+✅ ĐỔI       : ngân sách quảng cáo · thứ tự làm nội dung · đào tạo kịch bản
+⛔ KHÔNG ĐỔI : SLA phản hồi khách.
+```
+
+> ★ **SLA của repo này nằm ở `id-L` §4 và tính theo MÚI GIỜ của khách** — `N1.1` chấm `—` ngoài khung 08:00–17:00 ICT, và `N7.4` xét việc dọn hộp thư trong 12h. ⛔ Mức ưu tiên của chân dung ⛔ không được chạm vào bất kỳ con số nào trong đó.
+>
+> ⚠️ Trộn hai thứ này là lấy một quyết định về **ngân sách** để quyết một việc về **chăm khách** — và ở bản quốc tế nó còn tệ hơn, vì khách bị trả lời muộn đang ở một múi giờ mà hôm sau họ đã đi làm.
+
+★ Một khách thuộc chân dung *"ưu tiên thấp"* mà hỏi `OQ-01` *(bay sau mổ)* thì vẫn **trả lời ngay** — đó là câu hỏi an toàn, ⛔ không phải câu hỏi bán hàng (`id-K` §4b).
+
+---
+
 ## 4. BỐN NHÓM KẾT LUẬN *(nội địa: ba)*
 
 | Nhóm | Khi nào | Việc |

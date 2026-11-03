@@ -98,7 +98,7 @@ B8 GHI NHẬT KÝ KỲ        → việc kỳ trước đạt chưa · điều h
 
 ---
 
-## 4 · MƯỜI HAI LUẬT BẤT BIẾN
+## 4 · MƯỜI BẢY LUẬT BẤT BIẾN
 
 ```
 ① TRUY NGƯỢC. Mọi insight, mọi hook, mọi điểm trừ phải chỉ về được
@@ -146,6 +146,59 @@ B8 GHI NHẬT KÝ KỲ        → việc kỳ trước đạt chưa · điều h
    bản quốc tế bỏ thêm: SỐ HỘ CHIẾU · QUỐC TỊCH CỦA MỘT CÁ NHÂN ·
    SỐ HIỆU CHUYẾN BAY · TÊN KHÁCH SẠN.
    ⛔ Và ⛔ không nạp ảnh khách · hộ chiếu · hồ sơ bệnh án vào bất kỳ công cụ AI.
+
+⑬ ★★ DỮ LIỆU SỨC KHOẺ — HAI TẦNG  (id-B §6b)
+   Tiền sử can thiệp · bệnh nền · thuốc · ảnh · phim · chẩn đoán nơi khác
+   là DỮ LIỆU SỨC KHOẺ.
+   · Tầng ① luật VN 91/2025/QH15 — áp cho MỌI hội thoại: chỉ lưu NHÃN +
+     câu bằng chứng ngắn · giới hạn người xem · cần đồng ý xử lý.
+   · Tầng ② luật nước người xem, CỘNG THÊM ⛔ không thay thế: EU/UK là
+     SPECIAL CATEGORY (GDPR Art. 9) · mọi TT ngoài VN phải nêu việc
+     CHUYỂN DỮ LIỆU SANG VIỆT NAM.
+   ⚠ `L12` còn treo thì chấm `N2` cao cho lead EU/UK là khen một việc lẽ ra
+     ⛔ chưa được phép làm → ghi `⚠ thu dữ liệu khi L12 chưa gỡ` vào
+     VIỆC HỆ THỐNG, ⛔ không vào điểm của người.
+   ★ NV PHẢI HỎI (`N2`) nhưng báo cáo CHỈ LƯU NHÃN. Hai việc khác nhau.
+
+⑭ ★★ AN TOÀN TRƯỚC BÁN HÀNG — đứng trên mọi mục  (id-K §4b)
+   Dấu hiệu CẤP TÍNH (sưng · chảy dịch · mủ · sốt · chảy máu · hoại tử ·
+   đau nhiều) → CHUYỂN BÁC SĨ. ⛔ Không báo giá, ⛔ không bán thêm.
+   ★ BA loại "em đã làm rồi", và chúng ⛔ KHÔNG giống nhau:
+     · nơi khác                → ca tư vấn MỚI, rào NGỜ nặng. Chấm bình thường
+     · tại KN, còn ở VN        → KHIẾU NẠI. `N3` và `N5` chấm "—"
+     · ★ tại KN, ĐÃ VỀ NƯỚC    → 🔴 CẤP CỨU Y KHOA Ở XA (rào `XA`).
+                                 `N3` và `N5` chấm "—". Chuyển bác sĩ NGAY,
+                                 và hướng dẫn khám TẠI CHỖ trước
+   ⚠ Chấm nhân viên vì "⛔ không xin được số" ở hai loại sau là CHẤM SAI VIỆC.
+   ⚠ "collapsed" / "deformed" / "asymmetric" là CHỈ ĐỊNH LÀM LẠI,
+     ⛔ KHÔNG phải cấp tính — một ca làm lại được tư vấn tốt thì PHẢI ĐƯỢC CHẤM.
+     Miễn nó là mất phần khen đúng.
+
+⑮ MỘT QUYẾT ĐỊNH — MỘT SỔ  (id-A §2b)
+   Hai công thức cho một quyết định thì CHẮC CHẮN lệch nhau, và khi lệch thì
+   ⛔ không ai biết bảng nào đúng — vì CẢ HAI VẪN KHỚP TỔNG.
+   Thang đã có thì DÙNG LẠI, ⛔ không đẻ thang thứ hai. Thay thì mục cũ NGHỈ
+   («⛔ ĐÃ NGHỈ <ngày> — thay bằng <X>»), ⛔ không chạy song song.
+   ★ Đổi một luật thì GHI LUÔN CÁI MẤT.
+   ⚠ Bốn cặp hay bị trộn: ưu tiên chân dung ↔ SLA · chân dung ↔ thị trường ·
+     chân dung ↔ rào chốt · độ nóng ↔ hệ số giá trị đơn.
+
+⑯ BỐN NHÃN CHO MỘT HỘI THOẠI — ⛔ ĐỪNG TRỘN  (id-C §1c)
+   CHÂN DUNG (LÀ AI) × THỊ TRƯỜNG (Ở ĐÂU) × CHẶNG + RÀO CHỐT (VƯỚNG GÌ)
+   × ĐỘ NÓNG  →  HÀNH ĐỘNG.          ⚠ Bản nội địa có ba, bản QT có BỐN.
+   "I'm in Australia" = `AU`/`TT-C`  ·  "Is it safe to fly?" = `OQ-01`
+   → ⛔ KHÔNG phải chân dung.
+   ★ Phác họa theo kỳ là CHẾ ĐỘ TẠM: mã đổi nghĩa mỗi kỳ nên ⛔ không so được
+     giữa các kỳ, ⛔ không bàn giao được. Điều kiện nghỉ CỔNG 0: id-C §1.
+   ★ ƯU TIÊN CHÂN DUNG CHỈ TÍNH TỪ DỮ LIỆU (id-G §3b): độ nóng trung bình +
+     tỷ lệ ĐẾN KHÁM thật; ngưỡng ≥30 HT VÀ ≥5 lượt đến khám.
+     Bản QT thường ⛔ CHƯA ĐO ĐƯỢC "đến khám" (khách phải bay sang)
+     → xếp theo ĐỘ CHẶN và NÓI RÕ. ⛔ Ưu tiên KHÔNG đổi SLA theo múi giờ.
+
+⑰ SỬA MỘT TIÊU CHÍ THÌ SỬA BA CHỖ CÙNG LÚC  (id-F §2b)
+   id-F §3 · tools/tu_dien.json · tools/id.py.
+   Lệch nhau thì ⛔ không ai biết báo cáo đang chấm theo bản nào, và lệch kiểu
+   đó ⛔ không phát hiện được từ bên ngoài vì mọi bảng vẫn khớp tổng mẫu.
 ```
 
 ---

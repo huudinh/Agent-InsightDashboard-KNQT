@@ -228,6 +228,36 @@ giấy phép Bộ Y tế → hồ sơ bác sĩ → quy trình an toàn có văn 
 
 ---
 
+## 4b. ★★ AN TOÀN TRƯỚC BÁN HÀNG — ĐỨNG TRÊN MỌI MỤC KHÁC
+
+> ⚠️ Mục này **đứng trên** cả hai tầng pháp lý ở §4. Có dấu hiệu an toàn thì ⛔ **không tư vấn bán**, bất kể chặng `S` nào, bất kể tầng thị trường nào, bất kể hội thoại đang nóng tới đâu.
+
+```
+① DẤU HIỆU AN TOÀN → CHUYỂN BÁC SĨ, ⛔ KHÔNG TƯ VẤN BÁN.
+   đau · sưng · chảy dịch · sốt sau mổ  ·  vùng mổ biến dạng
+   bệnh nền khách tự nêu  ·  thuốc đang dùng  ·  mang thai
+   biến chứng sau can thiệp  ·  hỏi về thuốc / kháng sinh
+   → ⛔ Không báo giá. ⛔ Không bán thêm. ⛔ Không hẹn mổ.
+```
+
+### ★★ Ba loại *"em đã làm rồi"* — và chúng ⛔ KHÔNG giống nhau
+
+| Khách đã làm ở | Đây là gì | Chấm thế nào |
+|---|---|---|
+| **Nơi khác** | Ca tư vấn **mới**, rào `NGỜ` rất nặng *(đã từng bị hỏng một lần)* | Chấm bình thường. ⛔ Không chê nơi cũ |
+| **Tại Kangnam, đang ở Việt Nam** | **KHIẾU NẠI**, ⛔ không phải cơ hội bán | `N5` *(xin số & chốt)* và `N3.1` *(giá)* chấm `—`. Chuyển người có thẩm quyền |
+| ★ **Tại Kangnam, ĐÃ BAY VỀ NƯỚC** | 🔴 **CẤP CỨU Y KHOA Ở XA** — ⛔ không phải khiếu nại thường | Toàn bộ nhóm `N5` và `N3` chấm `—`. **Chuyển bác sĩ ngay**, và hướng dẫn khách tìm cơ sở y tế **tại chỗ** trước |
+
+> ★ **Loại thứ ba là loại riêng của bản quốc tế, và là loại nguy hiểm nhất.** Khách đã mổ ở Việt Nam rồi bay về — nếu có biến chứng thì họ ⛔ **không quay lại được dễ** *(đúng rào `XA`)*. Thời gian bay cộng với việc không có hồ sơ ở cơ sở địa phương làm mọi chậm trễ thành rủi ro y khoa thật.
+>
+> ⚠️ Và nó nối thẳng với `OQ-01`: nếu kỳ trước có hội thoại nào được trả lời *"bay được sau n ngày"* mà kỳ này xuất hiện một ca loại ③, thì hai việc đó **phải được đọc cùng nhau** — ghi vào nhật ký kỳ, ⛔ không để rời.
+
+⚠️ **Hệ quả khi chấm:** chấm nhân viên vì *"⛔ không xin được số"* hoặc *"né giá"* trong một ca loại ② hoặc ③ là **chấm sai việc**. Nhân viên **đúng** khi ⛔ không bán.
+
+★ Bảng dữ kiện gốc ghi rõ ô `lam_o_dau`: `noi-khac` · `tai-kn-trong-vn` · `tai-kn-da-ve-nuoc` · *(trống)*.
+
+---
+
 ## 5. RÀO `R` — NĂM RÀO CỨNG DÙNG CHUNG VỚI GÓI ADS QT
 
 | Mã | Rào | ⛔ Không được | Người duyệt |
@@ -365,6 +395,43 @@ R8 · đủ điều kiện KCB cho người nước ngoài : ✅ đã xác nhậ
 
 ⛔ Còn một dòng 🔴 ở **bất kỳ tầng nào** thì ⛔ không phát bản đó.
 ⛔ Và ⛔ **không phát khi `R8` chưa xác nhận**, dù mọi câu chữ đã sạch.
+
+---
+
+## 9b. ★ LUẬT SỔ NHẬP TỪ NGOÀI — VÀ VÌ SAO REPO NÀY ⛔ CHƯA NHẬP BỘ `KF`
+
+### Bốn luật cho mọi sổ nhập từ khối khác
+
+```
+① GIỮ NGUYÊN VĂN của nguồn, để còn đối chiếu với bản khối đó đang dùng.
+② Nguồn sửa thì sổ sửa theo. ⛔ KHÔNG sửa ngược lại.
+③ ⛔ Repo KHÔNG tự đặt thêm mục nào. Thiếu thì BÁO LẠI để bổ sung bản sau.
+④ Đặt tên theo MÃ GỐC của sổ đó (`kf-60-…`), ⛔ không nối tiếp chữ cái
+   `id-x` — xem va chạm `id-L` đã ghi ở `id-A` §2b.
+```
+
+### ⛔ Vì sao `KF-60` · `KF-62` · `KF-64` ⛔ chưa nhập vào repo này
+
+> Hệ nội địa cùng thương hiệu đã nhập ba bộ đó. Repo này **cùng thương hiệu**, nên về nguyên tắc dùng được — nhưng cả ba đều đo và chốt trên **tệp nội địa**, và mỗi bộ vướng đúng một trục của bản quốc tế:
+
+| Bộ | Nhập được chưa | Vướng ở đâu |
+|---|---|---|
+| **`KF-60`** lead scoring | ⛔ Chưa | Nhóm gọi và SLA của nó tính theo **giờ hành chính Việt Nam**. Repo này có SLA **theo múi giờ khách** (`id-L` §4, `N1.1` = `—` ngoài khung, `N7.4` thay thế). Nhập nguyên văn là **hai nơi cùng chấm một thứ** — đúng điều `id-A` §2b cấm |
+| **`KF-62`** thư viện chân dung | ⛔ Chưa | ⛔ Không có **trục thị trường**, nên ⛔ không có rào `XA`. Cùng một dịch vụ mà `TT-A` và `TT-C` là hai nỗi sợ khác nhau (`id-C` §1) |
+| **`KF-64`** chọn tệp & tầng nội dung | ⛔ Chưa | Ngưỡng và trọng số chốt trên dữ liệu nội địa. Và nó cần **tỷ lệ đến khám**, thứ bản quốc tế ⛔ chưa đo được (`id-G` §3b) |
+
+★ **Cái ĐÃ nhập là phương pháp, ⛔ không phải nội dung** — ghi ở `doc/CHANGELOG.md` mục `v1.2`.
+
+### ⏸ Để nhập được, mỗi bộ cần thêm đúng một thứ
+
+```
+KF-60 → một lớp phủ MÚI GIỜ cho nhóm gọi và SLA
+KF-62 → trục THỊ TRƯỜNG trong từng chân dung + rào XA
+KF-64 → một mốc đo "ĐẾN KHÁM" của khách quốc tế
+
+⛔ Không tự dựng ba thứ đó. Chúng là việc của khối Sale / Vận hành,
+   và repo này chỉ ĐỌC dữ liệu đã xảy ra (`id-A` §1).
+```
 
 ---
 

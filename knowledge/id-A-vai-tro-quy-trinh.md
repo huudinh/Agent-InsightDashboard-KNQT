@@ -60,6 +60,67 @@ rào pháp lý      R2 · R3 · R7 · R8 · R9          (id-K §5)
 
 ---
 
+## 2b. ★★ MỘT QUYẾT ĐỊNH — MỘT SỔ. ⛔ ĐỪNG ĐỂ HAI NƠI CÙNG CHẤM MỘT THỨ
+
+> ⚠️ Hai công thức cho **một** quyết định thì **chắc chắn lệch nhau**, và khi lệch thì ⛔ không ai biết bảng nào đúng — vì **cả hai vẫn khớp tổng**. Repo này có 12 sổ và bảy bộ mã, nên rủi ro đó cao hơn bản nội địa.
+
+Mỗi câu hỏi dưới đây có **đúng một** sổ trả lời:
+
+```
+id-B §3   → TẦNG THỊ TRƯỜNG     · TT-A…TT-D, TT-0 · khách Ở ĐÂU
+id-L      → THỊ TRƯỜNG · NGÔN NGỮ · MÚI GIỜ · CỔNG M
+id-C      → CHÂN DUNG           · khách LÀ AI
+id-C §3   → CHẶNG PHỄU          · S1…S7
+id-D §2   → ĐỘ NÓNG             · nhãn duy nhất của một kỳ
+id-D      → RÀO CHỐT + MÃ O/OQ  · khách đang VƯỚNG GÌ
+id-E      → CHỈ SỐ ADS          · chuỗi chi → CPA-KHÁM
+id-F      → CHẤM NHÂN VIÊN      · N1…N7, 27 tiêu chí
+id-G §3   → XẾP HẠNG VIỆC       · công thức điểm ưu tiên
+id-G §3b  → ƯU TIÊN CHÂN DUNG   · CHỈ từ dữ liệu · đổi ngân sách
+id-L §4   → SLA THEO MÚI GIỜ    · ⛔ KHÔNG theo ưu tiên chân dung
+id-K      → PHÁP CHẾ HAI TẦNG   · R · L · CỔNG 2
+```
+
+**Bốn cặp dễ bị trộn nhất ở bản quốc tế:**
+
+| Cặp | Luật phân xử |
+|---|---|
+| **Ưu tiên chân dung** ↔ **SLA** | Ưu tiên đổi **ngân sách · nội dung · đào tạo**. ⛔ **Không đổi SLA.** SLA là `id-L` §4, **theo múi giờ của khách** (`id-G` §3b) |
+| **Chân dung** ↔ **thị trường** | Chân dung = *khách là ai*. `TT`/nước = *khách ở đâu*. ⛔ Không có chân dung nào tên là một nước hay một tầng (`id-C` §1c) |
+| **Chân dung** ↔ **rào chốt** | ⛔ Không có chân dung nào tên là một trở ngại. *"Sợ bay sau mổ"* là `OQ-01` (`id-C` §1c) |
+| **Độ nóng** ↔ **hệ số giá trị đơn** | Độ nóng = mức sẵn sàng. Hệ số = giá trị kỳ vọng của **dịch vụ**. ⛔ Không suy cái này từ cái kia |
+
+⛔ **Luật về thang điểm:** thang đã có thì **dùng lại**, ⛔ không đẻ thang thứ hai. Cần một cách xếp mới → nói rõ nó **thay** cái nào, và cái cũ **nghỉ**.
+
+### ★ Luật nghỉ một mục — ⛔ không xoá, ⛔ không chạy song song
+
+```
+Một mục bị thay thì ĐÁNH DẤU NGHỈ, ⛔ không xoá:
+   «⛔ ĐÃ NGHỈ <ngày> — thay bằng <sổ/mục mới>»
+
+⛔ Hai mục trả lời cùng một câu hỏi thì ⛔ KHÔNG chạy song song,
+   dù một trong hai được ghi là "tham khảo".
+★ Giữ mục đã nghỉ để còn đối chiếu số các kỳ trước, và để biết VÌ SAO
+   đổi — ⛔ không phải để dùng tiếp.
+★ Đổi một luật thì GHI LUÔN CÁI MẤT. Một luật đổi mà ⛔ không ai viết
+   ra nó đánh đổi điều gì thì kỳ sau sẽ có người đổi ngược lại.
+```
+
+### ⚠️ Một va chạm mã đang có thật — ghi lại để ⛔ không ai sửa nhầm
+
+> Hệ nội địa cùng thương hiệu dùng **`id-L`** cho *lead scoring*, còn repo này dùng **`id-L`** cho *thị trường · ngôn ngữ · múi giờ*. **Cùng một chữ, hai nghĩa.**
+
+```
+⛔ KHÔNG đổi tên id-L của repo này — nó bị 174 chỗ tham chiếu,
+   trong đó có tools/id.py, goi/GOP-tri-thuc.md và các file kỳ đã sinh.
+✅ Khi nhập một sổ từ khối khác, ĐẶT TÊN THEO MÃ GỐC CỦA SỔ ĐÓ
+   (ví dụ `kf-60-lead-scoring.md`), ⛔ không nối tiếp chữ cái id-x.
+   Mã KF là mã của khối Sale, cố định và dùng chung — nó ⛔ không
+   va chạm với hệ chữ cái của bất kỳ repo nào.
+```
+
+---
+
 ## 3. QUY TRÌNH 8 BƯỚC
 
 ```

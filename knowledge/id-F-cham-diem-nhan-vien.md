@@ -62,6 +62,20 @@ TẦNG 2 · từng nhân viên : quy ra điểm 0–100 khi đủ mẫu, rồi p
 
 ---
 
+## 2b. ⚠️ SỬA MỘT TIÊU CHÍ THÌ SỬA **BA CHỖ CÙNG LÚC**
+
+```
+① sổ này (§3)            — định nghĩa và điểm
+② tools/tu_dien.json     — bộ cụm nhận diện
+③ tools/id.py            — hàm cham_hoi_thoai
+```
+
+> ⚠️ Thang điểm nằm nhiều chỗ mà lệch nhau thì ⛔ **không ai biết báo cáo đang chấm theo bản nào** — và lệch kiểu đó ⛔ **không phát hiện được từ bên ngoài**, vì mọi bảng vẫn khớp tổng mẫu.
+
+★ Repo này đã có một lần như thế: `OQ-01` *(bay sau mổ)* có trong sổ nhưng bộ cụm nhận diện ⛔ không bắt được câu *"Is it safe to fly more than 15 hours on day 14 after rhinoplasty?"* — đúng mã quan trọng nhất của repo, và ⛔ không có cách nào thấy được từ báo cáo.
+
+---
+
 ## 3. BẢY NHÓM TIÊU CHÍ — THANG 100
 
 ### `N1` · PHẢN HỒI & SLA — **15 điểm** *(nội địa: 20)*

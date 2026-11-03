@@ -95,3 +95,28 @@ _Kênh: Messenger · Nước: PH · Ngôn ngữ: EN_
 - `10-25 10:30` **KH:** [Tệp đính kèm/hình ảnh]
 - `10-25 10:34` **NV Mai P:** Thank you. Only our surgeon and medical team will see these photos; they will not be used for marketing. May I ask which city are you in?
 - `10-25 10:40` **KH:** Cebu, Philippines.
+
+---
+
+### <a id="ht-9"></a>9. Khách I
+
+_Cập nhật: 2026-10-24 15:20:00 · NV: Linh T · SĐT: Có · ID: t_0000000009_
+_Kênh: WhatsApp · Nước: AU · Ngôn ngữ: EN_
+
+- `10-24 14:55` **KH:** I had my rhinoplasty at Kangnam six weeks ago and I flew back to Australia. Now the tip is swollen and there is some discharge. I'm really worried.
+- `10-24 15:02` **NV Linh T:** I'm very sorry to hear that. Swelling with discharge six weeks after surgery needs to be seen by a doctor, I cannot assess it from here. Please go to a local clinic or emergency department today so they can look at it in person.
+- `10-24 15:06` **KH:** Should I fly back to Vietnam?
+- `10-24 15:09` **NV Linh T:** Please get it checked locally first — that comes before any travel decision. I am forwarding your case and your surgery record to our medical team right now, and a doctor will contact you directly. May I confirm the best number and time to reach you in your timezone?
+- `10-24 15:14` **KH:** +61xxxxxxxxx, any time after 6pm Sydney time.
+
+---
+
+### <a id="ht-10"></a>10. Khách J
+
+_Cập nhật: 2026-10-25 11:05:00 · NV: Mai P · SĐT: Không · ID: t_0000000010_
+_Kênh: Messenger · Nước: US · Ngôn ngữ: EN_
+
+- `10-25 10:40` **KH:** I had a nose job at another clinic in Seoul two years ago and it collapsed. Can you fix it?
+- `10-25 10:48` **NV Mai P:** Thank you for telling me. Revision cases are assessed differently from first-time surgery — the surgeon needs to see current photos and your previous operation records before saying what is possible. I will not guess at a method or a price before that.
+- `10-25 10:52` **KH:** Will I lose more cartilage?
+- `10-25 10:58` **NV Mai P:** That depends on what the surgeon finds, and only the surgeon can answer it after reviewing your records. Our revision price band is published on our price list, and the final figure is confirmed after the in-person consultation. Could you share which country you are flying from, so I can tell you how many consultation slots we have that week?

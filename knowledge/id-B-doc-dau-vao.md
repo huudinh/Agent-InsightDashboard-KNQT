@@ -211,6 +211,52 @@ MỐC SO SÁNH        : kỳ trước <có/không> · mục tiêu 30 ngày <có/
 
 ---
 
+## 6b. ★★ TIỀN SỬ ĐIỀU TRỊ LÀ **DỮ LIỆU SỨC KHOẺ** — VÀ Ở BẢN QUỐC TẾ NÓ CÓ **HAI TẦNG**
+
+> ⚠️ Mục này ⛔ **không phải chuyện ẩn danh** — nó là chuyện **loại dữ liệu**. Và nó là mục mà bản quốc tế nặng hơn bản nội địa, vì dữ liệu còn **đi qua biên giới**.
+
+Những thứ sau, trong hội thoại thẩm mỹ, là **dữ liệu sức khoẻ**:
+
+```
+tiền sử can thiệp ("I had rhinoplasty 3 years ago, it collapsed")
+bệnh nền khách tự nêu · thuốc đang dùng · tình trạng mang thai
+ảnh vùng cần làm · ảnh before–after của chính khách
+chẩn đoán hoặc phác đồ nơi khác đã đưa ra
+```
+
+### Tầng ①: luật Việt Nam — **áp cho MỌI hội thoại**
+
+**Luật 91/2025/QH15.** Ba luật vận hành:
+
+| | Luật | Nghĩa trong repo này |
+|---|---|---|
+| ① | **Chỉ lưu NHÃN + câu bằng chứng ngắn** | Lưu mã `OQ-xx` / `O-xx` + **một câu** đủ chứng minh. ⛔ Không chép cả đoạn khách kể bệnh sử |
+| ② | **Giới hạn người xem** | Ô này ⛔ không đi vào bản phát ra ngoài khối. Sổ tay chỉ giữ **đúng cặp câu** làm bằng cho ô `✗` đang xét |
+| ③ | **Cần đồng ý xử lý** | ⛔ Không đưa ảnh khách vào bất cứ file nào. ⛔ Không nạp lên công cụ công cộng |
+
+### Tầng ②: luật nước người xem — **cộng thêm, ⛔ không thay thế**
+
+★ `id-K` §4 đã có bảng này. Hai điểm phải nối vào đây:
+
+```
+EU/EEA · UK  → dữ liệu sức khoẻ là SPECIAL CATEGORY (GDPR Art. 9).
+               Cần cơ sở xử lý RIÊNG, ⛔ không dùng chung cơ sở "hợp đồng".
+               → chưa có privacy notice đạt GDPR thì mọi lead EU/UK
+                 vướng `L12`, và tiêu chí `N7.7` chấm theo đó.
+MỌI THỊ TRƯỜNG NGOÀI VN → phải nêu việc CHUYỂN DỮ LIỆU SANG VIỆT NAM.
+               ⛔ Không nêu là một thiếu sót pháp lý, ⛔ không phải
+                 một ô trống trong form.
+```
+
+⚠️ **Hệ quả ngược mà dễ bỏ sót:** `N2` yêu cầu nhân viên **khai thác tình trạng**, và `N7` yêu cầu khai thác **đúng thị trường**. Hai tiêu chí đó bắt nhân viên **thu dữ liệu sức khoẻ của người nước ngoài**. Nghĩa là:
+
+> ⛔ **Chưa có privacy notice đạt GDPR thì việc chấm `N2` cao cho một hội thoại EU/UK là đang khen một việc lẽ ra ⛔ chưa được phép làm.**
+> → Khi `L12` còn treo, hội thoại `EU`/`UK` ghi thêm nhãn `⚠ thu dữ liệu khi L12 chưa gỡ` vào `loi_he`, và việc đó vào **mục việc hệ thống**, ⛔ không vào điểm của người.
+
+★ Nhân viên **phải hỏi** (`N2`) nhưng báo cáo **chỉ lưu nhãn**. Hai việc khác nhau — hỏi là đúng, lưu nguyên văn bệnh sử là sai.
+
+---
+
 ## 7. QUY ƯỚC MÃ — ⛔ KHÔNG ĐỔI
 
 | Mã | Nghĩa | Định nghĩa ở |

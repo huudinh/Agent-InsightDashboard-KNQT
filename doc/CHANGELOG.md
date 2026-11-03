@@ -196,3 +196,76 @@ Và thêm một bước phân rã **trước** bốn thành phần của `CPL`: 
 - **Khách nội địa nhắn lạc** vào kênh quốc tế được đếm riêng và **loại khỏi mẫu** — ⛔ không xếp vào `TT-B`.
 - **Khối `facebook` đổi tên thành `meta`** trong schema. ⛔ Hai schema không đọc chéo được.
 - **Bốn format `L13`–`L16`** ở bản nội địa còn `[CHỜ CẤP]` thì ở bản này **được định nghĩa**: 5 bước khách xa · phiên dịch & hậu phẫu từ xa · hậu cần · giấy phép — đây là bộ format **sạch pháp chế ở mọi thị trường**, và là trụ format duy nhất dùng được cho `TT-C`.
+
+---
+
+## v1.2 — 03/11/2026 · port tri thức từ bản nội địa
+
+Bản nội địa cùng thương hiệu vừa sửa sâu phần tri thức. Kỳ này **port phần phương pháp**, ⛔ không port nội dung.
+
+### ⛔ Vì sao ⛔ KHÔNG nhập `KF-60` · `KF-62` · `KF-64`
+
+Repo này **cùng thương hiệu** nên về nguyên tắc dùng được — nhưng cả ba **đo và chốt trên tệp nội địa**, và mỗi bộ vướng đúng một trục của bản quốc tế:
+
+| Bộ | Vướng ở đâu | Cần thêm gì |
+|---|---|---|
+| **`KF-60`** lead scoring | Nhóm gọi và SLA tính theo **giờ hành chính VN**. Repo này có SLA **theo múi giờ khách** (`id-L` §4 · `N1.1` = `—` ngoài khung · `N7.4` thay thế). Nhập nguyên văn là **hai nơi cùng chấm một thứ** | một lớp phủ **múi giờ** |
+| **`KF-62`** thư viện chân dung | ⛔ Không có **trục thị trường**, nên ⛔ không có rào `XA`. Cùng một dịch vụ thì `TT-A` và `TT-C` là hai nỗi sợ khác nhau | trục **thị trường** trong từng chân dung |
+| **`KF-64`** chọn tệp & tầng | Ngưỡng chốt trên dữ liệu nội địa, và cần **tỷ lệ đến khám** — thứ bản quốc tế ⛔ chưa đo được | mốc đo **đến khám** của khách quốc tế |
+
+★ Luật nhập sổ từ ngoài ghi ở `id-K` §9b.
+
+### ⚠️ Một va chạm mã — đã ghi lại, ⛔ không sửa
+
+> Bản nội địa dùng **`id-L`** cho *lead scoring*; repo này dùng **`id-L`** cho *thị trường · ngôn ngữ · múi giờ*. **Cùng một chữ, hai nghĩa.**
+
+⛔ **Không đổi tên `id-L` của repo này** — nó bị **174 chỗ** tham chiếu, gồm `tools/id.py`, `goi/GOP-tri-thuc.md` và các file kỳ đã sinh. Quy ước từ nay: sổ nhập từ khối khác **đặt tên theo mã gốc của sổ đó** (`kf-60-lead-scoring.md`), ⛔ không nối tiếp chữ cái `id-x`. Ghi ở `id-A` §2b.
+
+### ✅ Đã port — hai chỗ bản quốc tế nặng hơn bản nội địa
+
+| # | Port gì | Vào đâu |
+|---|---|---|
+| ① | ★★ **Dữ liệu sức khoẻ — HAI TẦNG.** Tầng ① luật VN `91/2025/QH15` *(chỉ lưu nhãn + câu bằng chứng ngắn)* áp cho **mọi** hội thoại; tầng ② luật nước người xem **cộng thêm** — EU/UK là **special category (GDPR Art. 9)**, mọi `TT` ngoài VN phải nêu việc **chuyển dữ liệu sang Việt Nam**. ★ Hệ quả ngược: **`L12` còn treo thì chấm `N2` cao cho lead EU/UK là khen một việc lẽ ra ⛔ chưa được phép làm** | `id-B` §6b **(mới)** |
+| ② | ★★ **An toàn trước bán hàng**, đứng trên cả hai tầng pháp lý. **BA loại *"đã làm rồi"*** — nơi khác = ca mới · tại KN còn ở VN = **khiếu nại** · ★ tại KN **đã bay về nước** = 🔴 **cấp cứu y khoa ở xa** *(rào `XA`)*. Hai loại sau: `N3` và `N5` chấm `—` | `id-K` §4b **(mới)** |
+| ③ | ★★ **BỐN nhãn** *(nội địa có ba)*: chân dung × **thị trường** × chặng + rào chốt × độ nóng | `id-C` §1c **(mới)** |
+| ④ | **Chân dung theo kỳ là CHẾ ĐỘ TẠM** + ba điều kiện nghỉ CỔNG 0. ★ Con số thứ hai làm căn cứ: bản nội địa chạy thư viện thật trên **494 HT** được **65,6% *"chưa xác định"*** → **trượt cổng ① của chính nó** | `id-C` §1 *(viết lại)* |
+| ⑤ | **Năm cổng ổn định** + chẩn đoán khi trượt. ⚠️ Bẫy riêng bản QT: `CD0` cao có thể vì **khách nói ngôn ngữ khác** | `id-C` §1b **(mới)** |
+| ⑥ | ★★ **Ưu tiên chân dung chỉ từ dữ liệu**, ngưỡng ≥30 HT **và** ≥5 lượt đến khám. ⛔ **Không đổi SLA theo múi giờ** | `id-G` §3b **(mới)** |
+| ⑦ | **Một quyết định — một sổ** + bảng ranh giới 12 quyết định + **luật nghỉ một mục** | `id-A` §2b **(mới)** |
+| ⑧ | **Khuôn ba nhịp** + **trạng thái duyệt từng câu**, ★ ở bản QT có **hai tầng** *(testimonial hợp ở `TT-A`, 🔴 cấm ở AU)* | `id-H` §4b **(mới)** |
+| ⑨ | **Sửa một tiêu chí thì sửa BA chỗ cùng lúc** — kèm ví dụ thật: `OQ-01` có trong sổ mà bộ cụm ⛔ không bắt được câu *"safe to fly … after rhinoplasty"* | `id-F` §2b **(mới)** |
+| ⑩ | **Luật sổ nhập từ ngoài** | `id-K` §9b **(mới)** |
+
+### Đã cài vào công cụ, ⛔ không chỉ viết vào sổ
+
+- `tu_dien.json`: khối `lam_o_dau` và `dau_hieu_an_toan` **hai tầng**.
+- `id.py`: `gan_lam_o_dau()` · `co_dau_hieu_an_toan()`; miễn `N3.1` `N3.2` `N5.1`–`N5.4` ở luồng ⛔ không-phải-bán; hai cột mới trong CSV.
+- `template/MAU_hoi-thoai.md`: `HT-009` *(mổ tại KN, đã bay về Úc, sưng + chảy dịch)* · `HT-010` *(mổ ở clinic khác, mũi sập — ca làm lại tư vấn tốt)*.
+- Sửa lỗi `cp1252` trong `tools/gop-tham-khao.py` — nó vỡ khi in tiếng Việt trên console Windows, nên **bản gộp ⛔ không sinh lại được** cho tới nay.
+
+### ★ Hai lỗi thiết kế bắt được khi chạy thử
+
+**①** Bản đầu đưa `"collapsed"` · `"deformed"` · `"asymmetric"` vào danh sách dấu hiệu an toàn. `HT-010` liền bị miễn hết `N3`/`N5` — nhưng đó là **ca làm lại được tư vấn rất tốt**: nhân viên ⛔ không đoán phương pháp, ⛔ không báo giá, xin hồ sơ cũ, nêu khung giá đã công khai.
+
+> ⚠️ **Miễn chấm một ca làm tốt là mất phần khen đúng** — cùng họ với lỗi *"gắn cờ đỏ cho người làm đúng"*.
+
+→ Tách **hai tầng**: `cap_tinh` *(triệu chứng đang diễn ra)* mới thành luồng ⛔ không-bán; `chong_chi_dinh` *(bệnh nền, thuốc)* phải chuyển bác sĩ cho **câu hỏi y khoa** nhưng hội thoại **vẫn hợp lệ** → ⛔ không miễn `N5`.
+
+**②** `gan_lam_o_dau()` ban đầu dò bằng **danh sách câu đầy đủ**. Khách viết *"I had my rhinoplasty at Kangnam six weeks ago"* → ⛔ không khớp. → Đổi sang **logic**: tên `kangnam` **+** một nhãn *"đã làm"*. Liệt kê hết cách diễn đạt là việc ⛔ không bao giờ xong.
+
+### Đã kiểm
+
+```
+✅ dem-ngan.py       → bản ngắn 7.978 / 8.000  ⚠️ chỉ còn 22 ký tự dư
+✅ gop-tham-khao.py  → goi/GOP-tri-thuc.md 180.667 ký tự (sinh lại được)
+✅ id.py doc         → 10/10 HT mẫu chạy sạch
+✅ HT-009 → tai-kn-da-ve-nuoc · cap-tinh · N3 và N5 = —
+✅ HT-010 → noi-khac · ⛔ không cờ an toàn · VẪN chấm (điểm 41,4)
+✅ HT-001…HT-008 → điểm ⛔ KHÔNG đổi (⛔ không hồi quy)
+```
+
+### ⚠️ Việc còn mở
+
+- **Bản ngắn chỉ còn 22 ký tự dư.** Để nhét hai luật chống thiệt hại, đã phải nén `Bộ mã` · `Chấm điểm` · `Tuyệt đối không` thành **con trỏ sang sổ Knowledge** *(các sổ đó vẫn được nạp nên nội dung ⛔ không mất)*, và ba luật chất lượng **chỉ có ở bản đầy đủ**. Lần thêm luật sau **buộc phải bỏ một luật cũ**.
+- **Thư viện chân dung quốc tế ⛔ chưa có** → CỔNG 0 vẫn chạy.
+- `tools/huong-dan.html` và artifact publish **viết theo `v1.1`** — chưa có năm luật mới.

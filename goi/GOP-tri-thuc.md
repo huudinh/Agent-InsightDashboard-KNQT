@@ -3,7 +3,7 @@
 > Bản gộp **sinh tự động** từ `knowledge/`. ⛔ Không sửa file này —
 > sửa file gốc rồi chạy lại `python tools/gop-tham-khao.py`.
 
-Gộp ngày 2026-10-31 · 12 sổ
+Gộp ngày 2026-11-03 · 12 sổ
 
 ## Mục lục
 
@@ -83,6 +83,67 @@ rào pháp lý      R2 · R3 · R7 · R8 · R9          (id-K §5)
 ⚠️ **Mã `CD` thì ⛔ không dùng chung.** Chân dung được phác họa theo từng kỳ (`id-C` §1), nên `CD3` của kỳ này và `QT3` của `Agent-AdsOptimize-Kangnam-QT` ⛔ **không phải một tệp**. `QT1–QT7` ở agent đó là **khung mẫu để đối chiếu sau khi phác họa**, ⛔ không phải bộ chân dung để gán.
 
 ★ **Ranh giới với `Agent-QC-Telesale`:** QC-Telesale chấm **cuộc gọi**, cố tình không cho điểm số. Agent này chấm **hội thoại chat** và **có** thang 100 điểm — xem `id-F` §1, và **bốn rào an toàn** bắt buộc đi kèm.
+
+---
+
+## 2b. ★★ MỘT QUYẾT ĐỊNH — MỘT SỔ. ⛔ ĐỪNG ĐỂ HAI NƠI CÙNG CHẤM MỘT THỨ
+
+> ⚠️ Hai công thức cho **một** quyết định thì **chắc chắn lệch nhau**, và khi lệch thì ⛔ không ai biết bảng nào đúng — vì **cả hai vẫn khớp tổng**. Repo này có 12 sổ và bảy bộ mã, nên rủi ro đó cao hơn bản nội địa.
+
+Mỗi câu hỏi dưới đây có **đúng một** sổ trả lời:
+
+```
+id-B §3   → TẦNG THỊ TRƯỜNG     · TT-A…TT-D, TT-0 · khách Ở ĐÂU
+id-L      → THỊ TRƯỜNG · NGÔN NGỮ · MÚI GIỜ · CỔNG M
+id-C      → CHÂN DUNG           · khách LÀ AI
+id-C §3   → CHẶNG PHỄU          · S1…S7
+id-D §2   → ĐỘ NÓNG             · nhãn duy nhất của một kỳ
+id-D      → RÀO CHỐT + MÃ O/OQ  · khách đang VƯỚNG GÌ
+id-E      → CHỈ SỐ ADS          · chuỗi chi → CPA-KHÁM
+id-F      → CHẤM NHÂN VIÊN      · N1…N7, 27 tiêu chí
+id-G §3   → XẾP HẠNG VIỆC       · công thức điểm ưu tiên
+id-G §3b  → ƯU TIÊN CHÂN DUNG   · CHỈ từ dữ liệu · đổi ngân sách
+id-L §4   → SLA THEO MÚI GIỜ    · ⛔ KHÔNG theo ưu tiên chân dung
+id-K      → PHÁP CHẾ HAI TẦNG   · R · L · CỔNG 2
+```
+
+**Bốn cặp dễ bị trộn nhất ở bản quốc tế:**
+
+| Cặp | Luật phân xử |
+|---|---|
+| **Ưu tiên chân dung** ↔ **SLA** | Ưu tiên đổi **ngân sách · nội dung · đào tạo**. ⛔ **Không đổi SLA.** SLA là `id-L` §4, **theo múi giờ của khách** (`id-G` §3b) |
+| **Chân dung** ↔ **thị trường** | Chân dung = *khách là ai*. `TT`/nước = *khách ở đâu*. ⛔ Không có chân dung nào tên là một nước hay một tầng (`id-C` §1c) |
+| **Chân dung** ↔ **rào chốt** | ⛔ Không có chân dung nào tên là một trở ngại. *"Sợ bay sau mổ"* là `OQ-01` (`id-C` §1c) |
+| **Độ nóng** ↔ **hệ số giá trị đơn** | Độ nóng = mức sẵn sàng. Hệ số = giá trị kỳ vọng của **dịch vụ**. ⛔ Không suy cái này từ cái kia |
+
+⛔ **Luật về thang điểm:** thang đã có thì **dùng lại**, ⛔ không đẻ thang thứ hai. Cần một cách xếp mới → nói rõ nó **thay** cái nào, và cái cũ **nghỉ**.
+
+### ★ Luật nghỉ một mục — ⛔ không xoá, ⛔ không chạy song song
+
+```
+Một mục bị thay thì ĐÁNH DẤU NGHỈ, ⛔ không xoá:
+   «⛔ ĐÃ NGHỈ <ngày> — thay bằng <sổ/mục mới>»
+
+⛔ Hai mục trả lời cùng một câu hỏi thì ⛔ KHÔNG chạy song song,
+   dù một trong hai được ghi là "tham khảo".
+★ Giữ mục đã nghỉ để còn đối chiếu số các kỳ trước, và để biết VÌ SAO
+   đổi — ⛔ không phải để dùng tiếp.
+★ Đổi một luật thì GHI LUÔN CÁI MẤT. Một luật đổi mà ⛔ không ai viết
+   ra nó đánh đổi điều gì thì kỳ sau sẽ có người đổi ngược lại.
+```
+
+### ⚠️ Một va chạm mã đang có thật — ghi lại để ⛔ không ai sửa nhầm
+
+> Hệ nội địa cùng thương hiệu dùng **`id-L`** cho *lead scoring*, còn repo này dùng **`id-L`** cho *thị trường · ngôn ngữ · múi giờ*. **Cùng một chữ, hai nghĩa.**
+
+```
+⛔ KHÔNG đổi tên id-L của repo này — nó bị 174 chỗ tham chiếu,
+   trong đó có tools/id.py, goi/GOP-tri-thuc.md và các file kỳ đã sinh.
+✅ Khi nhập một sổ từ khối khác, ĐẶT TÊN THEO MÃ GỐC CỦA SỔ ĐÓ
+   (ví dụ `kf-60-lead-scoring.md`), ⛔ không nối tiếp chữ cái id-x.
+   Mã KF là mã của khối Sale, cố định và dùng chung — nó ⛔ không
+   va chạm với hệ chữ cái của bất kỳ repo nào.
+```
 
 ---
 
@@ -408,6 +469,52 @@ MỐC SO SÁNH        : kỳ trước <có/không> · mục tiêu 30 ngày <có/
 
 ---
 
+## 6b. ★★ TIỀN SỬ ĐIỀU TRỊ LÀ **DỮ LIỆU SỨC KHOẺ** — VÀ Ở BẢN QUỐC TẾ NÓ CÓ **HAI TẦNG**
+
+> ⚠️ Mục này ⛔ **không phải chuyện ẩn danh** — nó là chuyện **loại dữ liệu**. Và nó là mục mà bản quốc tế nặng hơn bản nội địa, vì dữ liệu còn **đi qua biên giới**.
+
+Những thứ sau, trong hội thoại thẩm mỹ, là **dữ liệu sức khoẻ**:
+
+```
+tiền sử can thiệp ("I had rhinoplasty 3 years ago, it collapsed")
+bệnh nền khách tự nêu · thuốc đang dùng · tình trạng mang thai
+ảnh vùng cần làm · ảnh before–after của chính khách
+chẩn đoán hoặc phác đồ nơi khác đã đưa ra
+```
+
+### Tầng ①: luật Việt Nam — **áp cho MỌI hội thoại**
+
+**Luật 91/2025/QH15.** Ba luật vận hành:
+
+| | Luật | Nghĩa trong repo này |
+|---|---|---|
+| ① | **Chỉ lưu NHÃN + câu bằng chứng ngắn** | Lưu mã `OQ-xx` / `O-xx` + **một câu** đủ chứng minh. ⛔ Không chép cả đoạn khách kể bệnh sử |
+| ② | **Giới hạn người xem** | Ô này ⛔ không đi vào bản phát ra ngoài khối. Sổ tay chỉ giữ **đúng cặp câu** làm bằng cho ô `✗` đang xét |
+| ③ | **Cần đồng ý xử lý** | ⛔ Không đưa ảnh khách vào bất cứ file nào. ⛔ Không nạp lên công cụ công cộng |
+
+### Tầng ②: luật nước người xem — **cộng thêm, ⛔ không thay thế**
+
+★ `id-K` §4 đã có bảng này. Hai điểm phải nối vào đây:
+
+```
+EU/EEA · UK  → dữ liệu sức khoẻ là SPECIAL CATEGORY (GDPR Art. 9).
+               Cần cơ sở xử lý RIÊNG, ⛔ không dùng chung cơ sở "hợp đồng".
+               → chưa có privacy notice đạt GDPR thì mọi lead EU/UK
+                 vướng `L12`, và tiêu chí `N7.7` chấm theo đó.
+MỌI THỊ TRƯỜNG NGOÀI VN → phải nêu việc CHUYỂN DỮ LIỆU SANG VIỆT NAM.
+               ⛔ Không nêu là một thiếu sót pháp lý, ⛔ không phải
+                 một ô trống trong form.
+```
+
+⚠️ **Hệ quả ngược mà dễ bỏ sót:** `N2` yêu cầu nhân viên **khai thác tình trạng**, và `N7` yêu cầu khai thác **đúng thị trường**. Hai tiêu chí đó bắt nhân viên **thu dữ liệu sức khoẻ của người nước ngoài**. Nghĩa là:
+
+> ⛔ **Chưa có privacy notice đạt GDPR thì việc chấm `N2` cao cho một hội thoại EU/UK là đang khen một việc lẽ ra ⛔ chưa được phép làm.**
+> → Khi `L12` còn treo, hội thoại `EU`/`UK` ghi thêm nhãn `⚠ thu dữ liệu khi L12 chưa gỡ` vào `loi_he`, và việc đó vào **mục việc hệ thống**, ⛔ không vào điểm của người.
+
+★ Nhân viên **phải hỏi** (`N2`) nhưng báo cáo **chỉ lưu nhãn**. Hai việc khác nhau — hỏi là đúng, lưu nguyên văn bệnh sử là sai.
+
+---
+
 ## 7. QUY ƯỚC MÃ — ⛔ KHÔNG ĐỔI
 
 | Mã | Nghĩa | Định nghĩa ở |
@@ -466,6 +573,117 @@ Chạy thật trên 295 hội thoại nội địa với một bộ bảy chân 
 > Một bộ chân dung đẩy phần lớn khách vào ô «chưa rõ» thì không đo khách — nó đo chính cái bộ đó.
 
 Với khách quốc tế, sai số này **còn lớn hơn**, vì cùng một dịch vụ mà bốn tầng thị trường có bốn nỗi sợ khác nhau. Chân dung phải **đi ra từ chữ khách nói trong kỳ**.
+
+### ⚠️ Cập nhật 03/11/2026 — con số thứ hai, từ một bộ thư viện thật
+
+Hệ nội địa cùng thương hiệu đã **chuyển sang một thư viện chân dung cố định** và đo trên **494 hội thoại**:
+
+| Đo | Kết quả | |
+|---|---|---|
+| Tỷ lệ *"chưa xác định"* | **65,6%** | ⛔ **TRƯỢT** cổng ① của chính bộ đó *(ngưỡng ≤15%)* |
+| Chân dung lớn nhất | 15,6% | ⛔ TRƯỢT cổng *"⛔ không nhóm nào dưới 5%"* |
+
+★ **Nguyên nhân đã được đo, ⛔ không phải lỗi từ khoá:** trung vị chữ khách nói cả hội thoại là **44 ký tự**; riêng nhóm chưa xếp được là **18 ký tự**. Khách gõ **tên thủ thuật rồi hỏi giá**, ⛔ không tả tình trạng.
+
+→ **Hai kết luận, và chúng ⛔ không mâu thuẫn nhau:**
+
+```
+① Con số 81% (bộ dựng sẵn, nội địa) và 65,6% (thư viện thật, nội địa)
+   đo CÙNG MỘT THẤT BẠI: phân loại theo thứ khách CHƯA NÓI.
+   → Căn cứ của sổ này VẪN ĐỨNG. Phác họa theo kỳ vẫn là cách đang dùng.
+
+② Nhưng "phác họa theo kỳ" là CHẾ ĐỘ TẠM, ⛔ không phải đích.
+   Cố định mới là đích — vì mã đổi nghĩa mỗi kỳ thì `CD3` của kỳ này
+   và `CD3` của kỳ sau là HAI THỨ KHÁC NHAU: ⛔ không vẽ được xu hướng,
+   ⛔ không bàn giao được cho khối Sale hay pháp chế.
+```
+
+### ★ Cái mất của chế độ tạm — ghi ra để ⛔ không ai quên
+
+| | Chế độ TẠM *(đang chạy)* | Đích *(khi có thư viện)* |
+|---|---|---|
+| Nguồn | Phác họa từ hội thoại **của kỳ** | Thư viện cố định, duyệt **một lần** |
+| Mã | `CD1…CDn` — ⚠️ **đổi nghĩa mỗi kỳ** | Mã đọc được, **cố định** |
+| Duyệt | **CỔNG 0, mỗi kỳ** | Một lần · ⛔ không còn CỔNG 0 |
+| So giữa các kỳ | ⛔ Không | ✅ Được |
+| Bàn giao Sale / pháp chế | ⛔ Không | ✅ Cùng bộ mã |
+| Bám sát tệp thật | ✅ **Có** — sinh ra từ chính tệp đó | ⛔ Không — phải qua cổng ổn định |
+
+### ⏸ Điều kiện để nghỉ CỔNG 0
+
+```
+① Một THƯ VIỆN CHÂN DUNG cho khách QUỐC TẾ, mã cố định đọc được
+② ★ Thư viện đó phải có TRỤC THỊ TRƯỜNG. Một thư viện nội địa
+   ⛔ KHÔNG dùng được: nó không có rào `XA`, và cùng một dịch vụ thì
+   `TT-A` với `TT-C` là hai nỗi sợ khác nhau (§1 trên)
+③ Qua năm cổng ổn định của §1b, đo trên dữ liệu QUỐC TẾ
+   — ⛔ không lấy kết quả đo của bản nội địa làm bằng
+
+⏸ Hiện CHƯA CÓ thứ nào trong ba thứ trên → CỔNG 0 VẪN CHẠY.
+⛔ Không tự dựng thư viện. Thiếu chân dung thì BÁO LẠI để bổ sung bản sau.
+```
+
+---
+
+## 1b. ★ NĂM CỔNG ỔN ĐỊNH · VÀ CHẨN ĐOÁN KHI TRƯỢT
+
+Một bộ chân dung *(phác họa của kỳ, hoặc thư viện khi có)* chỉ **ổn định** khi đạt cả năm:
+
+| # | Cổng | Ngưỡng |
+|---|---|---|
+| ① | Tỷ lệ `CD0` — hội thoại ⛔ không vào chân dung nào | ≤ **25%** |
+| ② | Chân dung có độ khớp thấp nhất | ≥ **70%** HT trong nhóm thật sự khớp mô tả |
+| ③ | Chân dung nhỏ nhất | ≥ **5%** số hội thoại của kỳ |
+| ④ | Mỗi chân dung có **≥3 `HT-nnn`** làm bằng | §1 điều ④ |
+| ⑤ | **Nỗi sợ riêng** — ⛔ không hai chân dung cùng một nỗi sợ | §1 điều ① |
+
+⛔ Không đạt → gộp hoặc tách chân dung, sửa dấu hiệu nhận ra, phác lại.
+⛔ **Chưa qua cổng ① thì ⛔ không dùng bảng chân dung để chia ngân sách** — báo cáo tự gắn cờ ở đầu trang.
+
+### ★★ Khi trượt cổng ① — chẩn đoán cho đúng, ⛔ đừng thêm từ khoá
+
+```
+Đo TRƯỚC khi sửa:
+① độ dài trung vị chữ khách nói, CẢ hội thoại     → ? ký tự
+② độ dài trung vị của riêng nhóm CD0              → ? ký tự
+```
+
+| Nếu thấy | Nguyên nhân | Việc chặn |
+|---|---|---|
+| `CD0` **ngắn hơn hẳn** | ★ **Khách chưa nói đủ để biết họ là ai** | **Khai thác** — siết `N2`, và với bản quốc tế siết cả `N7` *(khai thác đúng thị trường)* |
+| `CD0` **dài tương đương** | Bản phác họa thiếu một chân dung thật | Phác thêm / tách lại |
+
+> ★ **Thêm từ khoá khi khách chưa nói gì là ÉP DỮ LIỆU, ⛔ không phải sửa bộ mã.** `CD0` tụt trên giấy mà báo cáo ⛔ không đúng hơn — và kỳ sau ⛔ không ai biết con số nào là thật.
+
+⚠️ **Một bẫy riêng của bản quốc tế:** `CD0` cao có thể ⛔ **không phải** vì khách nói ít, mà vì **khách nói bằng ngôn ngữ khác** và bộ từ khoá chỉ bắt tiếng Việt. ⛔ Phải loại khả năng này trước — cắt `CD0` theo `ngon_ngu` và theo `TT` trước khi kết luận.
+
+---
+
+## 1c. ★★ BỐN NHÃN CHO MỘT HỘI THOẠI — ⛔ ĐỪNG TRỘN
+
+> ⚠️ Bản nội địa có **ba** nhãn. Bản quốc tế có **bốn**, vì thị trường là một trục độc lập.
+
+```
+CHÂN DUNG   ×   THỊ TRƯỜNG   ×   CHẶNG S + RÀO CHỐT   ×   ĐỘ NÓNG   →  HÀNH ĐỘNG
+(đúng 1)        (TT + nước)      (S1…S7 · SỢ NGỜ          (mức sẵn
+khách LÀ AI     khách Ở ĐÂU      NGẠI XA · O/OQ)          sàng)
+                                 khách đang VƯỚNG GÌ
+```
+
+⛔ **Bốn thứ dưới đây ⛔ KHÔNG phải chân dung:**
+
+| Khách nói | Dễ bị xếp thành | Thật ra là |
+|---|---|---|
+| *"I'm in Australia"* | chân dung *"khách Úc"* | **`AU` · `TT-C`** — thị trường |
+| *"Is it safe to fly after surgery?"* | chân dung *"khách sợ bay"* | **`OQ-01`** — rào chốt `XA` |
+| *"I'm Vietnamese living in Texas"* | chân dung *"Việt kiều"* | **`VN-DIASPORA-US` · `TT-B`** — thị trường |
+| *"How much is rhinoplasty"* rồi im | chân dung *"khách hỏi giá"* | **`S1` + chưa đủ dữ kiện** để biết họ là ai |
+
+> ★ Gộp chúng vào chân dung là trộn **khách là ai** với **khách ở đâu** và **khách đang vướng gì**. Ba câu hỏi khác nhau, ba cách xử lý khác nhau — và khi trộn thì cùng một người xuất hiện ở hai chân dung tuỳ kỳ đó họ vướng gì.
+
+⚠️ **Dấu hiệu đã trộn:** tên chân dung là **một nước**, **một tầng**, hoặc **một trở ngại** thay vì một con người có hoàn cảnh. Thị trường thuộc trục `TT`; rào cản thuộc `O`/`OQ`; ⛔ cả hai đều không thuộc trục chân dung.
+
+★ **Nhưng nỗi sợ thì CÓ thuộc chân dung** — và đó là chỗ dễ lẫn nhất. Phân biệt: *"sợ bay sau mổ"* là **rào chốt** `OQ-01`, đo được, gỡ được bằng một câu trả lời đúng. *"Sợ về nước rồi không ai chịu trách nhiệm cho mình"* là **nỗi sợ của một chân dung** — nó ⛔ không gỡ được bằng một câu, nó quyết định cả cách nói.
 
 ### ⚠️ `QT1–QT7` của gói ads ⛔ KHÔNG phải bộ chân dung để gán
 
@@ -1390,6 +1608,20 @@ TẦNG 2 · từng nhân viên : quy ra điểm 0–100 khi đủ mẫu, rồi p
 
 ---
 
+## 2b. ⚠️ SỬA MỘT TIÊU CHÍ THÌ SỬA **BA CHỖ CÙNG LÚC**
+
+```
+① sổ này (§3)            — định nghĩa và điểm
+② tools/tu_dien.json     — bộ cụm nhận diện
+③ tools/id.py            — hàm cham_hoi_thoai
+```
+
+> ⚠️ Thang điểm nằm nhiều chỗ mà lệch nhau thì ⛔ **không ai biết báo cáo đang chấm theo bản nào** — và lệch kiểu đó ⛔ **không phát hiện được từ bên ngoài**, vì mọi bảng vẫn khớp tổng mẫu.
+
+★ Repo này đã có một lần như thế: `OQ-01` *(bay sau mổ)* có trong sổ nhưng bộ cụm nhận diện ⛔ không bắt được câu *"Is it safe to fly more than 15 hours on day 14 after rhinoplasty?"* — đúng mã quan trọng nhất của repo, và ⛔ không có cách nào thấy được từ báo cáo.
+
+---
+
 ## 3. BẢY NHÓM TIÊU CHÍ — THANG 100
 
 ### `N1` · PHẢN HỒI & SLA — **15 điểm** *(nội địa: 20)*
@@ -1744,6 +1976,56 @@ CD2 · "I was quoted 20 grand in Australia" · khối ② Mở chặng S4
 
 ---
 
+## 3b. ★★ ƯU TIÊN CHÂN DUNG **CHỈ TÍNH TỪ DỮ LIỆU** — 03/11/2026
+
+```
+⛔ KHÔNG chân dung nào, ⛔ KHÔNG dịch vụ nào, ⛔ KHÔNG tầng thị trường nào
+   được gán mức ưu tiên TRƯỚC. Kể cả `TT-C` nghe "giá trị cao nhất".
+
+Chỉ số ưu tiên của một chân dung tính từ HAI thành phần đo được:
+   ① độ nóng trung bình của nhóm đó          (id-D §2)
+   ② tỷ lệ ĐẾN KHÁM thật của nhóm đó         (id-E · CPA-KHÁM)
+```
+
+### ⚠️ Và ở bản quốc tế, thành phần ② thường ⛔ KHÔNG đo được
+
+> Khách quốc tế phải **bay sang** mới khám. Giữa *"đồng ý lịch"* và *"đến khám thật"* có một chuyến bay, một visa, và vài tuần — nên mốc đến khám về chậm hơn kỳ báo cáo rất nhiều.
+
+```
+Chưa đo được "đến khám" → ⛔ KHÔNG tính được chỉ số ưu tiên.
+→ Xếp theo ĐỘ CHẶN (§3) và GHI THẲNG:
+  "Kỳ này xếp theo độ chặn. ⛔ Chưa xếp theo giá trị kỳ vọng vì
+   chưa đo được tỷ lệ đến khám của khách quốc tế."
+⛔ KHÔNG suy ưu tiên từ số lead, từ tầng thị trường, hay từ hệ số giá trị đơn.
+```
+
+★ Và ⛔ **không lấy mốc đo của bản nội địa làm thay** — chu kỳ quyết định của khách bay sang khác hẳn khách nội thành.
+
+### Ngưỡng — ⛔ dưới ngưỡng thì ⛔ không xếp hạng
+
+| Nhóm có | Agent được làm gì |
+|---|---|
+| **< 30 hội thoại** trong kỳ | ⛔ *"chưa đủ dữ liệu"*. ⛔ Không xếp hạng |
+| **< 5 lượt đến khám** | ⛔ *"chưa đủ dữ liệu"*. ⛔ Không xếp hạng |
+| Đủ cả hai | ✅ Xếp hạng, kèm **hai con số** làm bằng |
+
+⚠️ Ngưỡng này **cao hơn** ngưỡng 10 HT của `id-A` §5, và ⛔ không mâu thuẫn: 10 HT đủ để **mô tả** một nhóm, nhưng ⛔ chưa đủ để **xếp nhóm này trên nhóm kia**. Xếp hạng là quyết định phân bổ tiền.
+
+### ★ Mức ưu tiên đổi cái gì — và ⛔ không đổi cái gì
+
+```
+✅ ĐỔI       : ngân sách quảng cáo · thứ tự làm nội dung · đào tạo kịch bản
+⛔ KHÔNG ĐỔI : SLA phản hồi khách.
+```
+
+> ★ **SLA của repo này nằm ở `id-L` §4 và tính theo MÚI GIỜ của khách** — `N1.1` chấm `—` ngoài khung 08:00–17:00 ICT, và `N7.4` xét việc dọn hộp thư trong 12h. ⛔ Mức ưu tiên của chân dung ⛔ không được chạm vào bất kỳ con số nào trong đó.
+>
+> ⚠️ Trộn hai thứ này là lấy một quyết định về **ngân sách** để quyết một việc về **chăm khách** — và ở bản quốc tế nó còn tệ hơn, vì khách bị trả lời muộn đang ở một múi giờ mà hôm sau họ đã đi làm.
+
+★ Một khách thuộc chân dung *"ưu tiên thấp"* mà hỏi `OQ-01` *(bay sau mổ)* thì vẫn **trả lời ngay** — đó là câu hỏi an toàn, ⛔ không phải câu hỏi bán hàng (`id-K` §4b).
+
+---
+
 ## 4. BỐN NHÓM KẾT LUẬN *(nội địa: ba)*
 
 | Nhóm | Khi nào | Việc |
@@ -2021,6 +2303,62 @@ HT-052: "em về nước được 12 ngày, có kịp làm mũi không ạ?"
 | `DUYỆT` | ⬜ | **Để trống** — BS + pháp chế điền |
 
 ⛔ **Chỉ hook `DUYỆT = XANH` mới được lên ads.** Agent ⛔ không tự điền ô này.
+
+---
+
+## 4b. ★★ KHUÔN BA NHỊP · VÀ TRẠNG THÁI DUYỆT GẮN TRÊN TỪNG CÂU
+
+### Khuôn ba nhịp
+
+Mọi hook, và mọi **câu mẫu** trong sổ tay (`id-I` §3 phần 2), viết theo đúng ba nhịp:
+
+```
+<điều khách sợ, BẰNG CHỮ CỦA KHÁCH>  →  <điều mình làm khác>  →  <bằng chứng>
+```
+
+| Phải có | ⛔ Phải KHÔNG có |
+|---|---|
+| Một `HT-nnn` truy ngược được | Con số bảo hành *(đang có ba mức cùng lưu hành)* |
+| **Chữ khách dùng**, ⛔ không phải tính từ | Cam kết kết quả chắc chắn |
+| Một điều **mình làm khác được** | Testimonial kết quả lâm sàng *(🔴 chặn ở `TT-C`)* |
+| Qua **CỔNG 2 hai tầng** trước khi phát | Giá chưa có trong bảng `/price-list/` hiện hành |
+
+> ★ **Viết bằng chữ của khách.** Khách ⛔ không tìm *"natural-looking result"* — khách viết *"my nose tip is shiny and red"*. Khách ⛔ không tìm *"world-class surgeon"* — khách viết *"how do I know who actually operates on me"*.
+
+★ **Ví dụ đủ ba nhịp**, cho rào `XA` / `OQ-01`:
+> *"Is it safe to fly more than 15 hours on day 14?"* **→** bác sĩ xác nhận mốc bay **sau khám**, và khách có **kênh liên lạc sau khi về nước** **→** `[CHỜ CẤP: số ngày ở lại — Khoa Chuyên môn]`. *(`HT-021`)*
+
+⚠️ Ví dụ trên **chưa phát được** — nhịp ③ còn là một ô chờ cấp. Đó là đúng: một hook thiếu nhịp ③ thì ⛔ **không được làm tròn bằng một câu nghe hay**.
+
+```
+Thiếu nhịp ③ → câu đó chỉ là lời hứa.
+Thiếu nhịp ① → nó là lời người bán.
+Thiếu nhịp ② → ⛔ không có gì để khách chọn mình.
+```
+
+### ★ Trạng thái duyệt — gắn trên TỪNG CÂU, ⛔ không gắn theo cả tuyến
+
+```
+✅ «đã duyệt»                      → phát được
+🟠 «đề xuất – chưa duyệt»          → ⛔ KHÔNG phát ra ngoài
+🟠 «chờ pháp chế duyệt»            → ⛔ KHÔNG phát ra ngoài
+🟠 «chỉ dùng được ở TT-A / TT-B»   → ★ riêng bản quốc tế, xem dưới
+⏸ «chờ dữ kiện <ô>»               → ⛔ chưa viết được, ghi rõ chờ ô nào
+```
+
+⚠️ **Một tuyến nội dung có thể gồm câu đã duyệt và câu chưa duyệt.** Duyệt theo tuyến là cách để một câu 🟠 đi ra ngoài dưới vỏ một tuyến 🟢. Trạng thái nằm trên **từng câu**.
+
+### ★★ Và ở bản quốc tế, trạng thái duyệt có **hai tầng**
+
+> Một câu **sạch theo luật Việt Nam vẫn có thể bị chặn ở nước người xem.** Nên trạng thái duyệt của một hook ⛔ không phải một ô — nó là **hai ô**.
+
+| | Tầng VN | Tầng nước người xem |
+|---|---|---|
+| Ai soát | Pháp chế VN | Theo bảng `id-K` §4 |
+| Ví dụ chặn riêng tầng ② | — | Testimonial kết quả lâm sàng: hợp ở `TT-A`, 🔴 **cấm ở AU (AHPRA)** |
+| Kết luận | Cả hai ✅ → phát | Một bên 🟠 → ⛔ **không phát ở thị trường đó**, ⛔ không phát ở đâu cả nếu chưa cắt được theo thị trường |
+
+★ Hook ⛔ không cắt được theo thị trường thì lấy **mức chặt nhất** trong các thị trường sẽ thấy nó. ⛔ Không lấy mức trung bình.
 
 ---
 
@@ -2842,6 +3180,36 @@ giấy phép Bộ Y tế → hồ sơ bác sĩ → quy trình an toàn có văn 
 
 ---
 
+## 4b. ★★ AN TOÀN TRƯỚC BÁN HÀNG — ĐỨNG TRÊN MỌI MỤC KHÁC
+
+> ⚠️ Mục này **đứng trên** cả hai tầng pháp lý ở §4. Có dấu hiệu an toàn thì ⛔ **không tư vấn bán**, bất kể chặng `S` nào, bất kể tầng thị trường nào, bất kể hội thoại đang nóng tới đâu.
+
+```
+① DẤU HIỆU AN TOÀN → CHUYỂN BÁC SĨ, ⛔ KHÔNG TƯ VẤN BÁN.
+   đau · sưng · chảy dịch · sốt sau mổ  ·  vùng mổ biến dạng
+   bệnh nền khách tự nêu  ·  thuốc đang dùng  ·  mang thai
+   biến chứng sau can thiệp  ·  hỏi về thuốc / kháng sinh
+   → ⛔ Không báo giá. ⛔ Không bán thêm. ⛔ Không hẹn mổ.
+```
+
+### ★★ Ba loại *"em đã làm rồi"* — và chúng ⛔ KHÔNG giống nhau
+
+| Khách đã làm ở | Đây là gì | Chấm thế nào |
+|---|---|---|
+| **Nơi khác** | Ca tư vấn **mới**, rào `NGỜ` rất nặng *(đã từng bị hỏng một lần)* | Chấm bình thường. ⛔ Không chê nơi cũ |
+| **Tại Kangnam, đang ở Việt Nam** | **KHIẾU NẠI**, ⛔ không phải cơ hội bán | `N5` *(xin số & chốt)* và `N3.1` *(giá)* chấm `—`. Chuyển người có thẩm quyền |
+| ★ **Tại Kangnam, ĐÃ BAY VỀ NƯỚC** | 🔴 **CẤP CỨU Y KHOA Ở XA** — ⛔ không phải khiếu nại thường | Toàn bộ nhóm `N5` và `N3` chấm `—`. **Chuyển bác sĩ ngay**, và hướng dẫn khách tìm cơ sở y tế **tại chỗ** trước |
+
+> ★ **Loại thứ ba là loại riêng của bản quốc tế, và là loại nguy hiểm nhất.** Khách đã mổ ở Việt Nam rồi bay về — nếu có biến chứng thì họ ⛔ **không quay lại được dễ** *(đúng rào `XA`)*. Thời gian bay cộng với việc không có hồ sơ ở cơ sở địa phương làm mọi chậm trễ thành rủi ro y khoa thật.
+>
+> ⚠️ Và nó nối thẳng với `OQ-01`: nếu kỳ trước có hội thoại nào được trả lời *"bay được sau n ngày"* mà kỳ này xuất hiện một ca loại ③, thì hai việc đó **phải được đọc cùng nhau** — ghi vào nhật ký kỳ, ⛔ không để rời.
+
+⚠️ **Hệ quả khi chấm:** chấm nhân viên vì *"⛔ không xin được số"* hoặc *"né giá"* trong một ca loại ② hoặc ③ là **chấm sai việc**. Nhân viên **đúng** khi ⛔ không bán.
+
+★ Bảng dữ kiện gốc ghi rõ ô `lam_o_dau`: `noi-khac` · `tai-kn-trong-vn` · `tai-kn-da-ve-nuoc` · *(trống)*.
+
+---
+
 ## 5. RÀO `R` — NĂM RÀO CỨNG DÙNG CHUNG VỚI GÓI ADS QT
 
 | Mã | Rào | ⛔ Không được | Người duyệt |
@@ -2979,6 +3347,43 @@ R8 · đủ điều kiện KCB cho người nước ngoài : ✅ đã xác nhậ
 
 ⛔ Còn một dòng 🔴 ở **bất kỳ tầng nào** thì ⛔ không phát bản đó.
 ⛔ Và ⛔ **không phát khi `R8` chưa xác nhận**, dù mọi câu chữ đã sạch.
+
+---
+
+## 9b. ★ LUẬT SỔ NHẬP TỪ NGOÀI — VÀ VÌ SAO REPO NÀY ⛔ CHƯA NHẬP BỘ `KF`
+
+### Bốn luật cho mọi sổ nhập từ khối khác
+
+```
+① GIỮ NGUYÊN VĂN của nguồn, để còn đối chiếu với bản khối đó đang dùng.
+② Nguồn sửa thì sổ sửa theo. ⛔ KHÔNG sửa ngược lại.
+③ ⛔ Repo KHÔNG tự đặt thêm mục nào. Thiếu thì BÁO LẠI để bổ sung bản sau.
+④ Đặt tên theo MÃ GỐC của sổ đó (`kf-60-…`), ⛔ không nối tiếp chữ cái
+   `id-x` — xem va chạm `id-L` đã ghi ở `id-A` §2b.
+```
+
+### ⛔ Vì sao `KF-60` · `KF-62` · `KF-64` ⛔ chưa nhập vào repo này
+
+> Hệ nội địa cùng thương hiệu đã nhập ba bộ đó. Repo này **cùng thương hiệu**, nên về nguyên tắc dùng được — nhưng cả ba đều đo và chốt trên **tệp nội địa**, và mỗi bộ vướng đúng một trục của bản quốc tế:
+
+| Bộ | Nhập được chưa | Vướng ở đâu |
+|---|---|---|
+| **`KF-60`** lead scoring | ⛔ Chưa | Nhóm gọi và SLA của nó tính theo **giờ hành chính Việt Nam**. Repo này có SLA **theo múi giờ khách** (`id-L` §4, `N1.1` = `—` ngoài khung, `N7.4` thay thế). Nhập nguyên văn là **hai nơi cùng chấm một thứ** — đúng điều `id-A` §2b cấm |
+| **`KF-62`** thư viện chân dung | ⛔ Chưa | ⛔ Không có **trục thị trường**, nên ⛔ không có rào `XA`. Cùng một dịch vụ mà `TT-A` và `TT-C` là hai nỗi sợ khác nhau (`id-C` §1) |
+| **`KF-64`** chọn tệp & tầng nội dung | ⛔ Chưa | Ngưỡng và trọng số chốt trên dữ liệu nội địa. Và nó cần **tỷ lệ đến khám**, thứ bản quốc tế ⛔ chưa đo được (`id-G` §3b) |
+
+★ **Cái ĐÃ nhập là phương pháp, ⛔ không phải nội dung** — ghi ở `doc/CHANGELOG.md` mục `v1.2`.
+
+### ⏸ Để nhập được, mỗi bộ cần thêm đúng một thứ
+
+```
+KF-60 → một lớp phủ MÚI GIỜ cho nhóm gọi và SLA
+KF-62 → trục THỊ TRƯỜNG trong từng chân dung + rào XA
+KF-64 → một mốc đo "ĐẾN KHÁM" của khách quốc tế
+
+⛔ Không tự dựng ba thứ đó. Chúng là việc của khối Sale / Vận hành,
+   và repo này chỉ ĐỌC dữ liệu đã xảy ra (`id-A` §1).
+```
 
 ---
 

@@ -17,6 +17,117 @@ Chạy thật trên 295 hội thoại nội địa với một bộ bảy chân 
 
 Với khách quốc tế, sai số này **còn lớn hơn**, vì cùng một dịch vụ mà bốn tầng thị trường có bốn nỗi sợ khác nhau. Chân dung phải **đi ra từ chữ khách nói trong kỳ**.
 
+### ⚠️ Cập nhật 03/11/2026 — con số thứ hai, từ một bộ thư viện thật
+
+Hệ nội địa cùng thương hiệu đã **chuyển sang một thư viện chân dung cố định** và đo trên **494 hội thoại**:
+
+| Đo | Kết quả | |
+|---|---|---|
+| Tỷ lệ *"chưa xác định"* | **65,6%** | ⛔ **TRƯỢT** cổng ① của chính bộ đó *(ngưỡng ≤15%)* |
+| Chân dung lớn nhất | 15,6% | ⛔ TRƯỢT cổng *"⛔ không nhóm nào dưới 5%"* |
+
+★ **Nguyên nhân đã được đo, ⛔ không phải lỗi từ khoá:** trung vị chữ khách nói cả hội thoại là **44 ký tự**; riêng nhóm chưa xếp được là **18 ký tự**. Khách gõ **tên thủ thuật rồi hỏi giá**, ⛔ không tả tình trạng.
+
+→ **Hai kết luận, và chúng ⛔ không mâu thuẫn nhau:**
+
+```
+① Con số 81% (bộ dựng sẵn, nội địa) và 65,6% (thư viện thật, nội địa)
+   đo CÙNG MỘT THẤT BẠI: phân loại theo thứ khách CHƯA NÓI.
+   → Căn cứ của sổ này VẪN ĐỨNG. Phác họa theo kỳ vẫn là cách đang dùng.
+
+② Nhưng "phác họa theo kỳ" là CHẾ ĐỘ TẠM, ⛔ không phải đích.
+   Cố định mới là đích — vì mã đổi nghĩa mỗi kỳ thì `CD3` của kỳ này
+   và `CD3` của kỳ sau là HAI THỨ KHÁC NHAU: ⛔ không vẽ được xu hướng,
+   ⛔ không bàn giao được cho khối Sale hay pháp chế.
+```
+
+### ★ Cái mất của chế độ tạm — ghi ra để ⛔ không ai quên
+
+| | Chế độ TẠM *(đang chạy)* | Đích *(khi có thư viện)* |
+|---|---|---|
+| Nguồn | Phác họa từ hội thoại **của kỳ** | Thư viện cố định, duyệt **một lần** |
+| Mã | `CD1…CDn` — ⚠️ **đổi nghĩa mỗi kỳ** | Mã đọc được, **cố định** |
+| Duyệt | **CỔNG 0, mỗi kỳ** | Một lần · ⛔ không còn CỔNG 0 |
+| So giữa các kỳ | ⛔ Không | ✅ Được |
+| Bàn giao Sale / pháp chế | ⛔ Không | ✅ Cùng bộ mã |
+| Bám sát tệp thật | ✅ **Có** — sinh ra từ chính tệp đó | ⛔ Không — phải qua cổng ổn định |
+
+### ⏸ Điều kiện để nghỉ CỔNG 0
+
+```
+① Một THƯ VIỆN CHÂN DUNG cho khách QUỐC TẾ, mã cố định đọc được
+② ★ Thư viện đó phải có TRỤC THỊ TRƯỜNG. Một thư viện nội địa
+   ⛔ KHÔNG dùng được: nó không có rào `XA`, và cùng một dịch vụ thì
+   `TT-A` với `TT-C` là hai nỗi sợ khác nhau (§1 trên)
+③ Qua năm cổng ổn định của §1b, đo trên dữ liệu QUỐC TẾ
+   — ⛔ không lấy kết quả đo của bản nội địa làm bằng
+
+⏸ Hiện CHƯA CÓ thứ nào trong ba thứ trên → CỔNG 0 VẪN CHẠY.
+⛔ Không tự dựng thư viện. Thiếu chân dung thì BÁO LẠI để bổ sung bản sau.
+```
+
+---
+
+## 1b. ★ NĂM CỔNG ỔN ĐỊNH · VÀ CHẨN ĐOÁN KHI TRƯỢT
+
+Một bộ chân dung *(phác họa của kỳ, hoặc thư viện khi có)* chỉ **ổn định** khi đạt cả năm:
+
+| # | Cổng | Ngưỡng |
+|---|---|---|
+| ① | Tỷ lệ `CD0` — hội thoại ⛔ không vào chân dung nào | ≤ **25%** |
+| ② | Chân dung có độ khớp thấp nhất | ≥ **70%** HT trong nhóm thật sự khớp mô tả |
+| ③ | Chân dung nhỏ nhất | ≥ **5%** số hội thoại của kỳ |
+| ④ | Mỗi chân dung có **≥3 `HT-nnn`** làm bằng | §1 điều ④ |
+| ⑤ | **Nỗi sợ riêng** — ⛔ không hai chân dung cùng một nỗi sợ | §1 điều ① |
+
+⛔ Không đạt → gộp hoặc tách chân dung, sửa dấu hiệu nhận ra, phác lại.
+⛔ **Chưa qua cổng ① thì ⛔ không dùng bảng chân dung để chia ngân sách** — báo cáo tự gắn cờ ở đầu trang.
+
+### ★★ Khi trượt cổng ① — chẩn đoán cho đúng, ⛔ đừng thêm từ khoá
+
+```
+Đo TRƯỚC khi sửa:
+① độ dài trung vị chữ khách nói, CẢ hội thoại     → ? ký tự
+② độ dài trung vị của riêng nhóm CD0              → ? ký tự
+```
+
+| Nếu thấy | Nguyên nhân | Việc chặn |
+|---|---|---|
+| `CD0` **ngắn hơn hẳn** | ★ **Khách chưa nói đủ để biết họ là ai** | **Khai thác** — siết `N2`, và với bản quốc tế siết cả `N7` *(khai thác đúng thị trường)* |
+| `CD0` **dài tương đương** | Bản phác họa thiếu một chân dung thật | Phác thêm / tách lại |
+
+> ★ **Thêm từ khoá khi khách chưa nói gì là ÉP DỮ LIỆU, ⛔ không phải sửa bộ mã.** `CD0` tụt trên giấy mà báo cáo ⛔ không đúng hơn — và kỳ sau ⛔ không ai biết con số nào là thật.
+
+⚠️ **Một bẫy riêng của bản quốc tế:** `CD0` cao có thể ⛔ **không phải** vì khách nói ít, mà vì **khách nói bằng ngôn ngữ khác** và bộ từ khoá chỉ bắt tiếng Việt. ⛔ Phải loại khả năng này trước — cắt `CD0` theo `ngon_ngu` và theo `TT` trước khi kết luận.
+
+---
+
+## 1c. ★★ BỐN NHÃN CHO MỘT HỘI THOẠI — ⛔ ĐỪNG TRỘN
+
+> ⚠️ Bản nội địa có **ba** nhãn. Bản quốc tế có **bốn**, vì thị trường là một trục độc lập.
+
+```
+CHÂN DUNG   ×   THỊ TRƯỜNG   ×   CHẶNG S + RÀO CHỐT   ×   ĐỘ NÓNG   →  HÀNH ĐỘNG
+(đúng 1)        (TT + nước)      (S1…S7 · SỢ NGỜ          (mức sẵn
+khách LÀ AI     khách Ở ĐÂU      NGẠI XA · O/OQ)          sàng)
+                                 khách đang VƯỚNG GÌ
+```
+
+⛔ **Bốn thứ dưới đây ⛔ KHÔNG phải chân dung:**
+
+| Khách nói | Dễ bị xếp thành | Thật ra là |
+|---|---|---|
+| *"I'm in Australia"* | chân dung *"khách Úc"* | **`AU` · `TT-C`** — thị trường |
+| *"Is it safe to fly after surgery?"* | chân dung *"khách sợ bay"* | **`OQ-01`** — rào chốt `XA` |
+| *"I'm Vietnamese living in Texas"* | chân dung *"Việt kiều"* | **`VN-DIASPORA-US` · `TT-B`** — thị trường |
+| *"How much is rhinoplasty"* rồi im | chân dung *"khách hỏi giá"* | **`S1` + chưa đủ dữ kiện** để biết họ là ai |
+
+> ★ Gộp chúng vào chân dung là trộn **khách là ai** với **khách ở đâu** và **khách đang vướng gì**. Ba câu hỏi khác nhau, ba cách xử lý khác nhau — và khi trộn thì cùng một người xuất hiện ở hai chân dung tuỳ kỳ đó họ vướng gì.
+
+⚠️ **Dấu hiệu đã trộn:** tên chân dung là **một nước**, **một tầng**, hoặc **một trở ngại** thay vì một con người có hoàn cảnh. Thị trường thuộc trục `TT`; rào cản thuộc `O`/`OQ`; ⛔ cả hai đều không thuộc trục chân dung.
+
+★ **Nhưng nỗi sợ thì CÓ thuộc chân dung** — và đó là chỗ dễ lẫn nhất. Phân biệt: *"sợ bay sau mổ"* là **rào chốt** `OQ-01`, đo được, gỡ được bằng một câu trả lời đúng. *"Sợ về nước rồi không ai chịu trách nhiệm cho mình"* là **nỗi sợ của một chân dung** — nó ⛔ không gỡ được bằng một câu, nó quyết định cả cách nói.
+
 ### ⚠️ `QT1–QT7` của gói ads ⛔ KHÔNG phải bộ chân dung để gán
 
 `Agent-AdsOptimize-Kangnam-QT` có bảy chân dung mẫu `QT1–QT7`. Chúng là **khung mẫu để dựng chiến dịch**, và ở agent này chỉ dùng cho **đúng một việc**: sau khi đã phác họa xong và được duyệt, đối chiếu xem *kỳ này inbox có nhóm nào mà chiến dịch chưa nhắm, hoặc chiến dịch nhắm mà inbox không thấy ai*.
